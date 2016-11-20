@@ -52,6 +52,9 @@ Vu Title "${vuTitle}"
   
 </div>
 
+<div class="row">
+Location "${Location}"
+</div>
 
 
 <div class="row">
@@ -164,13 +167,57 @@ Date "${date}"
 
 <div class="row">
 
-<form action="addDesc.do" method="GET" class="form-inline">
+<form action="addDesc.do" method="GET" class="form-group">
 <div class="form-group">
-    <label for="Text">Vu Description</label>
-    <textarea class="form-control" name="desc" id=exampleTextarea" rows="5"></textarea>
+    <label for="desc">Vu Description</label>
+    <textarea class="form-control" name="desc" id="desc" rows="5"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+</div>
+
+<div class="row">
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+    &q=Colorado">
+</iframe>
+
+ <div class="panel-group" id="location">
+    <div class="panel panel-default" id="photos">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse3">Enter Location</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"></div>
+
+ <form action="addLocation.do" method="GET" class="form-inline">
+ 		Fill in atleast one of the following: 
+        <div class="form-group" id="location">
+        <label for="city">Address</label>
+        <input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
+        <label for="city">City</label>
+        <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
+        <label for="State">State</label>
+        <input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="CO">
+        <label for="city">Zip</label>
+        <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
+        <label for="place">Place</label>
+        <input type="text" name="Place" class="form-control" id="exampleInputName2" placeholder="Place">
+        
+        </div>
+        
+        <div class="form-group"> 
+        </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
+	</div>
 
 </div>
 
