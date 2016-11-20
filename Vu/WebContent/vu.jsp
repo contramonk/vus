@@ -118,9 +118,13 @@ Date "${date}"
        
         <form action="addPhotos.do" method="GET" class="form-inline">
         <div class="form-group" id="photos">
-        <label for="exampleInputName2">Image URL</label>
-        <input type="text" name="date" class="form-control" id="exampleInputName2" placeholder="https://...">
+        <label for="img url">Image URL</label>
+        <input type="text" name="img" class="form-control" id="exampleInputName2" placeholder="https://...">
+        <label for="img index">Index</label>
+        <input type="text" name="index" class="form-control" id="exampleInputName2" placeholder="index number">
+        
         </div>
+        
         <div class="form-group"> 
         </div>
          <button type="submit" class="btn btn-primary">Enter</button>
