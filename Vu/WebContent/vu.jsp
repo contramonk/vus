@@ -25,6 +25,31 @@
 <div class=container-fluid>
 <div class="row">
 Vu Title "${vuTitle}"
+
+<div class="panel-group" id="title">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse0">Vu Title</a>
+        </h4>
+      </div>
+      <div id="collapse0" class="panel-collapse collapse">
+        <div class="panel-body"></div>
+        
+        <form action="addTitle.do" method="GET" class="form-inline" id="title">
+        <div class="form-group" id="title">
+        <label for="title">Title</label>
+        <input type="text" name="title" class="form-control" id="exampleInputName1" placeholder="Title">
+        </div>
+        <div class="form-group"> 
+        </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 
@@ -44,7 +69,7 @@ Date "${date}"
         
         <form action="addDate.do" method="GET" class="form-inline" id="date">
         <div class="form-group" id="date">
-        <label for="exampleInputName2">Date</label>
+        <label for="date">Date</label>
         <input type="text" name="date" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         </div>
         <div class="form-group"> 
@@ -56,7 +81,7 @@ Date "${date}"
     </div>
   </div>
  </div>
- <hr>
+ 
  
 <div class="row">
  
@@ -134,6 +159,16 @@ Date "${date}"
     </div>
     
   </div>
+
+</div>
+
+<div class="row">
+
+<div class="form-group">
+    <label for="exampleTextarea">Vu Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </div>
+
 
 </div>
 
