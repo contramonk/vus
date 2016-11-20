@@ -18,11 +18,12 @@
   }
   </style>
 
-<title>Vu</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>VuAdmin</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" "target="_blank">
 </head>
 <body>
 <div class=container-fluid>
+<a href="VuUser.jsp">See Vu</a>
 <div class="row">
 Vu Title "${vuTitle}"
 
@@ -227,6 +228,7 @@ Date "${date}"
     <script src="js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
 </div>
 </body>
 </html>
