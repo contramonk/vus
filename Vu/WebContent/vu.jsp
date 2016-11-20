@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE >
 <html lang="en">
 <head>
@@ -23,13 +24,13 @@
 <body>
 <div class=container-fluid>
 <div class="row">
-Vu Title
+Vu Title "${vuTitle}"
 </div>
 
 
 
 <div class="row">
-Date 
+Date "${date}"
 
   <div class="panel-group">
     <div class="panel panel-default">
@@ -40,8 +41,19 @@ Date
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body"></div>
+        
+      
+
        
-        <div class="panel-footer">Panel Footer</div>
+         <form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">Date</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="yyyy/mm/dd">
+  </div>
+  <div class="form-group"> 
+  </div>
+  <button type="submit" class="btn btn-primary">Enter</button>
+</form>
       </div>
     </div>
   </div>
@@ -62,6 +74,13 @@ Date
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
+  
+  <c:forEach var="photo" items="${photoList}">
+  <div class="item">
+  <img src="photo">
+ </div>
+  
+  </c:forEach>
     <div class="item active">
       <img src="https://scontent.fapa1-2.fna.fbcdn.net/t31.0-8/14425518_10154103010359472_528916013561621627_o.jpg" alt="Chania">
     </div>
