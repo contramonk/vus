@@ -32,7 +32,7 @@ Vu Title "${vuTitle}"
 <div class="row">
 Date "${date}"
 
-  <div class="panel-group">
+  <div class="panel-group" id="date">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -42,10 +42,10 @@ Date "${date}"
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body"></div>
         
-        <form action="date.do" method="GET" class="form-inline">
-        <div class="form-group">
+        <form action="addDate.do" method="GET" class="form-inline" id="date">
+        <div class="form-group" id="date">
         <label for="exampleInputName2">Date</label>
-        <input type="text" name="date" class="form-control" id="exampleInputName2" placeholder="yyyy/mm/dd">
+        <input type="text" name="date" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         </div>
         <div class="form-group"> 
         </div>
@@ -56,11 +56,10 @@ Date "${date}"
     </div>
   </div>
  </div>
-<div class="row">
  <hr>
-
-
-
+ 
+<div class="row">
+ 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -106,6 +105,31 @@ Date "${date}"
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+ <div class="panel-group" id="photos">
+    <div class="panel panel-default" id="photos">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse2">Add Photo</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"></div>
+       
+        <form action="addPhotos.do" method="GET" class="form-inline">
+        <div class="form-group" id="photos">
+        <label for="exampleInputName2">Image URL</label>
+        <input type="text" name="date" class="form-control" id="exampleInputName2" placeholder="https://...">
+        </div>
+        <div class="form-group"> 
+        </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
+        
+      </div>
+    </div>
+    
+  </div>
 
 </div>
 
