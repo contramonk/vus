@@ -42,26 +42,24 @@ Date "${date}"
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body"></div>
         
-      
-
-       
-         <form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputName2">Date</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="yyyy/mm/dd">
-  </div>
-  <div class="form-group"> 
-  </div>
-  <button type="submit" class="btn btn-primary">Enter</button>
-</form>
+        <form action="date.do" method="GET" class="form-inline">
+        <div class="form-group">
+        <label for="exampleInputName2">Date</label>
+        <input type="text" name="date" class="form-control" id="exampleInputName2" placeholder="yyyy/mm/dd">
+        </div>
+        <div class="form-group"> 
+        </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
+        
       </div>
     </div>
   </div>
  </div>
-
+<div class="row">
  <hr>
 
-<div class="row">
+
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
