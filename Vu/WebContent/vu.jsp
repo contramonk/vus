@@ -30,7 +30,7 @@ Vu Title "${vuTitle}"
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse0">Vu Title</a>
+          <a data-toggle="collapse" href="#collapse0">Edit Title</a>
         </h4>
       </div>
       <div id="collapse0" class="panel-collapse collapse">
@@ -164,11 +164,13 @@ Date "${date}"
 
 <div class="row">
 
+<form action="addDesc.do" method="GET" class="form-inline">
 <div class="form-group">
-    <label for="exampleTextarea">Vu Description</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    <label for="Text">Vu Description</label>
+    <textarea class="form-control" name="desc" id=exampleTextarea" rows="5"></textarea>
   </div>
-
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 </div>
 
