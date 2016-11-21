@@ -14,6 +14,7 @@
 <title>Vus</title>
 </head>
 <body>
+
 	<nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -24,11 +25,12 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<div class="navbar-brand navbar-brand-centered">vu</div>
+			<div class="navbar-brand navbar-brand-centered"></div>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-brand-centered">
 			<ul class="nav navbar-nav">
+	<li></li>
 				<li><a href="vus.jsp">Home</a></li>
 				<li><a href="index.html">Signout</a></li>
 			</ul>
@@ -38,6 +40,7 @@
 	<!-- /.container-fluid --> </nav>
 	<div class=container-fluid>
 		<div class="row">
+		<img src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F" style="width: 4em; height: 4em ; position: relative; left:50%; right:50%">
 			<div class="panel-group" id="title">
 				<div class="panel panel-default">
 					<div class="panel-heading">

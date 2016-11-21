@@ -34,6 +34,9 @@
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
+	</nav>
+			<img src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F" style="width: 4em; height: 4em ; position: relative; left:50%; right:50%">
+	
 	<!-- /.container-fluid -->
 	<p>
 <a href="https://github.com/contramonk">Jonathan Edwards Github</a></p>
