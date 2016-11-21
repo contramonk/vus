@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<h5>Select a year to see a vu</h5>
+			<h5>Vus by Year</h5>
 		</div>
 		<div class="row">
 			<div class="panel-group">
@@ -89,7 +89,7 @@
 </c:forEach> --%> 
 							<a data-toggle="collapse" href="#collapse1">${year} 2016 
 							<a href="vuAdmin.jsp" value="Add Vu">+</a>
-							<a data-toggle="collapse" href="#collapse5">-</a>
+<!-- 							<a data-toggle="collapse" href="#collapse5">-</a>
 								<div id="collapse5" class="panel-collapse collapse">
 									<div class="panel-body"></div>
 
@@ -117,7 +117,7 @@
 										<div class="form-group"></div>
 										<button type="submit">Enter</button>
 									</form>
-								</div>
+								</div> -->
 
 
 									<!-- <form action="addVu.do" method="GET" class="form-inline" id="newvu">
