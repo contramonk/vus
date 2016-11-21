@@ -78,7 +78,7 @@
 			<hr>
 			<div class="col-lg-12">
 				<div class="col-md-8">
-					<a href="#">Terms of Service</a> | <a href="privacyPolicy.jsp">Privacy</a>
+					<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy Policy</a>
 				</div>
 				<div class="col-md-4">
 					<p class="muted pull-right">© 2016 Rockin Executioners. All
