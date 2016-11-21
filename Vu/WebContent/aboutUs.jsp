@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,21 +35,64 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	</nav>
-			<img src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F" style="width: 4em; height: 4em ; position: relative; left:50%; right:50%">
-	
+	<img
+		src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F"
+		style="width: 4em; height: 4em; position: relative; left: 50%; right: 50%">
+
 	<!-- /.container-fluid -->
-	<p>
-<a href="https://github.com/contramonk">Jonathan Edwards Github</a></p>
-<p>
-<a href="https://github.com/chrisbuttaro">Chris Buttaro Github</a></p>
-<p>
-<a href="https://github.com/spassantino">Sarah Passantino Github</a></p>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" href="#collapse0">Jonathan Edwards</a>
+				<div id="collapse0" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p>
+							<a href="https://github.com/contramonk">Jonathan Edwards
+								Github</a>
+						</p>
+					</div>
+				</div>
+			</h4>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" href="#collapse1">Chris Buttaro</a>
+				<div id="collapse1" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p>
+							<a href="https://github.com/chrisbuttaro">Chris Buttaro
+								Github</a>
+						</p>
+					</div>
+				</div>
+			</h4>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" href="#collapse2">Sarah Passantino</a>
+				<div id="collapse2" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p>
+							<a href="https://github.com/spassantino">Sarah Passantino
+								Github</a>
+						</p>
+					</div>
+				</div>
+			</h4>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<hr>
 			<div class="col-lg-12">
 				<div class="col-md-8">
-					<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy Policy</a>
+					<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
+						Policy</a>
 				</div>
 				<div class="col-md-4">
 					<p class="muted pull-right">© 2016 Rockin Executioners. All
