@@ -50,7 +50,7 @@
         </div>
         <div class="form-group"> 
         </div>
-         <button type="submit" class="btn btn-primary">Enter</button>
+         <button type="submit">Enter</button>
         </form>
       </div>
     </div>
@@ -69,17 +69,9 @@
 </c:forEach> --%>
         <a data-toggle="collapse" href="#collapse1">${year}
         2016
-        <!--   <div class="panel-group" id="title">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" style= "height: 5mm" style="width: 5mm">
-          <a data-toggle="collapse" href="#collapse0" >+ Add Vu</a>
-        </h4>
-      </div>
-      <div id="collapse0" class="panel-collapse collapse">
-        <div class="panel-body"></div>
         
- <form action="addVu.do" method="GET" class="form-inline" id="newvu">
+        
+ <!-- <form action="addVu.do" method="GET" class="form-inline" id="newvu">
         <input type="text" class="form-control" id="newvu" placeholder="Title">
         <input type="text" class="form-control" id="newvu" placeholder="Date">
         <input type="text" class="form-control" id="newvu" placeholder="Image url">
@@ -93,6 +85,7 @@
         </form>  -->
         
       </div>
+      <a href="vuAdmin.jsp" value="Add Vu">Add Vu</a>
     </div>
   </div>
         </a>
@@ -138,6 +131,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div></h5>
+             <input type="button" value="update" action="updateVu.do">
+             <input type="button" value="delete" action="deleteVu.do">
       </div>
     </div> 
   </div>
