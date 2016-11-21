@@ -71,7 +71,7 @@
                         <a class="page-scroll" href="#photos">Photos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Story</a>
+                        <a class="page-scroll" href="#contact">Description</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#map">Map</a>
