@@ -26,8 +26,8 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="navbar-brand-centered">
 		      <ul class="nav navbar-nav">
-		        <li><a href="#">Home</a></li>
-		        <li><a href="#">Signout</a></li>
+		        <li><a href="vus.jsp">Home</a></li>
+		        <li><a href="index.html">Signout</a></li>
 		      </ul>		        
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -115,7 +115,7 @@
   
   </c:forEach>
     <div class="item active" style="position: relative; text-align: center;">
-    <a href="vuUser.jsp">${title} The Greatest Vu Yet ${photo}</a>
+    <a href="VuUser.jsp">${title} The Greatest Vu Yet ${photo}</a>
     </div>
        <div class="item" style="position: relative; text-align: center;"> Vu2</div>
        <div class="item" style="position: relative; text-align: center;"> Vu3</div>
@@ -144,7 +144,7 @@
   <hr>
     <div class="col-lg-12">
       <div class="col-md-8">
-        <a href="#">Terms of Service</a> | <a href="#">Privacy</a>    
+        <a href="#">Terms of Service</a> | <a href="privacyPolicy.jsp">Privacy</a>    
       </div>
       <div class="col-md-4">
         <p class="muted pull-right">© 2016 Rockin Executioners. All rights reserved</p>
