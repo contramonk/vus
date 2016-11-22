@@ -153,12 +153,6 @@
 				</a>
 				</h4>
 			</div>
-			<%-- 	<div id="collapse1" class="panel-collapse collapse">
-				     <c:forEach items="${vusList}" var="item">
-    ${item}<br>
-</c:forEach> 
-				
-			</div> --%>
 		</div>
 	</div>
 	<div class="container">
