@@ -141,7 +141,9 @@
 												src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
 												style="width: 10mm; height: 10mm">
 												
-											${photo} ${title} ${date} Thanksgiving November 24, 2016</a>
+											${photo} ${title} ${date} Thanksgiving November 24, 2016 
+											
+											</a>
 												
 										</div>
 										<div class="panel-footer"></div>
