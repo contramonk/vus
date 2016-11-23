@@ -187,7 +187,8 @@ Date "${date}"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
     &q=Colorado">
 </iframe>
-
+</div>
+<div class="col-sm-4">
  <div class="panel-group" id="location">
     <div class="panel panel-default" id="photos">
       <div class="panel-heading">
@@ -197,6 +198,7 @@ Date "${date}"
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body"></div>
+      
 
  <form action="addLocation.do" method="GET" class="form-inline">
  		Fill in atleast one of the following: 

@@ -16,6 +16,21 @@ CREATE SCHEMA IF NOT EXISTS `vubase` DEFAULT CHARACTER SET utf8 ;
 USE `vubase` ;
 
 -- -----------------------------------------------------
+-- Table `user`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `user` ;
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `Location`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `Location` ;
@@ -52,25 +67,10 @@ CREATE TABLE IF NOT EXISTS `vu` (
     FOREIGN KEY (`location_id`)
     REFERENCES `Location` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `user`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `user` ;
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `password` VARCHAR(45) NOT NULL,
-  `first_name` VARCHAR(45) NOT NULL,
-  `last_name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_user_id`
-    FOREIGN KEY (`id`)
-    REFERENCES `vu` (`user_id`)
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vu_user`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -99,3 +99,13 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `vubase`;
+INSERT INTO `user` (`id`, `password`, `first_name`, `last_name`, `email`) VALUES (1, 'piowacket', 'Chris', 'Buttaro', 'chris.buttaro@gmail.com');
+
+COMMIT;
+
