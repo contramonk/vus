@@ -95,6 +95,14 @@ CREATE TABLE IF NOT EXISTS `Photo` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+SET SQL_MODE = '';
+GRANT USAGE ON *.* TO student;
+ DROP USER student;
+SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+CREATE USER 'student' IDENTIFIED BY 'student';
+
+GRANT SELECT, INSERT, TRIGGER ON TABLE * TO 'student';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'student';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -115,7 +123,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '1250 something street', 'st. thomas', 'vi', 00802, 'st. thomas');
+INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '4200', 'Constantine', 'VI', 99215, 'Burger King');
 
 COMMIT;
 
@@ -125,17 +133,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `vu` (`id`, `user_id`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (1, 1, 1, 'Virgin Islands', 'it was the best!!', '2010/01/01', '2011/01/01');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `Photo`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `vubase`;
-INSERT INTO `Photo` (`id`, `vu_id`, `url`, `caption`) VALUES (1, 1, 'https://media-cdn.tripadvisor.com/media/photo-s/01/79/2a/86/view-of-magens-bay.jpg', 'the view from my vu');
+INSERT INTO `vu` (`id`, `user_id`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (1, 1, 1, 'Virgin Islands', 'it was the best!!', '2010-01-01', '2011-01-01');
 
 COMMIT;
 
