@@ -16,17 +16,17 @@ CREATE SCHEMA IF NOT EXISTS `vubase` DEFAULT CHARACTER SET utf8 ;
 USE `vubase` ;
 
 -- -----------------------------------------------------
--- Table `user`
+-- Table `users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `user` ;
+DROP TABLE IF EXISTS `users` ;
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `users` (
+  `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
+  `enabled` VARCHAR(45) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`username`))
 ENGINE = InnoDB;
 
 
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `vu` ;
 
 CREATE TABLE IF NOT EXISTS `vu` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
   `location_id` INT NOT NULL,
   `title` VARCHAR(50) NOT NULL,
   `post` VARCHAR(1500) NULL,
@@ -62,15 +62,15 @@ CREATE TABLE IF NOT EXISTS `vu` (
   `end_date` DATE NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_vu_Location_idx` (`location_id` ASC),
-  INDEX `fk_user_id` (`user_id` ASC),
+  INDEX `fk_vu_user_idx` (`username` ASC),
   CONSTRAINT `fk_vu_Location`
     FOREIGN KEY (`location_id`)
     REFERENCES `Location` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_vu_user`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `user` (`id`)
+    FOREIGN KEY (`username`)
+    REFERENCES `users` (`username`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -95,6 +95,25 @@ CREATE TABLE IF NOT EXISTS `Photo` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `user_roles`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `user_roles` ;
+
+CREATE TABLE IF NOT EXISTS `user_roles` (
+  `user_role_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `role` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`user_role_id`),
+  UNIQUE INDEX `uni_username_role` (`username` ASC, `role` ASC),
+  CONSTRAINT `fk_user_user_roles`
+    FOREIGN KEY (`username`)
+    REFERENCES `users` (`username`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE = '';
 GRANT USAGE ON *.* TO student;
  DROP USER student;
@@ -109,11 +128,13 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `user`
+-- Data for table `users`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `user` (`id`, `password`, `first_name`, `last_name`, `email`) VALUES (1, 'piowacket', 'Chris', 'Buttaro', 'chris.buttaro@gmail.com');
+INSERT INTO `users` (`username`, `password`, `first_name`, `last_name`, `enabled`) VALUES ('chris', 'piowacket', 'Chris', 'Buttaro', 'true');
+INSERT INTO `users` (`username`, `password`, `first_name`, `last_name`, `enabled`) VALUES ('guest', 'guest', 'Jeff', 'Smitherson', 'true');
+INSERT INTO `users` (`username`, `password`, `first_name`, `last_name`, `enabled`) VALUES ('admin', 'admin', 'Creg', 'Sinclaire', 'true');
 
 COMMIT;
 
@@ -123,7 +144,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '4200', 'Constantine', 'VI', 99215, 'Burger King');
+INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '2240 E Barry Dr', 'K City', 'VI', 55543, 'Burger King');
 
 COMMIT;
 
@@ -133,7 +154,31 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `vu` (`id`, `user_id`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (1, 1, 1, 'Virgin Islands', 'it was the best!!', '2010-01-01', '2011-01-01');
+INSERT INTO `vu` (`id`, `username`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (1, 'chris', 1, 'Virgin Islands', 'it was the best!!', '2010/01/01', '2011/01/01');
+INSERT INTO `vu` (`id`, `username`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (2, 'guest', 1, 'Virgin Islands', 'different person visits islands', '2012/05/05', '2013/05/05');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `Photo`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `vubase`;
+INSERT INTO `Photo` (`id`, `vu_id`, `url`, `caption`) VALUES (1, 1, 'http://vevesworld.com/data_images/top_cityes/road-town/road-town-01.jpg', 'view from apartment');
+INSERT INTO `Photo` (`id`, `vu_id`, `url`, `caption`) VALUES (2, 2, 'http://vevesworld.com/data_images/top_cityes/road-town/road-town-04.jpg', 'view from hotel');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `user_roles`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `vubase`;
+INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (1, 'guest', 'ROLE_USER');
+INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (2, 'admin', 'ROLE_ADMIN');
+INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (3, 'admin', 'ROLE_USER');
 
 COMMIT;
 
