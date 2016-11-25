@@ -25,7 +25,7 @@
 <div class=container-fluid>
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
-Vu Title "${vuTitle}"
+Vu Title "${Vu.title}"
 
 <div class="panel-group" id="title">
     <div class="panel panel-default">
@@ -54,12 +54,12 @@ Vu Title "${vuTitle}"
 </div>
 
 <div class="row">
-Location "${Location}"
+Location "${Vu.location}"
 </div>
 
 
 <div class="row">
-Date "${date}"
+Date "${Vu.date}"
 
   <div class="panel-group" id="date">
     <div class="panel panel-default">
@@ -223,7 +223,7 @@ Date "${date}"
 	</div>
 
 </div>
-
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
