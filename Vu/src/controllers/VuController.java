@@ -36,12 +36,42 @@ public class VuController {
 		return mv;
 	}
 	
-	@RequestMapping("addDate.do") //for adding a startDate to a Vu
+	@RequestMapping("addDate.do") //for adding a endDate to a Vu
 	  public ModelAndView endDate(@RequestParam("endDate") Date endDate, Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.setStartDate(vu, endDate));
+		mv.addObject("Vu", vuDao.setEndDate(vu, endDate));
 			
 		return mv;
 	}
+	
+	@RequestMapping("addPhotos.do") //for adding a photo to a Vu
+	  public ModelAndView addPhotos(@RequestParam("photo") String imgUrl, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setPhoto(vu, imgUrl));
+			
+		return mv;
+	}
+	
+	@RequestMapping("addPost.do") //for adding a photo to a Vu
+	  public ModelAndView addPost(@RequestParam("post") String post, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setPhoto(vu, post));
+			
+		return mv;
+	}
+	
+	@RequestMapping("addLocation.do") //for adding a photo to a Vu
+	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, 
+			  @RequestParam("state") String state, @RequestParam("zip")String zip, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setPhoto(vu, post));
+			
+		return mv;
+	}
+	
+	
 }

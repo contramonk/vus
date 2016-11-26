@@ -103,7 +103,7 @@ Date "${Vu.date}"
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   
-  <c:forEach var="photo" items="${photoList}">
+  <c:forEach var="photo" items="${Vu.photoList}">
   <div class="item">
   <img src="photo">
  </div>
@@ -150,7 +150,7 @@ Date "${Vu.date}"
         <form action="addPhotos.do" method="GET" class="form-inline">
         <div class="form-group" id="photos">
         <label for="img url">Image URL</label>
-        <input type="text" name="img" class="form-control" id="exampleInputName2" placeholder="https://...">
+        <input type="text" name="photo" class="form-control" id="exampleInputName2" placeholder="https://...">
         <label for="img index">Index</label>
         <input type="text" name="index" class="form-control" id="exampleInputName2" placeholder="index number">
         
@@ -170,10 +170,10 @@ Date "${Vu.date}"
 
 <div class="row">
 
-<form action="addDesc.do" method="GET" class="form-group">
+<form action="addPost.do" method="GET" class="form-group">
 <div class="form-group">
-    <label for="desc">Vu Description</label>
-    <textarea class="form-control" name="desc" id="desc" rows="5"></textarea>
+    <label for="post">Vu Description</label>
+    <textarea class="form-control" name="post" id="post" rows="5"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -205,7 +205,7 @@ Date "${Vu.date}"
  <form action="addLocation.do" method="GET" class="form-inline">
  		Fill in atleast one of the following: 
         <div class="form-group" id="location">
-        <label for="city">Address</label>
+        <label for="address">Address</label>
         <input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
         <label for="city">City</label>
         <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
@@ -214,7 +214,7 @@ Date "${Vu.date}"
         <label for="city">Zip</label>
         <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
         <label for="place">Place</label>
-        <input type="text" name="Place" class="form-control" id="exampleInputName2" placeholder="Place">
+        <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">
         
         </div>
         
