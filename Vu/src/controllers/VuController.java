@@ -1,4 +1,6 @@
 package controllers;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,24 @@ public class VuController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vuDao.setTitle(vu, title ));
+			
+		return mv;
+	}
+	
+	@RequestMapping("addDate.do") //for adding a startDate to a Vu
+	  public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setStartDate(vu, startDate));
+			
+		return mv;
+	}
+	
+	@RequestMapping("addDate.do") //for adding a startDate to a Vu
+	  public ModelAndView endDate(@RequestParam("endDate") Date endDate, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setStartDate(vu, endDate));
 			
 		return mv;
 	}

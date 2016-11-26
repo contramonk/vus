@@ -73,8 +73,10 @@ Date "${Vu.date}"
         
         <form action="addDate.do" method="GET" class="form-inline" id="date">
         <div class="form-group" id="date">
-        <label for="date">Date</label>
-        <input type="text" name="date" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+        <label for="startDate">Start Date</label>
+        <input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+        <label for="endDate">End Date</label>
+        <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         </div>
         <div class="form-group"> 
         </div>
