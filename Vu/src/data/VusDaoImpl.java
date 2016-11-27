@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Date;
+
 import entities.Vu;
 
 public class VusDaoImpl implements VusDao{
@@ -25,8 +27,12 @@ public class VusDaoImpl implements VusDao{
 	}
 
 	@Override
-	public Vu addVu(Vu vu) {
-		
+	public Vu addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
+		Vu vu = new Vu();
+		vu.setTitle(title);
+		vu.setPost(post);
+		vu.setStartDate(startDate);
+		vu.setEndDate(endDate);
 		return vu;
 	}
 
