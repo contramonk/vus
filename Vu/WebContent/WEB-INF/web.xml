@@ -10,13 +10,12 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Vu</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
