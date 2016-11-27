@@ -2,24 +2,28 @@ package controllers;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.VuDao;
+import data.VuDAO;
 import entities.Vu; 
 
 
-@Repository 
+@Controller
 @SessionAttributes("")
 public class VuController {
 	@Autowired
-	private VuDao vuDao;
+	private VuDAO vuDao;
+	
 	
 	@RequestMapping("addDate.do") //for adding a startDate to a Vu
 	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
+	@RequestMapping("addTitle.do") //for adding a title to a Vu
+	  public ModelAndView title(@RequestParam("title") String title, Vu vu) {
+		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vuDao.setStartDate(vu, startDate));
@@ -57,7 +61,6 @@ public class VuController {
 	
 	@RequestMapping("addPost.do") //for adding a photo to a Vu
 	  public ModelAndView addPost(@RequestParam("post") String post, Vu vu) {
-		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vuDao.setPhoto(vu, post));
