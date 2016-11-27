@@ -91,9 +91,9 @@
 								</div>
 
 							</div>
-							<%-- <c:forEach items="${yearList}" var="item">
-    ${item}<br>
-</c:forEach>  --%>
+							 <c:forEach items="${yearList}" var="year">
+    ${year}<br>
+</c:forEach>  
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel-heading">
@@ -114,6 +114,9 @@
 												src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
 												style="width: 10mm; height: 10mm">
 												
+												<c:forEach items="${vus}" var="vu">
+ 												   ${Vu.photo} ${Vu.title} ${Vu.date}
+												</c:forEach>
 											${photo} ${title} ${date} Thanksgiving November 24, 2016 
 											
 											</a>
