@@ -68,7 +68,7 @@ public class VuController {
 			  @RequestParam("state") String state, @RequestParam("zip")String zip, Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.setPhoto(vu, post));
+		//mv.addObject("Vu", vuDao.setPhoto(vu, post));
 			
 		return mv;
 	}
