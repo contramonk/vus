@@ -23,6 +23,7 @@ public class VuController {
 	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
 		System.out.println("test");
 		System.out.println("test");
+		System.out.println("test");
 	return new ModelAndView();
 	}
 	@RequestMapping("addTitle.do") //for adding a title to a Vu
