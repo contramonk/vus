@@ -23,7 +23,32 @@ public class Vu {
 	@Column(name = "end_date")
 	@Temporal(TemporalType.DATE) 
 	private Date endDate;
+	@ManyToOne
+	@Column(name = "username")
+	private User userName;
 	
+
+
+	public User getUserName() {
+		return userName;
+	}
+
+	public void setUserName(User userName) {
+		this.userName = userName;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public void setLocationId(int locationId) {
+		this.locationId = locationId;
+	}
+
 public Vu(){
 	
 	}
