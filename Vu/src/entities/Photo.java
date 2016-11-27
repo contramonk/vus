@@ -10,7 +10,10 @@ public class Photo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name = "vu_id")
+	
+	@ManyToOne
+    @JoinColumn(name = "vu_id")
+    private List<Vu> roles;
 	private int vuId; 
 	private String url;
 	private String caption; 
