@@ -2,21 +2,22 @@ package controllers;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.VuDao;
+import data.VuDAO;
 import entities.Vu; 
 
 
-@Repository 
+@Controller
 @SessionAttributes("")
 public class VuController {
 	@Autowired
-	private VuDao vuDao;
+	private VuDAO vuDao;
+	
 	
 	@RequestMapping("addTitle.do") //for adding a title to a Vu
 	  public ModelAndView title(@RequestParam("title") String title, Vu vu) {
