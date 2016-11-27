@@ -18,6 +18,15 @@ public class VuController {
 	@Autowired
 	private VuDao vuDao;
 	
+	@RequestMapping("addDate.do") //for adding a startDate to a Vu
+	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setStartDate(vu, startDate));
+		
+		return mv;
+	}
+	
 	@RequestMapping("addTitle.do") //for adding a title to a Vu
 	  public ModelAndView title(@RequestParam("title") String title, Vu vu) {
 		ModelAndView mv = new ModelAndView();
@@ -27,14 +36,6 @@ public class VuController {
 		return mv;
 	}
 	
-	@RequestMapping("addDate.do") //for adding a startDate to a Vu
-	  public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.setStartDate(vu, startDate));
-			
-		return mv;
-	}
 	
 	@RequestMapping("addDate.do") //for adding a endDate to a Vu
 	  public ModelAndView endDate(@RequestParam("endDate") Date endDate, Vu vu) {
