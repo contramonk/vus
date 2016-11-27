@@ -56,6 +56,23 @@ public ModelAndView addVu(@RequestParam("locationId") int locationId, @RequestPa
 	
 	return mv;
 }
+@RequestMapping("editVu.do") //for editing a Vu
+public ModelAndView editVu(@RequestParam("locationId") int locationId, @RequestParam("title") String title, 
+		@RequestParam("post") String post, @RequestParam("startDate")Date startDate, @RequestParam("endDate") Date endDate, @RequestParam("vu")Vu vu) {
+	ModelAndView mv = new ModelAndView();
+	mv.setViewName("vus.jsp");
+	mv.addObject("Vu", vusDao.editVu(vu));
+	
+	return mv;
+}
+@RequestMapping("removeVu.do") //for removing a Vu
+public ModelAndView removeVu(@RequestParam("vu")Vu vu) {
+	ModelAndView mv = new ModelAndView();
+	mv.setViewName("vus.jsp");
+	mv.addObject("Vu", vusDao.removeVu(vu));
+	
+	return mv;
+}
 
 
 }
