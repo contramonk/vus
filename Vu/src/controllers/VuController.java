@@ -21,6 +21,8 @@ public class VuController {
 	
 	@RequestMapping("addDate.do") //for adding a startDate to a Vu
 	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
+	return new ModelAndView();
+	}
 	@RequestMapping("addTitle.do") //for adding a title to a Vu
 	  public ModelAndView title(@RequestParam("title") String title, Vu vu) {
 		System.out.println("test");
