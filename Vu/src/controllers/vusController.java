@@ -47,12 +47,12 @@ public ModelAndView removeYear(@RequestParam("year") int year) {
 	return mv;
 }
 
-@RequestMapping("addLocation.do") //for adding a photo to a Vu
-public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, 
-		@RequestParam("state") String state, @RequestParam("zip")String zip, Vu vu) {
+@RequestMapping("addVu.do") //for adding a Vu
+public ModelAndView addVu(@RequestParam("locationId") int locationId, @RequestParam("title") String title, 
+		@RequestParam("post") String post, @RequestParam("startDate")Date startDate, @RequestParam("endDate") Date endDate, @RequestParam("vu")Vu vu) {
 	ModelAndView mv = new ModelAndView();
-	mv.setViewName("vuAdmin.jsp");
-	mv.addObject("Vu", vuDao.setPhoto(vu, post));
+	mv.setViewName("vus.jsp");
+	mv.addObject("Vu", vusDao.addVu(vu));
 	
 	return mv;
 }
