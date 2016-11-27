@@ -49,23 +49,23 @@ public class vusController {
 	}
 
 	@RequestMapping("addVu.do") // for adding a Vu
-	public ModelAndView addVu(@RequestParam("locationId") int locationId, @RequestParam("title") String title,
+	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId, @RequestParam("title") String title,
 			@RequestParam("post") String post, @RequestParam("startDate") Date startDate,
 			@RequestParam("endDate") Date endDate, @RequestParam("vu") Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vus.jsp");
-		mv.addObject("Vu", vusDao.addVu(vu));
+		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, endDate, endDate, vu));
 
 		return mv;
 	}
 
 	@RequestMapping("editVu.do") // for editing a Vu
-	public ModelAndView editVu(@RequestParam("locationId") int locationId, @RequestParam("title") String title,
+	public ModelAndView editVu(@RequestParam("id") int id, @RequestParam("userId") int userId, @RequestParam("title") String title,
 			@RequestParam("post") String post, @RequestParam("startDate") Date startDate,
 			@RequestParam("endDate") Date endDate, @RequestParam("vu") Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vus.jsp");
-		mv.addObject("Vu", vusDao.editVu(vu));
+		mv.addObject("Vu", vusDao.editVu(id, userId, title, post, endDate, endDate, vu));
 
 		return mv;
 	}
