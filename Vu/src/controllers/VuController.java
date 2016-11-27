@@ -57,10 +57,12 @@ public class VuController {
 	
 	@RequestMapping("addPost.do") //for adding a photo to a Vu
 	  public ModelAndView addPost(@RequestParam("post") String post, Vu vu) {
+		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vuDao.setPhoto(vu, post));
 			
+		
 		return mv;
 	}
 	
