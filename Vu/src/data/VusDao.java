@@ -4,16 +4,16 @@ import entities.Vu;
 
 public interface VusDao {
 
-	public int addYear();
+	public int addYear(int year);
 
-	public int removeYear();
+	public int removeYear(int year);
 
-	public int editYear();
+	public int editYear(int year);
 
-	public Vu addVu();
+	public Vu addVu(Vu vu);
 
-	public Vu removeVu();
+	public Vu removeVu(Vu vu);
 
-	public Vu editVu();
+	public Vu editVu(Vu vu);
 
 }

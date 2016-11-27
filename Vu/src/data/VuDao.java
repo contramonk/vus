@@ -2,6 +2,7 @@ package data;
 
 import java.util.Date;
 
+import entities.Photo;
 import entities.Vu;
 
 public interface VuDao {
