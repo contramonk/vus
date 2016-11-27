@@ -1,6 +1,13 @@
 package entities;
 
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -13,7 +20,7 @@ public class Photo {
 	
 	@ManyToOne
     @JoinColumn(name = "vu_id")
-    private List<Vu> roles;
+    private List<Vu> vus;
 	private int vuId; 
 	private String url;
 	private String caption; 
