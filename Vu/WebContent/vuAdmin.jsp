@@ -25,7 +25,7 @@
 <div class=container-fluid>
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
-Vu Title "${vuTitle}"
+Vu Title "${Vu.title}"
 
 <div class="panel-group" id="title">
     <div class="panel panel-default">
@@ -54,12 +54,12 @@ Vu Title "${vuTitle}"
 </div>
 
 <div class="row">
-Location "${Location}"
+Location "${Vu.location}"
 </div>
 
 
 <div class="row">
-Date "${date}"
+Date "${Vu.date}"
 
   <div class="panel-group" id="date">
     <div class="panel panel-default">
@@ -73,8 +73,10 @@ Date "${date}"
         
         <form action="addDate.do" method="GET" class="form-inline" id="date">
         <div class="form-group" id="date">
-        <label for="date">Date</label>
-        <input type="text" name="date" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+        <label for="startDate">Start Date</label>
+        <input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+        <label for="endDate">End Date</label>
+        <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         </div>
         <div class="form-group"> 
         </div>
@@ -101,7 +103,7 @@ Date "${date}"
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   
-  <c:forEach var="photo" items="${photoList}">
+  <c:forEach var="photo" items="${Vu.photoList}">
   <div class="item">
   <img src="photo">
  </div>
@@ -148,7 +150,7 @@ Date "${date}"
         <form action="addPhotos.do" method="GET" class="form-inline">
         <div class="form-group" id="photos">
         <label for="img url">Image URL</label>
-        <input type="text" name="img" class="form-control" id="exampleInputName2" placeholder="https://...">
+        <input type="text" name="photo" class="form-control" id="exampleInputName2" placeholder="https://...">
         <label for="img index">Index</label>
         <input type="text" name="index" class="form-control" id="exampleInputName2" placeholder="index number">
         
@@ -168,10 +170,10 @@ Date "${date}"
 
 <div class="row">
 
-<form action="addDesc.do" method="GET" class="form-group">
+<form action="addPost.do" method="GET" class="form-group">
 <div class="form-group">
-    <label for="desc">Vu Description</label>
-    <textarea class="form-control" name="desc" id="desc" rows="5"></textarea>
+    <label for="post">Vu Description</label>
+    <textarea class="form-control" name="post" id="post" rows="5"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -203,7 +205,7 @@ Date "${date}"
  <form action="addLocation.do" method="GET" class="form-inline">
  		Fill in atleast one of the following: 
         <div class="form-group" id="location">
-        <label for="city">Address</label>
+        <label for="address">Address</label>
         <input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
         <label for="city">City</label>
         <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
@@ -212,7 +214,7 @@ Date "${date}"
         <label for="city">Zip</label>
         <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
         <label for="place">Place</label>
-        <input type="text" name="Place" class="form-control" id="exampleInputName2" placeholder="Place">
+        <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">
         
         </div>
         
@@ -223,7 +225,7 @@ Date "${date}"
 	</div>
 
 </div>
-
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
