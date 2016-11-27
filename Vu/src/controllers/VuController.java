@@ -21,6 +21,7 @@ public class VuController {
 	
 	@RequestMapping("addTitle.do") //for adding a title to a Vu
 	  public ModelAndView title(@RequestParam("title") String title, Vu vu) {
+		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vuDao.setTitle(vu, title ));
