@@ -12,7 +12,7 @@ public interface VusDao {
 
 	public int editYear(int year);
 
-	public Vu addVu(int id, int userId, String title, String post, Date startDate, Date endDate, Vu vu);
+	public Vu addVu(int id, int userId, String title, String post, Date startDate, Date endDate);
 
 	public Vu removeVu(Vu vu);
 
