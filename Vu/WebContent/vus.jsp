@@ -14,6 +14,7 @@
 <title>Vus</title>
 </head>
 <body>
+
 	<nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -74,6 +75,7 @@
 												class="glyphicon glyphicon-trash"></a>
 											<div id="collapse3" class="panel-collapse collapse">
 												<div class="panel-body"></div>
+
 												<form action="deleteYear.do" method="GET"
 													class="form-inline" id="year">
 													<div class="form-group" id="year">
@@ -87,69 +89,71 @@
 										</h4>
 									</div>
 								</div>
+
 							</div>
-							<c:forEach items="${yearList}" var="year">
-    ${year}<br>
-							</c:forEach>
+							<%-- <c:forEach items="${yearList}" var="item">
+    ${item}<br>
+</c:forEach>  --%>
 							<div class="panel-group">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" href="#collapse6">2016<a
 												href="vuAdmin.jsp" value="Add Vu"><span
-													class="glyphicon glyphicon-plus-sign"></span></a>
-											</a>
-									</div>
-						</h4>
-					</div>
-					<div id="collapse6" class="panel-collapse collapse">
-						<div class="panel-body">
-							<a href="VuUser.jsp"> <img
-								src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
-								style="width: 10mm; height: 10mm"> <c:forEach
-									items="${vus}" var="vu">
- 												   ${Vu.photo} ${Vu.title} ${Vu.date}
-												</c:forEach> ${photo} ${title} ${date} Thanksgiving November 24, 2016
-							</a>
-						</div>
-						<div class="panel-footer"></div>
-						<a data-toggle="collapse" href="#collapse5"><span
-							class="glyphicon glyphicon-trash"></span></a>
-						<div id="collapse5" class="panel-collapse collapse">
-							<div class="panel-body"></div>
-							<form action="deleteYear.do" method="GET" class="form-inline"
-								id="year">
-								<div class="form-group" id="year">
-									<input type="text" name="year" class="form-control"
-										placeholder="Title">
-								</div>
-								<div class="form-group"></div>
-								<button type="submit">Delete vu</button>
-							</form>
-						</div>
-						<a data-toggle="collapse" href="#collapse4"><span
-							class="glyphicon glyphicon-edit"></span></a>
-						<div id="collapse4" class="panel-collapse collapse">
-							<div class="panel-body"></div>
+													class="glyphicon glyphicon-plus-sign"></span></a> <a
+												data-toggle="collapse" href="#collapse5"><span
+													class="glyphicon glyphicon-trash"></span></a>
+												<div id="collapse5" class="panel-collapse collapse">
+													<div class="panel-body"></div>
 
-							<form action="editVu.do" method="GET" class="form-inline"
-								href="vuAdmin.jsp" id="year">
-								<div class="form-group" id="year">
-									<input type="text" name="year" class="form-control"
-										placeholder="Title">
+													<form action="deleteYear.do" method="GET"
+														class="form-inline" id="year">
+														<div class="form-group" id="year">
+															<input type="text" name="year" class="form-control"
+																placeholder="Title">
+														</div>
+														<div class="form-group"></div>
+														<button type="submit">Delete vu</button>
+													</form>
+												</div> <a data-toggle="collapse" href="#collapse4"><span
+													class="glyphicon glyphicon-edit"></span></a>
+												<div id="collapse4" class="panel-collapse collapse">
+													<div class="panel-body"></div>
+
+													<form action="editVu.do" method="GET" class="form-inline"
+														href="vuAdmin.jsp" id="year">
+														<div class="form-group" id="year">
+															<input type="text" name="year" class="form-control"
+																placeholder="Title">
+														</div>
+														<div class="form-group"></div>
+														<button type="submit">Edit vu</button>
+													</form>
+
+												</div>
+											</a>
+										</h4>
+									</div>
+									<div id="collapse6" class="panel-collapse collapse">
+										<div class="panel-body">
+												<a href="VuUser.jsp">
+											<img
+												src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
+												style="width: 10mm; height: 10mm">
+												
+											${photo} ${title} ${date} Thanksgiving November 24, 2016</a>
+												
+										</div>
+										<div class="panel-footer"></div>
+									</div>
 								</div>
-								<div class="form-group"></div>
-								<button type="submit">Edit vu</button>
-							</form>
-						</div>
+							</div>
 					</div>
 				</div>
+				</a>
+				</h4>
 			</div>
 		</div>
-		</a>
-		</h4>
-	</div>
-	</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -166,5 +170,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

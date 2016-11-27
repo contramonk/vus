@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.stereotype.Repository;
 
 import entities.Vu;
+
 //Added @Repository to DAO
 @Repository
 public class VuDaoImpl implements VuDAO {

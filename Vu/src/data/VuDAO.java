@@ -4,6 +4,7 @@ import java.util.Date;
 
 import entities.Vu;
 
+
 public interface VuDAO {
 //	public Vu setTitle(Vu vu, String title);
 //	public Vu setStartDate(Vu vu, Date startDate); 

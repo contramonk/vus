@@ -182,33 +182,3 @@ INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (3, 'admin'
 
 COMMIT;
 
-
--- -----------------------------------------------------
--- Data for table `Location`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `vubase`;
-INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '1250 something street', 'st. thomas', 'vi', 00802, 'st. thomas');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `vu`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `vubase`;
-INSERT INTO `vu` (`id`, `user_id`, `location_id`, `title`, `post`, `start_date`, `end_date`) VALUES (1, 1, 1, 'Virgin Islands', 'it was the best!!', '2010/01/01', '2011/01/01');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `Photo`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `vubase`;
-INSERT INTO `Photo` (`id`, `vu_id`, `url`, `caption`) VALUES (1, 1, 'https://media-cdn.tripadvisor.com/media/photo-s/01/79/2a/86/view-of-magens-bay.jpg', 'the view from my vu');
-
-COMMIT;
-
