@@ -1,6 +1,12 @@
 package entities;
 
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Location {
@@ -13,6 +19,9 @@ public class Location {
 	private String state;
 	private int zip;
 	private String place;
+	
+	@OneToMany(mappedBy="locationId")
+	private List<Vu> vus;
 
 	public Location() {
 	}
