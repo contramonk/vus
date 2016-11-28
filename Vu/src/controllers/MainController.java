@@ -14,13 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/admin/vus.jsp" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 
 	  ModelAndView model = new ModelAndView();
 	  model.addObject("title", "Spring Security Login Form - Database Authentication");
 	  model.addObject("message", "This is default page!");
-	  model.setViewName("/hello");
+	  model.setViewName("/vus");
 	  return model;
 
 	}
