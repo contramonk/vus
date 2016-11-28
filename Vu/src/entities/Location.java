@@ -20,7 +20,7 @@ public class Location {
 	private String zip;
 	private String place;
 	
-	@OneToMany(mappedBy="locationId")
+	@OneToMany(mappedBy="location")
 	private List <Vu> vus;
 
 

@@ -11,11 +11,11 @@ public class Vu {
 
 	@ManyToOne
 	@JoinColumn(name="username")
-	private User username;
+	private User user;
 	
 	@ManyToOne
 	@JoinColumn(name="location_id")
-	private int locationId; 
+	private Location location; 
 	
 	private String title; 
 	private String post; 
@@ -28,20 +28,20 @@ public class Vu {
 	@Temporal(TemporalType.DATE) 
 	private Date endDate;
 
-	public User getUsername() {
-		return username;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsername(User username) {
-		this.username = username;
+	public void setUsername(User user) {
+		this.user = user;
 	}
 
-	public int getLocationId() {
-		return locationId;
+	public Location getLocation() {
+		return location;
 	}
 
-	public void setLocationId(int locationId) {
-		this.locationId = locationId;
+	public void setLocationId(Location location) {
+		this.location = location;
 	}
 
 	public String getTitle() {
