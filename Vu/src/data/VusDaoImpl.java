@@ -7,8 +7,8 @@ import java.util.List;
 import entities.Vu;
 
 public class VusDaoImpl implements VusDao{
-List<Integer> years = new ArrayList<>();
-List<Vu> vus = new ArrayList<>();
+private List<Integer> years = new ArrayList<>();
+private List<Vu> vus = new ArrayList<>();
 	
 	
 	@Override
@@ -19,9 +19,8 @@ List<Vu> vus = new ArrayList<>();
 	}
 
 	@Override
-	public int removeYear(int year) {
+	public void removeYear(int year) {
 		years.remove(year);
-		return 0;
 
 	}
 
@@ -44,9 +43,8 @@ List<Vu> vus = new ArrayList<>();
 	}
 
 	@Override
-	public Vu removeVu(Vu vu) {
+	public void removeVu(Vu vu) {
 		vus.remove(vu);
-		return null;
 	}
 
 	@Override
