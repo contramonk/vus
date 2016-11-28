@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page session="true"%>
 
 <!DOCTYPE html>
 <Html lang="en">
@@ -105,20 +106,21 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                 <h2>Login</h2>
-					<form>
+                
+					<form name='loginForm'
+		  action="<c:url value='/j_spring_security_check' />" method='POST'>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Email address</label> <input
-								type="email" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" placeholder="Enter email">
-							<small id="emailHelp" class="form-text text-muted">We'll
-								never share your email with anyone else.</small>
+							<label for="username">Username</label> 
+							<input type="text" class="form-control" name="username" aria-describedby="username" placeholder="Enter Username">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label> <input
-								type="password" class="form-control" id="exampleInputPassword1"
+								type="password" class="form-control" name="password"
 								placeholder="Password">
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<input name="submit" type="submit" value="submit" class="btn btn-primary" />
+					<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 					</form>
 				</div>
             </div>
