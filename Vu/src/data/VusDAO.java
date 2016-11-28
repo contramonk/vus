@@ -4,7 +4,7 @@ import java.util.Date;
 
 import entities.Vu;
 
-public interface VusDao {
+public interface VusDAO {
 
 	public int addYear(int year);
 
