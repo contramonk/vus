@@ -15,7 +15,7 @@
 		<access-denied-handler error-page="/auth/403" />
 
 		<form-login
-		    login-page="/auth/login"
+		    login-page="/index.jsp"
 		    default-target-url="/auth/admin/vus.jsp"
 			authentication-failure-url="/auth/login?error"
 			username-parameter="username"
