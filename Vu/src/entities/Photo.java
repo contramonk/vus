@@ -20,7 +20,29 @@ public class Photo {
 	
 
 	
+	public int getVuId() {
+		return vuId;
+	}
+	public void setVuId(int vuId) {
+		this.vuId = vuId;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getCaption() {
+		return caption;
+	}
+	public void setCaption(String caption) {
+		this.caption = caption;
+	}
+	public int getId() {
+		return id;
+	}
 	@ManyToOne
+	
     @JoinColumn(name = "vu_id")
     private int vuId; 
 	private String url;

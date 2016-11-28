@@ -15,7 +15,7 @@ public class Vu {
 	
 	
 	@ManyToOne
-	@Column(name = "location_id")
+	@JoinColumn(name = "location_id")
 	private int locationId; 
 	private String title; 
 	private String post; 
@@ -26,7 +26,7 @@ public class Vu {
 	@Temporal(TemporalType.DATE) 
 	private Date endDate;
 	@ManyToOne
-	@Column(name = "username")
+	@JoinColumn(name = "username")
 	private User userName;
 	
 
