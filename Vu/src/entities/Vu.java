@@ -13,6 +13,8 @@ public class Vu {
 	@Column(name = "user_id")
 	private int userId;
 	
+	
+	@ManyToOne
 	@Column(name = "location_id")
 	private int locationId; 
 	private String title; 
