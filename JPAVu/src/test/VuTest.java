@@ -30,6 +30,7 @@ public class VuTest {
 		assertEquals(1, vu.getLocation().getId());
 		assertEquals("Virgin Islands", vu.getTitle());
 		assertEquals("it was the best!!", vu.getPost());
+		
 	}
 
 	@After
