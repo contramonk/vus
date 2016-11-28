@@ -21,7 +21,9 @@ public class Location {
 	private String place;
 	
 	@OneToMany(mappedBy="locationId")
+
 	private List<Vu> vus;
+
 
 	public Location() {
 	}
@@ -30,6 +32,14 @@ public class Location {
 	public String toString() {
 		return "Location [id=" + id + ", address=" + address + ", city=" + city + ", state=" + state + ", zip=" + zip
 				+ ", place=" + place + "]";
+	}
+
+	public List<Vu> getVus() {
+		return vus;
+	}
+
+	public void setVus(List<Vu> vus) {
+		this.vus = vus;
 	}
 
 	public String getAddress() {

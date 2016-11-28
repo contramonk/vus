@@ -42,8 +42,7 @@ CREATE TABLE IF NOT EXISTS `Location` (
   `state` CHAR(2) NULL,
   `zip` INT(5) NULL,
   `place` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_location_id` (`id` ASC))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -60,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `vu` (
   `post` VARCHAR(1500) NULL,
   `start_date` DATE NULL,
   `end_date` DATE NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`, `location_id`, `username`),
   INDEX `fk_vu_Location_idx` (`location_id` ASC),
   INDEX `fk_vu_user_idx` (`username` ASC),
   CONSTRAINT `fk_vu_Location`
