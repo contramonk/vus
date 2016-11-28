@@ -26,15 +26,15 @@ public class PhotoTest {
 		public void test() {
 			Photo photo = em.find(Photo.class, 1);
 			assertEquals(1, photo.getId());
-			//assertEquals("view from apartment", photo.getCaption());
-			//assertEquals("http://vevesworld.com/data_images/top_cityes/road-town/road-town-01.jpg", photo.getUrl());
-			//assertEquals(1, photo.getVuId());
+			assertEquals("view from apartment", photo.getCaption());
+			assertEquals("http://vevesworld.com/data_images/top_cityes/road-town/road-town-01.jpg", photo.getUrl());
+			
 		}
 
 		@After
 		public void tearDown() throws Exception {
-			emf.close();
 			em.close();
+			emf.close();
 		}
 
 }

@@ -1,7 +1,8 @@
 package entities;
 
 import javax.persistence.*;
-import java.util.Date; 
+import java.util.Date;
+import java.util.List; 
 
 @Entity
 public class Vu {
@@ -15,7 +16,7 @@ public class Vu {
 	
 	@ManyToOne
 	@JoinColumn(name="location_id")
-	private int locationId; 
+	private Location location; 
 	
 	private String title; 
 	private String post; 
@@ -27,6 +28,25 @@ public class Vu {
 	@Column(name="end_date")
 	@Temporal(TemporalType.DATE) 
 	private Date endDate;
+	
+	@OneToMany(mappedBy="vu")
+	private List<Photo> photos;
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
 
 	public User getUsername() {
 		return username;
@@ -36,13 +56,13 @@ public class Vu {
 		this.username = username;
 	}
 
-	public int getLocationId() {
-		return locationId;
-	}
-
-	public void setLocationId(int locationId) {
-		this.locationId = locationId;
-	}
+//	public int getLocationId() {
+//		return locationId;
+//	}
+//
+//	public void setLocationId(int locationId) {
+//		this.locationId = locationId;
+//	}
 
 	public String getTitle() {
 		return title;

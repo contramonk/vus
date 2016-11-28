@@ -17,19 +17,19 @@ public class Photo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-    @JoinColumn(name = "vu_id")
     @ManyToOne
-    private int vuId; 
+    @JoinColumn(name = "vu_id")
+    private Vu vu; 
 	private String url;
 	private String caption; 
 	
 
-	public int getVuId() {
-		return vuId;
-	}
-	public void setVuId(int vuId) {
-		this.vuId = vuId;
-	}
+//	public int getVuId() {
+//		return vuId;
+//	}
+//	public void setVuId(int vuId) {
+//		this.vuId = vuId;
+//	}
 	public String getUrl() {
 		return url;
 	}
