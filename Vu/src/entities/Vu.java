@@ -16,6 +16,7 @@ public class Vu {
 	
 	@ManyToOne
 	@JoinColumn(name = "location_id")
+	@Column(name="location_id")
 	private int locationId; 
 	private String title; 
 	private String post; 
