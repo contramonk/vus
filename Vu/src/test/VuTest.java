@@ -27,6 +27,9 @@ public class VuTest {
 		Vu vu = em.find(Vu.class, 1);
 //		assertEquals(1, vu.getLocationId());
 		assertEquals("Chris", vu.getUser().getFirstName());
+		assertEquals(1, vu.getLocation().getId());
+		assertEquals("Virgin Islands", vu.getTitle());
+		assertEquals("it was the best!!", vu.getPost());
 	}
 
 	@After

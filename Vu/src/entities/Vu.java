@@ -1,7 +1,8 @@
 package entities;
 
 import javax.persistence.*;
-import java.util.Date; 
+import java.util.Date;
+import java.util.List; 
 
 @Entity
 public class Vu {
@@ -27,65 +28,73 @@ public class Vu {
 	@Column(name="end_date")
 	@Temporal(TemporalType.DATE) 
 	private Date endDate;
+	
+	@OneToMany(mappedBy="vu")
+	private List<Photo> photos;
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUsername(User user) {
-		this.user = user;
-	}
-
-	public Location getLocation() {
-		return location;
-	}
-
-	public void setLocationId(Location location) {
-		this.location = location;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getPost() {
-		return post;
-	}
-
-	public void setPost(String post) {
-		this.post = post;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public int getId() {
-		return id;
-	}
 
 	public Vu(){
 		
 	}
 
 
-
-
-
+	public Location getLocation() {
+		return location;
+	}
+	
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+	
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUsername(User user) {
+		this.user = user;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getPost() {
+		return post;
+	}
+	
+	public void setPost(String post) {
+		this.post = post;
+	}
+	
+	public Date getStartDate() {
+		return startDate;
+	}
+	
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+	
+	public Date getEndDate() {
+		return endDate;
+	}
+	
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
+	public int getId() {
+		return id;
+	}
 }

@@ -21,8 +21,7 @@ public class Location {
 	private String place;
 	
 	@OneToMany(mappedBy="location")
-	private List <Vu> vus;
-
+	private List<Vu> vus;
 
 	public Location() {
 	}
