@@ -22,11 +22,7 @@ public class Photo {
 	
 	@ManyToOne
     @JoinColumn(name = "vu_id")
-    private List<Vu> vus;
-
-	@Column(name = "vu_id")
-
-	private int vuId; 
+    private int vuId; 
 	private String url;
 	private String caption; 
 
