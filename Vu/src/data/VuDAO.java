@@ -8,10 +8,10 @@ import entities.Vu;
 
 
 public interface VuDAO {
-	public Vu setTitle(Vu vu, String title);
+	public Vu setTitle(int vuID, String title);
 	public Vu setStartDate(Vu vu, Date startDate); 
 	public Vu setEndDate(Vu vu, Date endDate); 
-	public Photo setPhoto(Photo photo, String imgUrl);
+	public Photo addPhoto(Photo photo, String imgUrl, String caption);
 	public Vu addPost (Vu vu, String post);
 	public Location addAddress(Location location, String address);
 	public Location addCity(Location location, String city);

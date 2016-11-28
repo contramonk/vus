@@ -2,7 +2,11 @@ package data;
 
 import java.util.Date;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import entities.Location;
 import entities.Photo;
@@ -10,14 +14,23 @@ import entities.Vu;
 
 //Added @Repository to DAO
 @Repository
+@Transactional
 public class VuDaoImpl implements VuDAO {
+	@PersistenceContext
+	private EntityManager em;
 
+	
+	
+	
 	@Override
-	public Vu setTitle(Vu vu, String title) {
-		vu.setTitle(title);  
+	public Vu setTitle(int vuID, String title) {
+		Vu managedVu = em.find(Vu.class, vuID);
+		managedVu.setTitle(title);  
 		
-		return vu; 
+		em.persist(managedVu);
+		return managedVu; 
 	}
+	
 	@Override	
 	public Vu setStartDate(Vu vu, Date startDate){
 		vu.setStartDate(startDate);
@@ -30,43 +43,19 @@ public class VuDaoImpl implements VuDAO {
 		
 		return vu; 
 	}
-	@Override
-	public Vu vu setPhoto(Vu vu, String imgUrl){
-
-		return vu; 
-	}
+	
+	
 	@Override
 	public Vu addPost (Vu vu, String post){
 		vu.setPost(post);
 		return vu; 
+	
 	}
 	@Override
-	public Address addAddress(Address add, String address){
-		Address.setAddress; 
-		
-		return Address; 
-	}
-	@Override
-	public Address addCity(Address address, String city){
-		Address.setCity; 
-		
-		return address; 
-	}
-	@Override
-	public Address addState(Address address, String state){
-		Address.setState; 
-		
-		return address; 
-	}
-	@Override
-	public Address addZip(Address address, int zip){
-		Address.setZip; 
-		
-		return address; 
-	}
-	@Override
-	public Photo setPhoto(Photo photo, String imgUrl) {
-		// TODO Auto-generated method stub
+	public Photo addPhoto(Photo photo, String imgUrl, String caption) {
+		photo.setUrl(imgUrl);
+		photo.setCaption(caption);
+		em.persist(photo);
 		return null;
 	}
 	@Override
@@ -89,6 +78,7 @@ public class VuDaoImpl implements VuDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 	
 	
