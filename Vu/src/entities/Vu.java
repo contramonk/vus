@@ -12,7 +12,7 @@ public class Vu {
 
 	@ManyToOne
 	@JoinColumn(name="username")
-	private User username;
+	private User user;
 	
 	@ManyToOne
 	@JoinColumn(name="location_id")
@@ -32,77 +32,69 @@ public class Vu {
 	@OneToMany(mappedBy="vu")
 	private List<Photo> photos;
 
-	public Location getLocation() {
-		return location;
-	}
-
-	public void setLocation(Location location) {
-		this.location = location;
-	}
-
-	public List<Photo> getPhotos() {
-		return photos;
-	}
-
-	public void setPhotos(List<Photo> photos) {
-		this.photos = photos;
-	}
-
-	public User getUsername() {
-		return username;
-	}
-
-	public void setUsername(User username) {
-		this.username = username;
-	}
-
-//	public int getLocationId() {
-//		return locationId;
-//	}
-//
-//	public void setLocationId(int locationId) {
-//		this.locationId = locationId;
-//	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getPost() {
-		return post;
-	}
-
-	public void setPost(String post) {
-		this.post = post;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public int getId() {
-		return id;
-	}
 
 	public Vu(){
 		
 	}
 
 
+	public Location getLocation() {
+		return location;
+	}
+	
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+	
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUsername(User user) {
+		this.user = user;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getPost() {
+		return post;
+	}
+	
+	public void setPost(String post) {
+		this.post = post;
+	}
+	
+	public Date getStartDate() {
+		return startDate;
+	}
+	
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+	
+	public Date getEndDate() {
+		return endDate;
+	}
+	
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
+	public int getId() {
+		return id;
+	}
 }

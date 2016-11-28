@@ -17,12 +17,11 @@ public class Location {
 	private String address;
 	private String city;
 	private String state;
-	private int zip;
+	private String zip;
 	private String place;
 	
 	@OneToMany(mappedBy="location")
 	private List<Vu> vus;
-
 
 	public Location() {
 	}
@@ -65,11 +64,11 @@ public class Location {
 		this.state = state;
 	}
 
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 

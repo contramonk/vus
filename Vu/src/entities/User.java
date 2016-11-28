@@ -15,6 +15,11 @@ public class User {
 	private String lastName;
 	private String enabled; 
 	
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", enabled=" + enabled + "]";
+	}
 	public String getUsername() {
 		return username;
 	}
