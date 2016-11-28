@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `Location` (
   `state` CHAR(2) NULL,
   `zip` INT(5) NULL,
   `place` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  INDEX `fk_location_id` (`id` ASC))
 ENGINE = InnoDB;
 
 
@@ -59,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `vu` (
   `post` VARCHAR(1500) NULL,
   `start_date` DATE NULL,
   `end_date` DATE NULL,
-  PRIMARY KEY (`id`, `location_id`, `username`),
+  PRIMARY KEY (`id`),
   INDEX `fk_vu_Location_idx` (`location_id` ASC),
   INDEX `fk_vu_user_idx` (`username` ASC),
   CONSTRAINT `fk_vu_Location`
@@ -178,6 +179,7 @@ USE `vubase`;
 INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (1, 'guest', 'ROLE_USER');
 INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (2, 'admin', 'ROLE_ADMIN');
 INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (3, 'admin', 'ROLE_USER');
+INSERT INTO `user_roles` (`user_role_id`, `username`, `role`) VALUES (4, 'guest', 'ROLE_ADMIN');
 
 COMMIT;
 
