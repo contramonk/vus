@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.stereotype.Repository;
 
+import entities.Location;
+import entities.Photo;
 import entities.Vu;
 
 //Added @Repository to DAO
@@ -29,10 +31,8 @@ public class VuDaoImpl implements VuDAO {
 		return vu; 
 	}
 	@Override
-	public Photo setPhoto(Photo photo, String imgUrl){
-	
-		//not sure how to access multiple photos from the data base
-		
+	public Vu vu setPhoto(Vu vu, String imgUrl){
+
 		return vu; 
 	}
 	@Override
@@ -63,6 +63,31 @@ public class VuDaoImpl implements VuDAO {
 		Address.setZip; 
 		
 		return address; 
+	}
+	@Override
+	public Photo setPhoto(Photo photo, String imgUrl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Location addAddress(Location location, String address) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Location addCity(Location location, String city) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Location addState(Location location, String state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Location addZip(Location location, int zip) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
