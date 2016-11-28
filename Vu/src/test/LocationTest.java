@@ -1,5 +1,7 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -8,11 +10,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import entities.Vu;
+import entities.Location;
 
-import static org.junit.Assert.assertEquals;
-
-public class VuTest {
+public class LocationTest {
 	private EntityManagerFactory emf;
     private EntityManager em;
 
@@ -24,15 +24,21 @@ public class VuTest {
 
 	@Test
 	public void test() {
-		Vu vu = em.find(Vu.class, 1);
+		Location l = em.find(Location.class, 1);
 //		assertEquals(1, vu.getLocationId());
-		assertEquals("chris", vu.getUsername());
+		assertEquals("2240 E Barry Dr", l.getAddress());
+		assertEquals("VI", l.getState());
+		assertEquals("K City", l.getCity());
+		assertEquals("55543", l.getZip());
+		assertEquals("Burger King", l.getPlace());
+		assertEquals(1, l.getId());
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		em.close();
 		emf.close();
+
 	}
 
 }
