@@ -15,7 +15,7 @@ import entities.Vu;
 
 @Controller
 @SessionAttributes("")
-public class vusController {
+public class VusController {
 
 //	@Autowired
 //	private VusDao vusDao;
