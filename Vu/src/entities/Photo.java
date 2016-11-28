@@ -24,12 +24,7 @@ public class Photo {
 	private String caption; 
 	
 
-//	public int getVuId() {
-//		return vuId;
-//	}
-//	public void setVuId(int vuId) {
-//		this.vuId = vuId;
-//	}
+
 	public String getUrl() {
 		return url;
 	}
