@@ -11,15 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 
-@Entity
+
 public class Photo {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
-
-	
+<<<<<<< HEAD
 	public int getVuId() {
 		return vuId;
 	}
@@ -47,5 +42,18 @@ public class Photo {
     private int vuId; 
 	private String url;
 	private String caption; 
+=======
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private int id;
+//	
+//
+//	
+//	@ManyToOne
+//    @JoinColumn(name = "vu_id")
+//    private int vuId; 
+//	private String url;
+//	private String caption; 
+>>>>>>> ae151358f1bf5e78484a431da268a28e151c3aec
 
 }
