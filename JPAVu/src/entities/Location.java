@@ -28,8 +28,7 @@ public class Location {
 
 	@Override
 	public String toString() {
-		return "Location [id=" + id + ", address=" + address + ", city=" + city + ", state=" + state + ", zip=" + zip
-				+ ", place=" + place + "]";
+		return address + " " + city + "," + state + " " + zip;
 	}
 
 	public List<Vu> getVus() {

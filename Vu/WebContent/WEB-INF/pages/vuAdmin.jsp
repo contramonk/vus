@@ -25,7 +25,7 @@
 <div class=container-fluid>
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
-Vu Title "${Vu.title}"
+    ${Vu.title}
 
 <div class="panel-group" id="title">
     <div class="panel panel-default">
@@ -54,12 +54,12 @@ Vu Title "${Vu.title}"
 </div>
 
 <div class="row">
-Location "${Vu.location}"
+${Vu.location}
 </div>
 
 
 <div class="row">
-Date "${Vu.date}"
+${Vu.startDate}
 
   <div class="panel-group" id="date">
     <div class="panel panel-default">
@@ -103,12 +103,12 @@ Date "${Vu.date}"
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   
-  <c:forEach var="photo" items="${Vu.photoList}">
+ <%--  <c:forEach var="photo" items="${Vu.photoList}">
   <div class="item">
   <img src="photo">
  </div>
   
-  </c:forEach>
+  </c:forEach> --%>
     <div class="item active">
       <img src="https://scontent.fapa1-2.fna.fbcdn.net/t31.0-8/14425518_10154103010359472_528916013561621627_o.jpg" alt="Chania">
     </div>
@@ -169,6 +169,7 @@ Date "${Vu.date}"
 </div>
 
 <div class="row">
+${Vu.post}
 
 <form action="addPost.do" method="GET" class="form-group">
 <div class="form-group">
