@@ -76,114 +76,72 @@
 			<div class="panel-group">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title"> <a href="vuAdmin.jsp" value="Add Vu">Add Vu<span
-									class="glyphicon glyphicon-plus-sign"></span></a>
+						<h4 class="panel-title">
+							<a href="vuAdmin.jsp" value="Add Vu">Add Vu<span
+								class="glyphicon glyphicon-plus-sign"></span></a>
 						</h4>
 					</div>
 				</div>
-					</div>
-					</div>
-					
-					<c:forEach items="${years}" var="year">
+			</div>
+		</div>
+
+		<%-- <c:forEach items="${Vus}" var="vu"> --%>
+			
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
 
 
 
-    ${year}<br>
-
-
-
-</c:forEach>
-
-
-
-<div class="panel-group">
-
-
-
-<div class="panel panel-default">
-
-
-
-<div class="panel-heading">
-
-
-
-<h4 class="panel-title">
-
-
-
-<a data-toggle="collapse" href="#collapse6">2016
-
-<a	href="vuAdmin.jsp" value="Add Vu"><span
-
-class="glyphicon glyphicon-plus-sign"></span></a>
-
-</h4>
-
-
-
-</a>
-
-</div>
-
-
-
-</div>
-
-
-
-<div id="collapse6" class="panel-collapse collapse">
-
-
-
-<div class="panel-body">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" href="#collapse0">${vu.startDate} 2016 </a>
+					</h4>
+					</a>
+				</div>
+			</div>
+			<div id="collapse0" class="panel-collapse collapse">
+				<div class="panel-body">
 
 					<c:forEach items="${Vus}" var="vu">
-						<tr>
-							<td><c:out value="${vu.photo}" /><td>
-          
-							<td><c:out value="${vu.title}" />
-							<td>
-          
-							<td><c:out value="${vu.date}" />
-							<td>
-        
-						</tr>
-      </c:forEach>
+						<a href="vuAdmin.jsp"> "${vu.photo}" "${vu.title}"
+
+							"${vu.date}"> </a>
+							<br>
+						<span class="glyphicon glyphicon-edit"></span>
+						<span class="glyphicon glyphicon-trash"></span>
+						<hr>
+					</c:forEach>
 
 
-<a href="vuAdmin.jsp">
-									<img
-									src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
-									style="width: 10mm; height: 10mm"> 
+					<a href="vuAdmin.jsp"> <img
+						src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
+						style="width: 10mm; height: 10mm"> Thanksgiving November 24,
+						2016
 
-
-Thanksgiving November 24, 2016
-
-
-
-</a>
+<br>
+					</a> <a href="vuAdmin.jsp"><span class="glyphicon glyphicon-edit"></span></a>
+					 <a href="deleteVu.do"><span
+						class="glyphicon glyphicon-trash"></span></a>
 
 
 
-
+				</div>
+				<%-- </c:forEach>
+ --%>
+				<div class="container">
+					<div class="row">
+						<hr>
+						<div class="col-lg-12">
+							<div class="col-md-8">
+								<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
+									Policy</a>
 							</div>
-
-					
-					<div class="container">
-						<div class="row">
-							<hr>
-							<div class="col-lg-12">
-								<div class="col-md-8">
-									<a href="aboutUs.jsp">About Us</a> | <a
-										href="privacyPolicy.jsp">Privacy Policy</a>
-								</div>
-								<div class="col-md-4">
-									<p class="muted pull-right">© 2016 Rockin Executioners. All
-										rights reserved</p>
-								</div>
+							<div class="col-md-4">
+								<p class="muted pull-right">© 2016 Rockin Executioners. All
+									rights reserved</p>
 							</div>
 						</div>
 					</div>
+				</div>
 </body>
 </html>
