@@ -17,30 +17,30 @@ import entities.Vu;
 @Transactional
 public class VusDaoImpl implements VusDAO {
 //	private List<Integer> years = new ArrayList<>();
-	private List<Vu> vus = new ArrayList<>();
+	//private List<Vu> vus = new ArrayList<>();
 	@PersistenceContext
 	private EntityManager em;
 
 	@Override
 	public List<Vu> getVus(String username) {
-		String vuQ = "SELECT vu from Vu vu where Vu.username = ?1";
-		vus.add(em.createQuery(vuQ, Vu.class).setParameter(1, username).getSingleResult());
+		String vuQ = "SELECT vu from Vu vu where vu.user.username = ?1";
+		 List<Vu> vus =em.createQuery(vuQ, Vu.class).setParameter(1, username).getResultList();
 		System.out.println("*********" + vus + "*********");
 		return vus;
 	}
 
-	@Override
-	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
-		Vu vu = new Vu();
-		vu.setTitle(title);
-		vu.setPost(post);
-		vu.setStartDate(startDate);
-		vu.setEndDate(endDate);
-		vus.add(vu);
-		System.out.println(vu);
-		System.out.println(vus);
-		return vus;
-	}
+//	@Override
+//	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
+//		Vu vu = new Vu();
+//		vu.setTitle(title);
+//		vu.setPost(post);
+//		vu.setStartDate(startDate);
+//		vu.setEndDate(endDate);
+//		vus.add(vu);
+//		System.out.println(vu);
+//		System.out.println(vus);
+//		return vus;
+//	}
 
 //	@Override
 //	public List<String> getVus(User user) {
