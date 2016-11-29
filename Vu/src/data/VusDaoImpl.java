@@ -13,11 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 import entities.User;
 import entities.Vu;
 
-@Repository
+//@Repository
 @Transactional
 public class VusDaoImpl implements VusDAO {
-//	private List<Integer> years = new ArrayList<>();
-	//private List<Vu> vus = new ArrayList<>();
 	@PersistenceContext
 	private EntityManager em;
 

@@ -1,5 +1,6 @@
 package controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import data.VuDAO;
 
 
 @Controller
@@ -25,6 +28,13 @@ public class MainController {
 //	  return model;
 //
 //	}
+	@Autowired
+	private VuDAO dao;
+	
+	@RequestMapping(path = "/test")
+	public void test() {
+		System.out.println(dao.test());
+	}
 
 	@RequestMapping(value = { "/", "/admin/vuAdmin.jsp" }, method = RequestMethod.GET)
 	public ModelAndView vuAdminPage() {

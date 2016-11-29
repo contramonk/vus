@@ -9,7 +9,7 @@ import entities.Vu;
 public interface VusDAO {
 
 
-	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate);
+//	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate);
 	
 //	public List<String> getVus(User user);
 //	public void removeVu(Vu vu);

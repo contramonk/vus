@@ -10,15 +10,20 @@
 
   <context:component-scan base-package="controllers, data, entities" />
   <!-- git note -->
-  
-  <bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/pages/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
+ 
+		
+	<bean id="test" class="data.VuDaoImpl"/>
+	<bean id="dao" class="data.VusDaoImpl"/> 
+	
+	<bean id="myEntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="vubase" />
 	</bean>
+	
+	<bean id="myTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="myEntityManagerFactory" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="myTransactionManager" />
 
 </beans>

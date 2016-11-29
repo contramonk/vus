@@ -24,30 +24,30 @@ public class VusController {
 	private VusDAO vusDao;
 
 	@RequestMapping("getVus.do")
-	public ModelAndView getVus(List<Vu> vus, ModelMap model) {
+	public ModelAndView getVus(ModelMap model) {
 		System.out.println("test");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName(); // get logged in username
 		model.addAttribute("username", username);
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/auth/admin/vus.jsp");
+		mv.setViewName("vus.jsp");
 		mv.addObject("Vus", vusDao.getVus(username));
 
 		System.out.println(username);
 		return mv;
 	}
 
-	@RequestMapping(path = "addVu.do") // for adding a Vu
-	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId,
-			@RequestParam("title") String title, @RequestParam("post") String post,
-			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
-			@RequestParam("vu") Vu vu) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vus.jsp");
-		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
-
-		return mv;
-	}
+//	@RequestMapping(path = "addVu.do") // for adding a Vu
+//	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId,
+//			@RequestParam("title") String title, @RequestParam("post") String post,
+//			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
+//			@RequestParam("vu") Vu vu) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("vus.jsp");
+//		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
+//
+//		return mv;
+//	}
 	//
 	// @RequestMapping("editVu.do") // for editing a Vu
 	// public ModelAndView editVu(@RequestParam("id") int id,

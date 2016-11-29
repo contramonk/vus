@@ -15,9 +15,19 @@ import entities.User;
 import entities.Vu;
 
 //Added @Repository to DAO
-@Repository
+//@Repository
 @Transactional
 public class VuDaoImpl implements VuDAO {
+	
+	
+	public String test() {
+		return "TEST WORKED SUCCESSFULLY";
+	}
+	
+	public VuDaoImpl () {
+		System.out.println("LOADED DAO");
+	}
+	
 	@PersistenceContext
 	private EntityManager em;
 	
