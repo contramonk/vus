@@ -2,12 +2,12 @@
 package controllers;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.VusDAO;
@@ -19,6 +19,15 @@ public class VusController {
 
 	@Autowired
 	private VusDAO vusDao;
+	
+	@RequestMapping("getVus.do")
+	public ModelAndView getVus(@RequestParam("username") String username, List<Vu> vus) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/auth/admin/vus.do");
+		mv.addObject("Vus", vusDao.getVus(username));
+		
+		return mv;
+	}
 
 	@RequestMapping(path="addVu.do") // for adding a Vu
 	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId, @RequestParam("title") String title,
@@ -26,7 +35,7 @@ public class VusController {
 			@RequestParam("endDate") Date endDate, @RequestParam("vu") Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vus.jsp");
-		mv.addObject("Vus", vusDao.addVu(id, userId, title, post, startDate, endDate));
+		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
 
 		return mv;
 	}
