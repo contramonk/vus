@@ -15,12 +15,19 @@ import entities.Vu;
 
 @Repository
 @Transactional
-public class VusDaoImpl implements VusDAO{
-private List<Integer> years = new ArrayList<>();
-private List<Vu> vus = new ArrayList<>();
-@PersistenceContext
-private EntityManager em;
-	
+public class VusDaoImpl implements VusDAO {
+	private List<Integer> years = new ArrayList<>();
+	private List<Vu> vus = new ArrayList<>();
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public List<Vu> getVus(String username) {
+		String vuQ = "SELECT vu from Vu vu where Vu.username = ?1";
+		vus.add(em.createQuery(vuQ, Vu.class).setParameter(1, username).getSingleResult());
+		return vus;
+	}
+
 	@Override
 	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
 		Vu vu = new Vu();
@@ -35,20 +42,21 @@ private EntityManager em;
 	}
 
 	@Override
-	public List<String> getVus(User user){
+	public List<String> getVus(User user) {
 		String sql = "SELECT Vu.title from Vu where Vu.getUser.getUsername = 'guest'";
 		List<String> titles = em.createQuery(sql, String.class).getResultList();
 		return titles;
 	}
-//	@Override
-//	public void removeVu(Vu vu) {
-//		vus.remove(vu);
-//	}
-//
-//	@Override
-//	public Vu editVu(int id, int userId, String title, String post, Date startDate, Date endDate, Vu vu) {
-//
-//		return vu;
-//	}
-//
+	// @Override
+	// public void removeVu(Vu vu) {
+	// vus.remove(vu);
+	// }
+	//
+	// @Override
+	// public Vu editVu(int id, int userId, String title, String post, Date
+	// startDate, Date endDate, Vu vu) {
+	//
+	// return vu;
+	// }
+	//
 }

@@ -83,6 +83,93 @@
 				</div>
 					</div>
 					</div>
+					
+					<c:forEach items="${years}" var="year">
+
+
+
+    ${year}<br>
+
+
+
+</c:forEach>
+
+
+
+<div class="panel-group">
+
+
+
+<div class="panel panel-default">
+
+
+
+<div class="panel-heading">
+
+
+
+<h4 class="panel-title">
+
+
+
+<a data-toggle="collapse" href="#collapse6">2016
+
+<a	href="vuAdmin.jsp" value="Add Vu"><span
+
+class="glyphicon glyphicon-plus-sign"></span></a>
+
+</h4>
+
+
+
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+<div id="collapse6" class="panel-collapse collapse">
+
+
+
+<div class="panel-body">
+
+					<c:forEach items="${Vus}" var="vu">
+						<tr>
+							<td><c:out value="${vu.photo}" /><td>
+          
+							<td><c:out value="${vu.title}" />
+							<td>
+          
+							<td><c:out value="${vu.date}" />
+							<td>
+        
+						</tr>
+      </c:forEach>
+
+
+<a href="vuAdmin.jsp">
+									<img
+									src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
+									style="width: 10mm; height: 10mm"> 
+
+
+Thanksgiving November 24, 2016
+
+
+
+</a>
+
+
+
+
+							</div>
+
+					
 					<div class="container">
 						<div class="row">
 							<hr>

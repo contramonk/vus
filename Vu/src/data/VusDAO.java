@@ -16,4 +16,6 @@ public interface VusDAO {
 //
 //	public Vu editVu(int id, int userId, String title, String post, Date startDate, Date endDate, Vu vu);
 
+	List<Vu> getVus(String username);
+
 }
