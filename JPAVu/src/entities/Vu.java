@@ -29,6 +29,12 @@ public class Vu {
 	@JoinColumn(name="location_id")
 	private Location location; 
 	
+	@Override
+	public String toString() {
+		return "Vu [id=" + id + ", user=" + user + ", location=" + location + ", title=" + title + ", post=" + post
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", photos=" + photos + "]";
+	}
+
 	private String title; 
 	private String post; 
 	

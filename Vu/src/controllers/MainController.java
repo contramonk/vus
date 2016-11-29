@@ -14,18 +14,17 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = { "/", "/admin/vus.jsp" }, method = RequestMethod.GET)
-	public ModelAndView defaultPage() {
-
-	  ModelAndView model = new ModelAndView();
-	  VuController vuController;
-	  vuController.getVus("username");
-	  model.addObject("title", "Spring Security Login Form - Database Authentication");
-	  model.addObject("message", "This is default page!");
-	  model.setViewName("/vus");
-	  return model;
-
-	}
+//	@RequestMapping(value = { "/", "/admin/vus.jsp" }, method = RequestMethod.GET)
+//	public ModelAndView defaultPage() {
+//
+//	  ModelAndView model = new ModelAndView();
+//	  VuController vuController;
+//	  model.addObject("title", "Spring Security Login Form - Database Authentication");
+//	  model.addObject("message", "This is default page!");
+//	  model.setViewName("/vus");
+//	  return model;
+//
+//	}
 
 	@RequestMapping(value = { "/", "/admin/vuAdmin.jsp" }, method = RequestMethod.GET)
 	public ModelAndView vuAdminPage() {

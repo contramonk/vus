@@ -16,7 +16,7 @@
 
 		<form-login
 		    login-page="/index.jsp"
-		    default-target-url="/auth/admin/vus.do"
+		    default-target-url="/getVus.do"
 			authentication-failure-url="/auth/login?error"
 			username-parameter="username"
 			password-parameter="password" />

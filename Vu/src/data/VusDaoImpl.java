@@ -25,6 +25,7 @@ public class VusDaoImpl implements VusDAO {
 	public List<Vu> getVus(String username) {
 		String vuQ = "SELECT vu from Vu vu where Vu.username = ?1";
 		vus.add(em.createQuery(vuQ, Vu.class).setParameter(1, username).getSingleResult());
+		System.out.println("*********" + vus + "*********");
 		return vus;
 	}
 

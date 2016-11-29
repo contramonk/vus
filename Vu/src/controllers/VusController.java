@@ -22,9 +22,10 @@ public class VusController {
 	
 	@RequestMapping("getVus.do")
 	public ModelAndView getVus(@RequestParam("username") String username, List<Vu> vus) {
+		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/auth/admin/vus.do");
 		mv.addObject("Vus", vusDao.getVus(username));
+		mv.setViewName("/auth/admin/vus.jsp");
 		
 		return mv;
 	}
