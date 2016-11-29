@@ -102,14 +102,17 @@
 			<div id="collapse0" class="panel-collapse collapse">
 				<div class="panel-body">
 
-					<%-- <c:forEach items="${Vus}" var="vu">
-						<a href="vuAdmin.jsp"> 
-						${vu.getPhoto} ${vu.getTitle}	${vu.getDate} </a>
+					 <c:forEach items="${Vus}" var="vu">
+					<%--  ${vu}<br> --%>
+						<a href="getVu.do?vuId=${vu.id}"> 
+						${vu}
+						<%-- ${vu.getPhoto} ${vu.getTitle}	${vu.getDate}  --%>
+						</a> 
 							<br>
 						<span class="glyphicon glyphicon-edit"></span>
 						<span class="glyphicon glyphicon-trash"></span>
 						<hr>
-					</c:forEach> --%>
+					</c:forEach> 
 
 
 					<a href="vuAdmin.jsp"> <img
