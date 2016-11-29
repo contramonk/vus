@@ -42,12 +42,12 @@ public class VusDaoImpl implements VusDAO {
 		return vus;
 	}
 
-	@Override
-	public List<String> getVus(User user) {
-		String sql = "SELECT Vu.title from Vu where Vu.getUser.getUsername = 'guest'";
-		List<String> titles = em.createQuery(sql, String.class).getResultList();
-		return titles;
-	}
+//	@Override
+//	public List<String> getVus(User user) {
+//		String sql = "SELECT Vu.title from Vu where Vu.getUser.getUsername = 'guest'";
+//		List<String> titles = em.createQuery(sql, String.class).getResultList();
+//		return titles;
+//	}
 	// @Override
 	// public void removeVu(Vu vu) {
 	// vus.remove(vu);
