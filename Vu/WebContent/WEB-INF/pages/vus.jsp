@@ -64,81 +64,39 @@
 		</div>
 
 		<!-- /.navbar-collapse -->
-
 	</div>
-
 	<!-- /.container-fluid --> </nav>
-
 	<div class=container-fluid>
-
 		<div class="row">
-
 			<img
 				src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F"
 				style="width: 4em; height: 4em; position: relative; left: 50%; right: 50%">
-
 		</div>
-
 		<div class="row">
-			<div class="panel panel-default">
-
-
-
-				<div class="panel-heading">
-
-
-
-					<h4 class="panel-title">
-
-
-
-						<a data-toggle="collapse" href="#collapse0"><span
-							class="glyphicon glyphicon-plus-sign"></span></a>
-
-
-
-						<div id="collapse0" class="panel-collapse collapse">
-
-
-
-							<div class="panel-body"></div>
-
-							<a href="vuAdmin.jsp"></a>
-
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"> <a href="vuAdmin.jsp" value="Add Vu">Add Vu<span
+									class="glyphicon glyphicon-plus-sign"></span></a>
+						</h4>
+					</div>
+				</div>
+					</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<hr>
+							<div class="col-lg-12">
+								<div class="col-md-8">
+									<a href="aboutUs.jsp">About Us</a> | <a
+										href="privacyPolicy.jsp">Privacy Policy</a>
 								</div>
-
-
-						</div>
-
-
-
-						<div class="container">
-
-							<div class="row">
-
-								<hr>
-
-								<div class="col-lg-12">
-
-									<div class="col-md-8">
-
-										<a href="aboutUs.jsp">About Us</a> | <a
-											href="privacyPolicy.jsp">Privacy Policy</a>
-
-									</div>
-
-									<div class="col-md-4">
-
-										<p class="muted pull-right">© 2016 Rockin Executioners.
-											All rights reserved</p>
-
-									</div>
-
+								<div class="col-md-4">
+									<p class="muted pull-right">© 2016 Rockin Executioners. All
+										rights reserved</p>
 								</div>
-
 							</div>
-
 						</div>
+					</div>
 </body>
-
 </html>

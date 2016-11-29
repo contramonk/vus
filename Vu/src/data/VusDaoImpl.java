@@ -4,14 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import entities.User;
 import entities.Vu;
 
 @Repository
+@Transactional
 public class VusDaoImpl implements VusDAO{
 private List<Integer> years = new ArrayList<>();
 private List<Vu> vus = new ArrayList<>();
+@PersistenceContext
+private EntityManager em;
 	
 	@Override
 	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
@@ -26,6 +34,12 @@ private List<Vu> vus = new ArrayList<>();
 		return vus;
 	}
 
+	@Override
+	public List<String> getVus(User user){
+		String sql = "SELECT Vu.title from Vu where Vu.getUser.getUsername = 'guest'";
+		List<String> titles = em.createQuery(sql, String.class).getResultList();
+		return titles;
+	}
 //	@Override
 //	public void removeVu(Vu vu) {
 //		vus.remove(vu);
