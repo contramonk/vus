@@ -10,13 +10,19 @@
 
 	<context:component-scan base-package="controllers, data, entities" />
 	
+<!-- 	<bean id="test" class="data.VuDaoImpl"/>
+	<bean id="test" class="data.VusDaoImpl"/> -->
+	
+	
 	<bean id="myEntityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="vubase" />
 	</bean>
+	
 	<bean id="myTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="myEntityManagerFactory" />
 	</bean>
+	
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
 
 </beans>

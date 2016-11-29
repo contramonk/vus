@@ -45,8 +45,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.2.RELEASE</version>
 		</dependency>
-	
-		<!--  Dependency JPA -->
+
+		<!-- Dependency JPA -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
@@ -59,6 +59,7 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+
 
 		<!-- Dependency for jstl -->
 		<dependency>

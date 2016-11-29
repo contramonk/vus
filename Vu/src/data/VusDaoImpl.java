@@ -16,7 +16,7 @@ import entities.Vu;
 @Repository
 @Transactional
 public class VusDaoImpl implements VusDAO {
-	private List<Integer> years = new ArrayList<>();
+//	private List<Integer> years = new ArrayList<>();
 	private List<Vu> vus = new ArrayList<>();
 	@PersistenceContext
 	private EntityManager em;
