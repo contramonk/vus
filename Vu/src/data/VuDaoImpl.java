@@ -33,7 +33,7 @@ public class VuDaoImpl implements VuDAO {
 	
 	@Override
 	public Vu getVu(int vuId){
-		String vuQ = "SELECT vu from Vu vu where Vu.getId = ?1";
+		String vuQ = "SELECT vu from Vu vu where vu.id = ?1";
 		Vu vu = em.createQuery(vuQ, Vu.class)
 		.setParameter(1, vuId)
 		.getSingleResult();
