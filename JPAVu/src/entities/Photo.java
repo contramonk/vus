@@ -14,6 +14,12 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Photo {
 	
+	public Vu getVu() {
+		return vu;
+	}
+	public void setVu(Vu vu) {
+		this.vu = vu;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

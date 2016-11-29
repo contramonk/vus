@@ -8,14 +8,15 @@ import entities.Vu;
 
 
 public interface VuDAO {
-	public Vu setTitle(int vuID, String title);
-	public Vu setStartDate(Vu vu, Date startDate); 
-	public Vu setEndDate(Vu vu, Date endDate); 
-	public Photo addPhoto(Photo photo, String imgUrl, String caption);
-	public Vu addPost (Vu vu, String post);
-	public Location addAddress(Location location, String address);
-	public Location addCity(Location location, String city);
-	public Location addState(Location location, String state);
-	public Location addZip(Location location, int zip);
+	public Vu getVu(int vuId);
+	public Vu addTitle(int vuId, String title);
+	public Vu addStartDate(int vuId, Date startDate); 
+	public Vu addEndDate(int vuId, Date endDate); 
+	public Vu addPhoto(int vuId, Photo photo, String imgUrl, String caption);
+	public Vu addPost (int vuId, String post);
+	public Location addAddress(int vuId, String address);
+	public Location addCity(int vuId, String city);
+	public Location addState(int vuId, String state);
+	public Location addZip(int vuId, int zip);
 
 }
