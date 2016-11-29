@@ -148,28 +148,26 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
 				<h2>Register</h2>
-				<form>
+				<form action = "register.do">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Email address</label> <input
-							type="email" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="Enter email"> <small
-							id="emailHelp" class="form-text text-muted">We'll never
-							share your email with anyone else.</small>
+						<label for="userCreate">Username</label> <input
+							type="text" class="form-control" id="userCreate"
+							aria-describedby="userName help" placeholder="Username" name="username">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
+							type="password" class="form-control" id="createPassword"
+							placeholder="Password" name="password">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFirstName1">First Name</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
+							type="password" class="form-control" id="createFirstName"
+							placeholder="First Name" name="firstname">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputLastName1">Last Name</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
+							type="password" class="form-control" id="createLastName"
+							placeholder="LastName" name="lastname">
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
