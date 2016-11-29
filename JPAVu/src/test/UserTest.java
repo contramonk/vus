@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,7 +10,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import entities.User;
+import entities.Vu;
 
 public class UserTest {
 	private EntityManagerFactory emf;
@@ -24,12 +24,8 @@ public class UserTest {
 
 	@Test
 	public void test() {
-		User u = em.find(User.class, "guest");
-//		assertEquals(1, vu.getLocationId());
-		assertEquals("guest", u.getUsername());
-		assertEquals("Jeff", u.getFirstName());
-		assertEquals("Smitherson", u.getLastName());
-		assertEquals("true", u.getEnabled());
+		Vu v = em.find(Vu.class, 2);
+		assertEquals("Virgin Islands", v.getUser().getVus().get(0).getTitle());
 	}
 
 	@After
