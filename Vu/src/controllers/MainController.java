@@ -18,6 +18,8 @@ public class MainController {
 	public ModelAndView defaultPage() {
 
 	  ModelAndView model = new ModelAndView();
+	  VuController vuController;
+	  vuController.getVus("username");
 	  model.addObject("title", "Spring Security Login Form - Database Authentication");
 	  model.addObject("message", "This is default page!");
 	  model.setViewName("/vus");
