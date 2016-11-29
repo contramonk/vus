@@ -55,9 +55,9 @@
 
 				<li></li>
 
-				<li><a href="vus.jsp">Home</a></li>
+				<li><a href="getVus.do">Home</a></li>
 
-				<li><a href="index.html">Signout</a></li>
+				<li><a href="index.jsp">Signout</a></li>
 
 			</ul>
 
@@ -86,7 +86,7 @@
 		</div>
 
 		<%-- <c:forEach items="${Vus}" var="vu"> --%>
-			
+
 		<div class="panel-group">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -94,7 +94,8 @@
 
 
 					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse0">${vu.startDate} 2016 </a>
+						<a data-toggle="collapse" href="#collapse0">${vu.startDate}
+							2016 </a>
 					</h4>
 					</a>
 				</div>
@@ -102,20 +103,22 @@
 			<div id="collapse0" class="panel-collapse collapse">
 				<div class="panel-body">
 
-					 <c:forEach items="${Vus}" var="vu">
-					<%--  ${vu}<br> --%>
+					<c:forEach items="${Vus}" var="vu">
+						<%--  ${vu}<br> --%>
+						<img src="${vu.photos[0].getUrl()}">
 						<a href="getVu.do?vuId=${vu.id}"> 
-						${vu}
-						<%-- ${vu.getPhoto} ${vu.getTitle}	${vu.getDate}  --%>
-						</a> 
-							<br>
-						<span class="glyphicon glyphicon-edit"></span>
-						<span class="glyphicon glyphicon-trash"></span>
+						<%-- ${vu} --%> 
+						${vu.title}
+							${vu.startDate}
+						<br>
+						</a>
+						<a href="getVu.do?vuId=${vu.id}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a href="deleteVu.do"><span class="glyphicon glyphicon-trash"></span></a>
 						<hr>
-					</c:forEach> 
+					</c:forEach>
+</div>
 
-
-					<a href="vuAdmin.jsp"> <img
+					<!-- <a href="vuAdmin.jsp"> <img
 						src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
 						style="width: 10mm; height: 10mm"> Thanksgiving November 24,
 						2016
@@ -125,7 +128,7 @@
 					 <a href="deleteVu.do"><span
 						class="glyphicon glyphicon-trash"></span></a>
 
-
+ -->
 
 				</div>
 				<%-- </c:forEach>

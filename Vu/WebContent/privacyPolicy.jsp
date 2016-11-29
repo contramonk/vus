@@ -30,8 +30,8 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-brand-centered">
 			<ul class="nav navbar-nav">
-				<li><a href="vus.jsp">Home</a></li>
-				<li><a href="index.html">Signout</a></li>
+				<li><a href="getVus.do">Home</a></li>
+				<li><a href="index.jsp">Signout</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
