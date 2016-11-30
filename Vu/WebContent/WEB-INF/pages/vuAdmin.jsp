@@ -26,9 +26,10 @@
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
     ${Vu.title}
-    <div>
-    ${Vu.photos}
-    </div>
+   
+    
+  
+    
    
 
 <div class="panel-group" id="title">
@@ -109,12 +110,12 @@ ${Vu.startDate}
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-   <%-- <c:forEach items="${Vu.photos}" var="photo">
-    <div class="item">
-    <img src="${photo}">
+ <c:forEach items="${Vu.photos}" var="photo">
+    <div class="item-active">
+    <img src="${photo.url}">
     </div>
-   </c:forEach>  --%>
-  </div>
+   </c:forEach>  
+  </div> 
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
