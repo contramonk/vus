@@ -17,7 +17,7 @@ public class Location {
 	private String address;
 	private String city;
 	private String state;
-	private String zip;
+	private int zip;
 	private String place;
 	
 	@OneToMany(mappedBy="location")
@@ -63,11 +63,11 @@ public class Location {
 		this.state = state;
 	}
 
-	public String getZip() {
+	public int getZip() {
 		return zip;
 	}
 
-	public void setZip(String zip) {
+	public void setZip(int zip) {
 		this.zip = zip;
 	}
 

@@ -214,29 +214,37 @@ ${Vu.post}
         <form action="addCity.do" method="GET" class="form-inline">
         <div class="form-group" id="city">
         <label for="city">City</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
          </div>
+          <button type="submit" class="btn btn-primary">Enter</button>
         </form>
         
         <form action="addState.do" method="GET" class="form-inline">
         <div class="form-group" id="state">
         <label for="State">State</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="CO">
          </div>
+          <button type="submit" class="btn btn-primary">Enter</button>
         </form>
         
         <form action="addZip.do" method="GET" class="form-inline">
-        <div class="form-group" id="city">
+        <div class="form-group" id="zip">
         <label for="city">Zip</label>
-        <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
+        <input type="hidden" name="vuId" value="${Vu.id}">
+        <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="Zip">
          </div>
+          <button type="submit" class="btn btn-primary">Enter</button>
         </form>
         
         <form action="addPlace.do" method="GET" class="form-inline">
         <div class="form-group" id="city">
         <label for="place">Place</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">
         </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
         </form>
     
 	
