@@ -105,7 +105,7 @@
 
 					<c:forEach items="${Vus}" var="vu">
 						<%--  ${vu}<br> --%>
-						<img src="${vu.photos[0].getUrl()}">
+						<img src="${vu.photos[0].getUrl()}" style="width:15mm; height:15mm">
 						<a href="getVu.do?vuId=${vu.id}"> 
 						<%-- ${vu} --%> 
 						${vu.title}
