@@ -1,15 +1,15 @@
 package data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.transaction.annotation.Transactional;
 
-import entities.Location;
 import entities.User;
 import entities.Vu;
 
@@ -25,6 +25,27 @@ public class VusDaoImpl implements VusDAO {
 		 List<Vu> vus =em.createQuery(vuQ, Vu.class).setParameter(1, username).getResultList();
 		System.out.println("*********" + vus + "*********");
 		return vus;
+	}
+	@Override
+	public List<Vu> getVusByYear(String username) {
+//		String vuQ = "Select v from Vu v where v.user.username = ?1 group by year(v.startDate)";
+		String vuQ= "select id, username, title, year(start_date) from Vu where username=?1";
+//		String vuQ = "SELECT YEAR(?1) from Vu group by YEAR(?1)";
+		List<Vu> yearGroups = em.createQuery(vuQ, Vu.class).setParameter(1, username).getResultList();
+//		List<Date> yearGroups = em.createQuery(vuQ, Date.class).getResultList();
+		
+		for (Vu vu : yearGroups) {
+			System.out.println(vu.getStartDate());
+		}
+		List<Vu>vusByYear =getVus(username);
+//		for (Date yearGroup : yearGroups) {
+//			for (Vu vu : vusByYear) {
+//				if(vu.getStartDate().toString().contains(yearGroup.toString()));
+//				vusByYear.add(vu);
+//			}
+//		}
+		System.out.println(yearGroups);
+		return vusByYear;
 	}
 	
 	@Override
