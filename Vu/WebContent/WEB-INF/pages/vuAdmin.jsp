@@ -40,6 +40,7 @@
         <form action="addTitle.do" method="GET" class="form-inline" id="title">
         <div class="form-group" id="title">
         <label for="title">Title</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="title" class="form-control" id="exampleInputName1" placeholder="Title">
         </div>
         <div class="form-group"> 
@@ -54,7 +55,7 @@
 </div>
 
 <div class="row">
-${Vu.location}
+${Vu.location.state}
 </div>
 
 
@@ -74,6 +75,7 @@ ${Vu.startDate}
         <form action="addDate.do" method="GET" class="form-inline" id="date">
         <div class="form-group" id="date">
         <label for="startDate">Start Date</label>
+         <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         <label for="endDate">End Date</label>
         <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
@@ -89,6 +91,7 @@ ${Vu.startDate}
  </div>
  
  
+ 
 <div class="row">
  
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -100,31 +103,16 @@ ${Vu.startDate}
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
+ 
+
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-  
- <%--  <c:forEach var="photo" items="${Vu.photoList}">
-  <div class="item">
-  <img src="photo">
- </div>
-  
-  </c:forEach> --%>
-    <div class="item active">
-      <img src="https://scontent.fapa1-2.fna.fbcdn.net/t31.0-8/14425518_10154103010359472_528916013561621627_o.jpg" alt="Chania">
+ <c:forEach items="${Vu.photos}" var="photo">
+    <div class="item-active">
+    <img src="${photo.url}">
     </div>
-
-    <div class="item">
-      <img src="https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/13902785_10153990145604472_7918892357210220902_n.jpg?oh=ac5cf7aee9897064e43802bc3972a848&oe=588B4730" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/14079631_10154028366494472_9166475305605359890_n.jpg?oh=c6346430391adbe01473738433890878&oe=58C29BA2" alt="Flower">
-    </div>
-
-    <div class="item">
-      <img src="https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/15056306_10154263570019472_6305733730725051490_n.jpg?oh=48d7d7573a4dea91f3ba9e000208d4ea&oe=58877ECC" alt="Flower">
-    </div>
-  </div>
+   </c:forEach>  
+  </div> 
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -174,6 +162,7 @@ ${Vu.post}
 <form action="addPost.do" method="GET" class="form-group">
 <div class="form-group">
     <label for="post">Vu Description</label>
+    <input type="hidden" name="vuId" value="${Vu.id}">
     <textarea class="form-control" name="post" id="post" rows="5"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Submit</button>
@@ -184,11 +173,10 @@ ${Vu.post}
 <div class="row">
 
 <iframe
-  width="600"
-  height="450"
+  width="450"
+  height="250"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
-    &q=Colorado">
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}" allowfullscreen>
 </iframe>
 </div>
 <div class="col-sm-4">
