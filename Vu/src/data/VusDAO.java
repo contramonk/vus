@@ -2,6 +2,7 @@ package data;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import entities.Location;
 import entities.User;
@@ -21,6 +22,6 @@ public interface VusDAO {
 
 	User getUserByUsername(String username);
 
-	List<Vu> getVusByYear(String username);
+	Map<Integer, List<Vu>> getVusByYear(String username);
 
 }

@@ -88,14 +88,13 @@
 			</div>
 			<div id="collapse1" class="panel-collapse collapse">
 				<div class="panel-body">
-					<form action="addVu.do" method="GET" class="form-inline"
-						id="newvu">
+					<form action="addVu.do" method="GET" class="form-inline" id="newvu">
 
 						<input type="text" class="form-control" name="title"
-							placeholder="Title" value=""> 
-							<input type="hidden" name="username" value="${user.username}">
-							<input type="text"
-							class="form-control" placeholder="Start Date" name="startDate">
+							placeholder="Title" value=""> <input type="hidden"
+							name="username" value="${user.username}"> <input
+							type="text" class="form-control" placeholder="Start Date"
+							name="startDate">
 
 						<button type="submit" class="btn btn-primary">Enter</button>
 
@@ -118,19 +117,24 @@
 
 			<%-- <c:forEach items="${Vus}" var="vu"> --%>
 
+							<c:forEach var="vu" items="${vuMap}">
 			<div class="panel-group">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 
 
 
-						<h4 class="panel-title">
+						<%-- <h4 class="panel-title">
 							<a data-toggle="collapse" href="#collapse0">${vu.startDate}
 								2016 </a>
+						</h4> --%>
+						<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapse0"> ${vu.key}</a>
 						</h4>
 					</div>
 				</div>
 			</div>
+							</c:forEach>
 			<div id="collapse0" class="panel-collapse collapse">
 				<div class="panel-body">
 
@@ -138,9 +142,8 @@
 						<%--  ${vu}<br> --%>
 						<img src="${vu.photos[0].getUrl()}"
 							style="width: 15mm; height: 15mm">
-						<a href="getVu.do?vuId=${vu.id}">
-							 ${vu.title}
-							${vu.startDate} <br>
+						<a href="getVu.do?vuId=${vu.id}"> ${vu.title} ${vu.startDate}
+							<br>
 						</a>
 						<a href="getVu.do?vuId=${vu.id}"><span
 							class="glyphicon glyphicon-edit"></span></a>

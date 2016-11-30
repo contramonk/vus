@@ -3,6 +3,7 @@ package controllers;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -30,7 +31,8 @@ public class VusController {
 		String username = auth.getName(); // get logged in username
 		model.addAttribute("username", username);
 		ModelAndView mv = new ModelAndView();
-		vusDao.getVusByYear(username);
+		Map<Integer, List<Vu>> vuMap = vusDao.getVusByYear(username);
+		mv.addObject("vuMap", vuMap);
 		mv.addObject("user", vusDao.getUserByUsername(username));
 		mv.setViewName("vus.jsp");
 		mv.addObject("Vus", vusDao.getVus(username));
