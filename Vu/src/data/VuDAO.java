@@ -12,7 +12,7 @@ public interface VuDAO {
 	public Vu addTitle(int vuId, String title);
 	public Vu addStartDate(int vuId, Date startDate); 
 	public Vu addEndDate(int vuId, Date endDate); 
-	public Vu addPhoto(int vuId, Photo photo, String imgUrl, String caption);
+	public Vu addPhoto(int vuId, String imgUrl);
 	public Vu addPost (int vuId, String post);
 	public Vu addAddress(int vuId, String address);
 	public Vu addCity(int vuId, String city);

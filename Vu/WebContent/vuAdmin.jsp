@@ -148,10 +148,8 @@ ${Vu.location.state}
         <form action="addPhotos.do" method="GET" class="form-inline">
         <div class="form-group" id="photos">
         <label for="img url">Image URL</label>
-        <input type="text" name="photo" class="form-control" id="exampleInputName2" placeholder="https://...">
-        <label for="img index">Index</label>
-        <input type="text" name="index" class="form-control" id="exampleInputName2" placeholder="index number">
-        
+         <input type="hidden" name="vuId" value="${Vu.id}">
+        <input type="text" name="imgUrl" class="form-control" id="exampleInputName2" placeholder="https://...">
         </div>
         
         <div class="form-group"> 

@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.VuDAO; 
+import data.VuDAO;
+import entities.Photo; 
 
 
 @Controller
@@ -64,16 +65,16 @@ public class VuController {
 		mv.addObject("Vu", vuDao.addEndDate(id, date));
 		return mv;
 	}
-//	
-//	@RequestMapping("addPhotos.do") //for adding a photo to a Vu
-//	  public ModelAndView addPhotos(@RequestParam("photo") String imgUrl, Vu vu) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vuAdmin.jsp");
-//		mv.addObject("Vu", vuDao.addPhoto(vu, imgUrl));
-//			
-//		return mv;
-//	}
-//	
+	
+	@RequestMapping("addPhotos.do") //for adding a photo to a Vu
+	  public ModelAndView addPhotos(@RequestParam("imgUrl") String imgUrl, @RequestParam("vuId") String vuId, Photo photo) {
+		int id=Integer.parseInt(vuId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addPhoto(id, imgUrl));	
+		return mv;
+	}
+	
 	@RequestMapping("addPost.do") //for adding a photo to a Vu
 	  public ModelAndView addPost(@RequestParam("post") String post, @RequestParam("vuId") String vuId) {
 		int id=Integer.parseInt(vuId);
