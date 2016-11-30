@@ -1,15 +1,14 @@
 package data;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import entities.Location;
 import entities.User;
 import entities.Vu;
 
@@ -27,18 +26,18 @@ public class VusDaoImpl implements VusDAO {
 		return vus;
 	}
 
-//	@Override
-//	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate) {
-//		Vu vu = new Vu();
-//		vu.setTitle(title);
-//		vu.setPost(post);
-//		vu.setStartDate(startDate);
-//		vu.setEndDate(endDate);
-//		vus.add(vu);
-//		System.out.println(vu);
-//		System.out.println(vus);
-//		return vus;
-//	}
+	@Override
+	public Vu addVu(String username, String title, Date startDate) {
+//		String vuQ = "Select username from Vu vu where vu.user.username = ?1";
+		username = em.find(String.class, username);
+		Vu vu = new Vu();
+		vu.getUser().setUsername(username);
+		vu.setTitle(title);
+		vu.setStartDate(startDate);
+		em.persist(vu);
+		System.out.println(vu);
+		return vu;
+	}
 
 //	@Override
 //	public List<String> getVus(User user) {

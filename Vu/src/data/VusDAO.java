@@ -3,13 +3,14 @@ package data;
 import java.util.Date;
 import java.util.List;
 
+import entities.Location;
 import entities.User;
 import entities.Vu;
 
 public interface VusDAO {
 
 
-//	public List<Vu> addVu(int id, int userId, String title, String post, Date startDate, Date endDate);
+	public Vu addVu(String username, String Title, Date startDate);
 	
 //	public List<String> getVus(User user);
 //	public void removeVu(Vu vu);

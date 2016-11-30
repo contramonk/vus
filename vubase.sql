@@ -55,10 +55,10 @@ DROP TABLE IF EXISTS `vu` ;
 CREATE TABLE IF NOT EXISTS `vu` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
-  `location_id` INT NOT NULL,
+  `location_id` INT NULL,
   `title` VARCHAR(50) NOT NULL,
   `post` VARCHAR(1500) NULL,
-  `start_date` DATE NULL,
+  `start_date` DATE NOT NULL,
   `end_date` DATE NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_vu_Location_idx` (`location_id` ASC),

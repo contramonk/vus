@@ -76,6 +76,37 @@
 			<div class="panel-group">
 				<div class="panel panel-default">
 					<div class="panel-heading">
+
+
+
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1"><span
+								class="glyphicon glyphicon-plus-sign"></span></a>
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse">
+				<div class="panel-body">
+					<form action="addVu.do" method="GET" class="form-inline"
+						id="newvu">
+
+						<input type="text" class="form-control" name="title"
+							placeholder="Title" value=""> 
+							<input type="hidden" name="username" value="${Vu.user.username}">
+							<input type="text"
+							class="form-control" placeholder="Start Date" name="startDate">
+
+						<button type="submit" class="btn btn-primary">Enter</button>
+
+					</form>
+
+				</div>
+
+			</div>
+			<!-- 	<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a href="vuAdmin.jsp" value="Add Vu">Add Vu<span
 								class="glyphicon glyphicon-plus-sign"></span></a>
@@ -83,21 +114,21 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<%-- <c:forEach items="${Vus}" var="vu"> --%>
+			<%-- <c:forEach items="${Vus}" var="vu"> --%>
 
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel-heading">
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
 
 
 
-					<h4 class="panel-title">
-						<a data-toggle="collapse" href="#collapse0">${vu.startDate}
-							2016 </a>
-					</h4>
-					</a>
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse0">${vu.startDate}
+								2016 </a>
+						</h4>
+					</div>
 				</div>
 			</div>
 			<div id="collapse0" class="panel-collapse collapse">
@@ -105,48 +136,35 @@
 
 					<c:forEach items="${Vus}" var="vu">
 						<%--  ${vu}<br> --%>
-						<img src="${vu.photos[0].getUrl()}">
-						<a href="getVu.do?vuId=${vu.id}"> 
-						<%-- ${vu} --%> 
-						${vu.title}
-							${vu.startDate}
-						<br>
+						<img src="${vu.photos[0].getUrl()}"
+							style="width: 15mm; height: 15mm">
+						<a href="getVu.do?vuId=${vu.id}"> <%-- ${vu} --%> ${vu.title}
+							${vu.startDate} <br>
 						</a>
-						<a href="getVu.do?vuId=${vu.id}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a href="getVu.do?vuId=${vu.id}"><span
+							class="glyphicon glyphicon-edit"></span></a>
 						<a href="deleteVu.do"><span class="glyphicon glyphicon-trash"></span></a>
 						<hr>
 					</c:forEach>
-</div>
-
-					<!-- <a href="vuAdmin.jsp"> <img
-						src="http://animal-dream.com/data_images/turkey/turkey6.jpg"
-						style="width: 10mm; height: 10mm"> Thanksgiving November 24,
-						2016
-
-<br>
-					</a> <a href="vuAdmin.jsp"><span class="glyphicon glyphicon-edit"></span></a>
-					 <a href="deleteVu.do"><span
-						class="glyphicon glyphicon-trash"></span></a>
-
- -->
-
 				</div>
-				<%-- </c:forEach>
+
+			</div>
+			<%-- </c:forEach>
  --%>
-				<div class="container">
-					<div class="row">
-						<hr>
-						<div class="col-lg-12">
-							<div class="col-md-8">
-								<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
-									Policy</a>
-							</div>
-							<div class="col-md-4">
-								<p class="muted pull-right">© 2016 Rockin Executioners. All
-									rights reserved</p>
-							</div>
+			<div class="container">
+				<div class="row">
+					<hr>
+					<div class="col-lg-12">
+						<div class="col-md-8">
+							<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
+								Policy</a>
+						</div>
+						<div class="col-md-4">
+							<p class="muted pull-right">© 2016 Rockin Executioners. All
+								rights reserved</p>
 						</div>
 					</div>
 				</div>
+			</div>
 </body>
 </html>
