@@ -61,14 +61,13 @@ public class VusController {
 	
 	 return mv;
 	 }
-	//
-	// @RequestMapping("removeVu.do") // for removing a Vu
-	// public ModelAndView removeVu(@RequestParam("vu") Vu vu) {
-	// ModelAndView mv = new ModelAndView();
-	// mv.setViewName("vus.jsp");
-	// mv.addObject("Vu", vusDao.removeVu(vu));
-	//
-	// return mv;
-	// }
+	
+	 @RequestMapping("deleteVu.do") // for removing a Vu
+	 public ModelAndView removeVu(@RequestParam("vu") Vu vu) {
+	 ModelAndView mv = new ModelAndView();
+	 mv.setViewName("vus.jsp");
+	 vusDao.removeVu(vu);
+	 return mv;
+	 }
 
 }

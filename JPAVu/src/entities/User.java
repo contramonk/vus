@@ -67,6 +67,10 @@ public class User {
 		vus.add(vu);
 	}
 
+	public void removeVu(Vu vu){
+		vus.remove(vu);
+	}
+	
 	public String getUsername() {
 		return username;
 	}
