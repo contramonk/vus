@@ -151,7 +151,7 @@
 							</a>
 							<a href="getVu.do?vuId=${vu.id}"><span
 								class="glyphicon glyphicon-edit"></span></a>
-							<a href="deleteVu.do"><span class="glyphicon glyphicon-trash"></span></a>
+							<a href="deleteVu.do?vuId=${vu.id}&vu=${vu}"><span class="glyphicon glyphicon-trash"></span></a>
 							<hr>
 						</c:forEach>
 					</div>

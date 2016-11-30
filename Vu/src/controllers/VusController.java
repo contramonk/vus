@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.VusDAO;
+import entities.User;
 import entities.Vu;
 
 @Controller
@@ -63,10 +64,16 @@ public class VusController {
 	 }
 	
 	 @RequestMapping("deleteVu.do") // for removing a Vu
-	 public ModelAndView removeVu(@RequestParam("vu") Vu vu) {
+	 public ModelAndView removeVu(@RequestParam("vuId") int vuId) {
 	 ModelAndView mv = new ModelAndView();
 	 mv.setViewName("vus.jsp");
-	 vusDao.removeVu(vu);
+//	 mv.addObject(vu);
+	 System.out.println(vuId);
+	 User u = vusDao.removeVu(vuId);
+	 Map<Integer, List<Vu>> vuMap = vusDao.getVusByYear(u.getUsername());
+	 System.out.println(vuMap.size());
+	 mv.addObject("vuMap", vuMap);
+	 mv.addObject("Vus", vusDao.getVus(u.getUsername()));
 	 return mv;
 	 }
 

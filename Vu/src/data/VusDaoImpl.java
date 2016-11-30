@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.dialect.identity.SybaseAnywhereIdentityColumnSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.User;
@@ -86,8 +87,16 @@ public class VusDaoImpl implements VusDAO {
 
 
 	 @Override
-	 public void removeVu(Vu vu) {
-	  vu.getUser().removeVu(vu);
+	 public User removeVu(int vuId) {
+		 String q = "Select vu from Vu vu where vu.id = ?1";
+		 Vu droppedVu = em.find(Vu.class, vuId);
+		 User u = droppedVu.getUser();
+		 u.removeVu(droppedVu);
+		 em.remove(droppedVu);
+		 em.persist(u);
+		 
+		 return u;
+		 
 	 }
 	
 	// @Override

@@ -14,7 +14,7 @@ public interface VusDAO {
 	public Vu addVu(String username, String Title, Date startDate);
 	
 //	public List<String> getVus(User user);
-	public void removeVu(Vu vu);
+	public User removeVu(int vuId);
 //
 //	public Vu editVu(int id, int userId, String title, String post, Date startDate, Date endDate, Vu vu);
 
