@@ -27,7 +27,6 @@
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
     ${Vu.title}
-
 <div class="panel-group" id="title">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -189,6 +188,7 @@ ${Vu.post}
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}" allowfullscreen>
 </iframe>
+    ${Vu.location.address}
 </div>
 <div class="col-sm-4">
  <div class="panel-group" id="location">
@@ -201,28 +201,45 @@ ${Vu.post}
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body"></div>
       
-
- <form action="addLocation.do" method="GET" class="form-inline">
- 		Fill in atleast one of the following: 
-        <div class="form-group" id="location">
+        
+       <form action="addAddress.do" method="GET" class="form-inline">
+        <div class="form-group" id="address">
         <label for="address">Address</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
-        <label for="city">City</label>
-        <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
-        <label for="State">State</label>
-        <input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="CO">
-        <label for="city">Zip</label>
-        <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
-        <label for="place">Place</label>
-        <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">
-        
-        </div>
-        
-        <div class="form-group"> 
         </div>
          <button type="submit" class="btn btn-primary">Enter</button>
+       </form>
+        
+        <form action="addCity.do" method="GET" class="form-inline">
+        <div class="form-group" id="city">
+        <label for="city">City</label>
+        <input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
+         </div>
         </form>
-	</div>
+        
+        <form action="addState.do" method="GET" class="form-inline">
+        <div class="form-group" id="state">
+        <label for="State">State</label>
+        <input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="CO">
+         </div>
+        </form>
+        
+        <form action="addZip.do" method="GET" class="form-inline">
+        <div class="form-group" id="city">
+        <label for="city">Zip</label>
+        <input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="City">
+         </div>
+        </form>
+        
+        <form action="addPlace.do" method="GET" class="form-inline">
+        <div class="form-group" id="city">
+        <label for="place">Place</label>
+        <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">
+        </div>
+        </form>
+    
+	
 
 </div>
 </div>

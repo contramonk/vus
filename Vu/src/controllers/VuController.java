@@ -84,16 +84,15 @@ public class VuController {
 		
 		return mv;
 	}
-//	
-//	@RequestMapping("addLocation.do") //for adding a photo to a Vu
-//	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, 
-//			  @RequestParam("state") String state, @RequestParam("zip")String zip, Vu vu) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vuAdmin.jsp");
-//		mv.addObject("Vu", vuDao.setPhoto(vu, post));
-//			
-//		return mv;
-//	}
-//	
-//	
+	
+	@RequestMapping("addAddress.do") //for adding a photo to a Vu
+	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("vuId") String vuId) {
+		int id=Integer.parseInt(vuId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addAddress(id, address));
+		return mv;
+	}
+	
+	
 }
