@@ -19,7 +19,8 @@ public class VuController {
 	private VuDAO vuDao;
 	
 	@RequestMapping("getVu.do")
-	public ModelAndView getVu(@RequestParam("vuId") String vuId, Vu vu) {
+	 
+	public ModelAndView getVu(@RequestParam("vuId") String vuId){
 		int id=Integer.parseInt(vuId);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
