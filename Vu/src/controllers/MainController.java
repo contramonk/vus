@@ -30,11 +30,6 @@ public class MainController {
 //	}
 	@Autowired
 	private VuDAO dao;
-	
-	@RequestMapping(path = "/test")
-	public void test() {
-		System.out.println(dao.test());
-	}
 
 	@RequestMapping(value = { "/", "/admin/vuAdmin.jsp" }, method = RequestMethod.GET)
 	public ModelAndView vuAdminPage() {
