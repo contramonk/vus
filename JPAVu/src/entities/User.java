@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,11 +23,37 @@ public class User {
 	private String enabled;
 	@OneToMany(mappedBy = "user")
 	private List<Vu> vus;
+	@OneToMany(mappedBy = "user")
+	private List<UserRole> userRoles;
 
+	
+	public void addUserRole(UserRole userRole) {
+		if (userRoles == null) {
+			userRoles = new ArrayList<>();
+		}
+		if (!userRoles.contains(userRole)) {
+			userRoles.add(userRole);
+		}
+	}
+	public void removeUserRole(UserRole userRole) {
+		if (userRoles != null) {
+			userRoles.remove(userRole);
+		}
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", enabled=" + enabled + "]";
+	}
+
+	public List<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(List<UserRole> userRoles) {
+		this.userRoles = userRoles;
 	}
 
 	public List<Vu> getVus() {
