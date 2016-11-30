@@ -161,12 +161,12 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFirstName1">First Name</label> <input
-							type="password" class="form-control" id="createFirstName"
+							type="text" class="form-control" id="createFirstName"
 							placeholder="First Name" name="firstname">
 					</div>
 					<div class="form-group">
 						<label for="exampleInputLastName1">Last Name</label> <input
-							type="password" class="form-control" id="createLastName"
+							type="text" class="form-control" id="createLastName"
 							placeholder="LastName" name="lastname">
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
