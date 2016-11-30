@@ -9,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,13 +39,12 @@ public class VusController {
 		return mv;
 	}
 
-	@RequestMapping("addVu.do") // for adding a Vu
-	public ModelAndView addVu(@RequestParam("user") String username, @RequestParam("location") Location location,
-			@RequestParam("title") String title, @RequestParam("post") String post,
-			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
-			@RequestParam("vu") Vu vu) {
+	@RequestMapping(path ="addVu.do") // for adding a Vu
+	public ModelAndView addVu(@RequestParam("username") String username,
+			@RequestParam("title") String title,
+			@RequestParam("startDate") Date startDate) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vus.jsp");
+		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vusDao.addVu(username, title, startDate));
 
 		return mv;
