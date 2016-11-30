@@ -32,6 +32,7 @@ public class VusController {
 		String username = auth.getName(); // get logged in username
 		model.addAttribute("username", username);
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("user", vusDao.getUserByUsername(username));
 		mv.setViewName("vus.jsp");
 		mv.addObject("Vus", vusDao.getVus(username));
 
@@ -44,6 +45,7 @@ public class VusController {
 			@RequestParam("title") String title,
 			@RequestParam("startDate") Date startDate) {
 		ModelAndView mv = new ModelAndView();
+		System.out.println(username);
 		mv.setViewName("vuAdmin.jsp");
 		mv.addObject("Vu", vusDao.addVu(username, title, startDate));
 

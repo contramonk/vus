@@ -63,6 +63,9 @@ public class User {
 	public void setVus(List<Vu> vus) {
 		this.vus = vus;
 	}
+	public void addVu(Vu vu){
+		vus.add(vu);
+	}
 
 	public String getUsername() {
 		return username;
