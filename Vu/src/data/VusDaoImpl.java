@@ -1,13 +1,14 @@
 package data;
 
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.User;
@@ -27,25 +28,48 @@ public class VusDaoImpl implements VusDAO {
 		return vus;
 	}
 	@Override
-	public List<Vu> getVusByYear(String username) {
-//		String vuQ = "Select v from Vu v where v.user.username = ?1 group by year(v.startDate)";
-		String vuQ= "select id, username, title, year(start_date) from Vu where username=?1";
+	public Map<Integer, List<Vu>> getVusByYear(String username) {
+		String vus = "Select v from Vu v where v.user.username = ?1 order by v.startDate";
+		String years = "Select year(v.startDate) from Vu v where v.user.username = ?1 group by year(v.startDate)";
+		String vuQ= "SELECT username, title, year(start_date) from Vu where username=?1";
 //		String vuQ = "SELECT YEAR(?1) from Vu group by YEAR(?1)";
-		List<Vu> yearGroups = em.createQuery(vuQ, Vu.class).setParameter(1, username).getResultList();
+		List<Vu> vuList = em.createQuery(vus, Vu.class).setParameter(1, username).getResultList();
+		List<Integer> yearList = em.createQuery(years, Integer.class).setParameter(1, username).getResultList();
 //		List<Date> yearGroups = em.createQuery(vuQ, Date.class).getResultList();
-		
-		for (Vu vu : yearGroups) {
-			System.out.println(vu.getStartDate());
+		Map<Integer, List<Vu>> vuMap = new HashMap<Integer, List<Vu>>();
+		List<Vu> list = new ArrayList<Vu>();
+		for(int i = 0; i<yearList.size(); i++){
+			for(int j=0; j< vuList.size(); j++){
+				if(yearList.get(i)==(Integer.parseInt(vuList.get(j).getStartDate().toString().substring(0,4)))){
+					list.add(vuList.get(j));
+					System.out.println(yearList.get(i) + " " + (Integer.parseInt(vuList.get(j).getStartDate().toString().substring(0,4))));
+				}
+			}
+			System.out.println("list size: " + list.size());
+			vuMap.put(yearList.get(i), list);
+			list = new ArrayList<Vu>();
 		}
-		List<Vu>vusByYear =getVus(username);
+		
+		System.out.println(vuMap.size());
+		for(int i = 0; i< vuMap.size(); i++){
+			System.out.println(yearList.get(i));
+			for(Vu vu: vuMap.get(yearList.get(i))){
+				System.out.println("test");
+				System.out.println(vu);
+			}
+		}
+		return vuMap;
+//		for (List<Vu> vuGroup : yearGroups) {
+//			System.out.println(vuGroup);
+//		}
 //		for (Date yearGroup : yearGroups) {
 //			for (Vu vu : vusByYear) {
 //				if(vu.getStartDate().toString().contains(yearGroup.toString()));
 //				vusByYear.add(vu);
 //			}
 //		}
-		System.out.println(yearGroups);
-		return vusByYear;
+//		System.out.println(yearGroups);
+//		return yearGroups;
 	}
 	
 	@Override
