@@ -1,17 +1,13 @@
 package data;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import entities.Location;
 import entities.Photo;
-import entities.User;
 import entities.Vu;
 
 //Added @Repository to DAO
@@ -69,11 +65,13 @@ public class VuDaoImpl implements VuDAO {
 	
 	}
 	@Override
-	public Vu addPhoto(int vuId, Photo photo, String imgUrl, String caption){
-		Vu managedVu = em.find(Vu.class, vuId);
+	public Vu addPhoto(int vuId, String imgUrl){
+		Vu managedVu=em.find(Vu.class, vuId);
+		Photo photo=new Photo(); 
 		photo.setUrl(imgUrl);
-		photo.setCaption(caption);
+		managedVu.addPhoto(photo);
 		em.persist(photo);
+		em.persist(managedVu);
 		return managedVu;
 	}
 	@Override
