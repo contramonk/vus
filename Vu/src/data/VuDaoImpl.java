@@ -25,7 +25,7 @@ public class VuDaoImpl implements VuDAO {
 	@Override
 	public Vu getVu(int vuId){
 		String vuQ = "SELECT vu from Vu vu where vu.id = ?1";
-		Vu vu = em.createQuery(vuQ, Vu.class)
+		Vu vu = em.createQuery(vuQ, Vu.class) 
 		.setParameter(1, vuId)
 		.getSingleResult();
 		return vu;
@@ -77,7 +77,7 @@ public class VuDaoImpl implements VuDAO {
 	@Override
 	public Vu addAddress(int vuId, String address) {
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setAddress(address);;
+		managedVu.getLocation().setAddress(address);
 		em.persist(managedVu);
 		return managedVu; 
 	}
@@ -91,14 +91,14 @@ public class VuDaoImpl implements VuDAO {
 	@Override
 	public Vu addState(int vuId, String state) {
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setState(state);;
+		managedVu.getLocation().setState(state);
 		em.persist(managedVu);
 		return managedVu; 
 	}
 	@Override
 	public Vu addZip(int vuId, int zip) {
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setZip(zip);;
+		managedVu.getLocation().setZip(zip);
 		em.persist(managedVu);
 		return managedVu; 
 	}
@@ -106,7 +106,7 @@ public class VuDaoImpl implements VuDAO {
 	@Override
 	public Vu addPlace(int vuId, String place) {
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setPlace(place);;
+		managedVu.getLocation().setPlace(place);
 		em.persist(managedVu);
 		return managedVu; 
 	}

@@ -100,7 +100,7 @@ ${Vu.location.state}
   </div>
  </div>
  
- 
+
  
 <div class="row">
  
@@ -112,16 +112,15 @@ ${Vu.location.state}
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
-
- 
-
+  
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
- <c:forEach items="${Vu.photos}" var="photo">
-    <div class="item-active">
+ 
+ <c:forEach items="${Vu.photos}" var="photo" varStatus="status">
+       <div class="item<c:if test='${status.first}'> active</c:if>">
     <img src="${photo.url}">
-    </div>
-   </c:forEach>  
+   </div>
+    </c:forEach>  
   </div> 
 
   <!-- Left and right controls -->
