@@ -52,7 +52,7 @@ public class VuDaoImpl implements VuDAO {
 	@Override	
 	public Vu addStartDate(int vuId, Date startDate){
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.setStartDate(startDate);;  
+		managedVu.setStartDate(startDate);
 		em.persist(managedVu);
 		return managedVu; 
 	}

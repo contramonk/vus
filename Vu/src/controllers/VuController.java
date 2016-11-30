@@ -1,4 +1,7 @@
 package controllers;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.VuDAO;
-import entities.Vu; 
+import data.VuDAO; 
 
 
 @Controller
@@ -41,8 +43,18 @@ public class VuController {
 	}
 	
 	@RequestMapping("addDate.do") //for adding a startDate to a Vu
-	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
-	return new ModelAndView();
+	public ModelAndView startDate(@RequestParam("startDate") String startDate, @RequestParam("vuId") String vuId) throws ParseException {
+		int id=Integer.parseInt(vuId);
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		
+		
+		
+		Date date = formatter.parse(startDate);
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addStartDate(id, date));
+		return mv;
 	}
 	
 	
