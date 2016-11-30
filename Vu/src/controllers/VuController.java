@@ -79,7 +79,7 @@ public class VuController {
 		int id=Integer.parseInt(vuId);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.setPost(id, post));
+		mv.addObject("Vu", vuDao.addPost(id, post));
 			
 		
 		return mv;
