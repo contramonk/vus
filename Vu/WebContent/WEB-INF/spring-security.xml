@@ -12,15 +12,15 @@
 		<intercept-url pattern="/auth/admin/**" access="hasRole('ROLE_ADMIN')" />
 
 		<!-- access denied page -->
-		<access-denied-handler error-page="/auth/403" />
+		<access-denied-handler error-page="/403" />
 
 		<form-login
 		    login-page="/index.jsp"
 		    default-target-url="/getVus.do"
-			authentication-failure-url="/auth/login?error"
+			authentication-failure-url="/error.do?error"
 			username-parameter="username"
 			password-parameter="password" />
-		<logout logout-success-url="/auth/login?logout"  />
+		<logout logout-success-url="/index?logout"  />
 		<!-- enable csrf protection -->
 		<csrf />
 	</http>
