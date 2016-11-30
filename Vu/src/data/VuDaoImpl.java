@@ -18,12 +18,7 @@ import entities.Vu;
 //@Repository
 @Transactional
 public class VuDaoImpl implements VuDAO {
-	
-	
-	public String test() {
-		return "TEST WORKED SUCCESSFULLY";
-	}
-	
+
 	public VuDaoImpl () {
 		System.out.println("LOADED DAO");
 	}
@@ -89,19 +84,33 @@ public class VuDaoImpl implements VuDAO {
 		return managedVu; 
 	}
 	@Override
-	public Location addCity(int vuId, String city) {
-		// TODO Auto-generated method stub
-		return null;
+	public  Vu addCity(int vuId, String city) {
+		Vu managedVu = em.find(Vu.class, vuId);
+		managedVu.getLocation().setCity(city);
+		em.persist(managedVu);
+		return managedVu; 
 	}
 	@Override
-	public Location addState(int vuId, String state) {
-		// TODO Auto-generated method stub
-		return null;
+	public Vu addState(int vuId, String state) {
+		Vu managedVu = em.find(Vu.class, vuId);
+		managedVu.getLocation().setState(state);;
+		em.persist(managedVu);
+		return managedVu; 
 	}
 	@Override
-	public Location addZip(int vuId, int zip) {
-		// TODO Auto-generated method stub
-		return null;
+	public Vu addZip(int vuId, int zip) {
+		Vu managedVu = em.find(Vu.class, vuId);
+		managedVu.getLocation().setZip(zip);;
+		em.persist(managedVu);
+		return managedVu; 
+	}
+	
+	@Override
+	public Vu addPlace(int vuId, String place) {
+		Vu managedVu = em.find(Vu.class, vuId);
+		managedVu.getLocation().setPlace(place);;
+		em.persist(managedVu);
+		return managedVu; 
 	}
 	
 
