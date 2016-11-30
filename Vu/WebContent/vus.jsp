@@ -138,7 +138,8 @@
 						<%--  ${vu}<br> --%>
 						<img src="${vu.photos[0].getUrl()}"
 							style="width: 15mm; height: 15mm">
-						<a href="getVu.do?vuId=${vu.id}"> <%-- ${vu} --%> ${vu.title}
+						<a href="getVu.do?vuId=${vu.id}">
+							 ${vu.title}
 							${vu.startDate} <br>
 						</a>
 						<a href="getVu.do?vuId=${vu.id}"><span
