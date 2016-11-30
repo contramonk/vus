@@ -93,7 +93,7 @@
 
 						<input type="text" class="form-control" name="title"
 							placeholder="Title" value=""> 
-							<input type="hidden" name="username" value="${Vu.user.username}">
+							<input type="hidden" name="username" value="${user.username}">
 							<input type="text"
 							class="form-control" placeholder="Start Date" name="startDate">
 

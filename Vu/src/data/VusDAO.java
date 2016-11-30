@@ -19,4 +19,6 @@ public interface VusDAO {
 
 	List<Vu> getVus(String username);
 
+	User getUserByUsername(String username);
+
 }
