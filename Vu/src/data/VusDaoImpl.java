@@ -26,6 +26,13 @@ public class VusDaoImpl implements VusDAO {
 		System.out.println("*********" + vus + "*********");
 		return vus;
 	}
+	@Override
+	public List<Vu> getVusByYear(List <Vu> vus) {
+		String vuQ = "SELECT YEAR(start_date) from Vu group by YEAR(start_date)";
+		List<String> years = em.createQuery(vuQ, String.class).getResultList();
+		System.out.println(years);
+		return vus;
+	}
 	
 	@Override
 	public User getUserByUsername(String username){
