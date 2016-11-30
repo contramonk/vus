@@ -239,7 +239,7 @@ ${Vu.post}
         </form>
         
         <form action="addPlace.do" method="GET" class="form-inline">
-        <div class="form-group" id="city">
+        <div class="form-group" id="place">
         <label for="place">Place</label>
         <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Place">

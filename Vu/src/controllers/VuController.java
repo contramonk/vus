@@ -121,6 +121,15 @@ public class VuController {
 		return mv;
 	}
 	
+	@RequestMapping("addPlace.do") //for adding a photo to a Vu
+	  public ModelAndView addPlace(@RequestParam("place") String place, @RequestParam("vuId") String vuId) {
+		int id=Integer.parseInt(vuId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addPlace(id, place));
+		return mv;
+	}
+	
 	
 	
 }

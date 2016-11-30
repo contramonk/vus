@@ -18,5 +18,6 @@ public interface VuDAO {
 	public Vu addCity(int vuId, String city);
 	public Vu addState(int vuId, String state);
 	public Vu addZip(int vuId, int zip);
+	public Vu addPlace(int vuId, String Place);
 	
 }
