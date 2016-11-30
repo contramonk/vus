@@ -26,11 +26,6 @@
 <a href="VuUser.jsp">See Vu</a>
 <div class="row">
     ${Vu.title}
-   
-    
-  
-    
-   
 
 <div class="panel-group" id="title">
     <div class="panel panel-default">
@@ -45,6 +40,7 @@
         <form action="addTitle.do" method="GET" class="form-inline" id="title">
         <div class="form-group" id="title">
         <label for="title">Title</label>
+        <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="title" class="form-control" id="exampleInputName1" placeholder="Title">
         </div>
         <div class="form-group"> 
@@ -79,6 +75,7 @@ ${Vu.startDate}
         <form action="addDate.do" method="GET" class="form-inline" id="date">
         <div class="form-group" id="date">
         <label for="startDate">Start Date</label>
+         <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         <label for="endDate">End Date</label>
         <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
@@ -165,6 +162,7 @@ ${Vu.post}
 <form action="addPost.do" method="GET" class="form-group">
 <div class="form-group">
     <label for="post">Vu Description</label>
+    <input type="hidden" name="vuId" value="${Vu.id}">
     <textarea class="form-control" name="post" id="post" rows="5"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Submit</button>
