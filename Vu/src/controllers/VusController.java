@@ -37,17 +37,17 @@ public class VusController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "addVu.do") // for adding a Vu
-//	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId,
-//			@RequestParam("title") String title, @RequestParam("post") String post,
-//			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
-//			@RequestParam("vu") Vu vu) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vus.jsp");
-//		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
-//
-//		return mv;
-//	}
+	@RequestMapping(path = "addVu.do") // for adding a Vu
+	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId,
+			@RequestParam("title") String title, @RequestParam("post") String post,
+			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
+			@RequestParam("vu") Vu vu) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vus.jsp");
+		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
+
+		return mv;
+	}
 	//
 	// @RequestMapping("editVu.do") // for editing a Vu
 	// public ModelAndView editVu(@RequestParam("id") int id,
