@@ -2,7 +2,6 @@
 package controllers;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -14,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.VusDAO;
+import entities.Location;
+import entities.User;
 import entities.Vu;
 
 @Controller
@@ -37,14 +38,14 @@ public class VusController {
 		return mv;
 	}
 
-	@RequestMapping(path = "addVu.do") // for adding a Vu
-	public ModelAndView addVu(@RequestParam("id") int id, @RequestParam("userId") int userId,
+	@RequestMapping("addVu.do") // for adding a Vu
+	public ModelAndView addVu(@RequestParam("user") String username, @RequestParam("location") Location location,
 			@RequestParam("title") String title, @RequestParam("post") String post,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
 			@RequestParam("vu") Vu vu) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vus.jsp");
-		mv.addObject("Vu", vusDao.addVu(id, userId, title, post, startDate, endDate));
+		mv.addObject("Vu", vusDao.addVu(username, title, startDate));
 
 		return mv;
 	}

@@ -10,7 +10,7 @@ import entities.Vu;
 public interface VusDAO {
 
 
-	public Vu addVu(User user, Location location, String title, String post, Date startDate, Date endDate);
+	public Vu addVu(String username, String Title, Date startDate);
 	
 //	public List<String> getVus(User user);
 //	public void removeVu(Vu vu);
