@@ -28,12 +28,14 @@ public class VusDaoImpl implements VusDAO {
 
 	@Override
 	public Vu addVu(String username, String title, Date startDate) {
-		String vuQ = "Select vu from Vu vu where vu.user.username = ?1";
-		List<Vu> vus = em.createQuery(vuQ, Vu.class).setParameter(1, username).getResultList();
-		
+//		String vuQ = "Select username from Vu vu where vu.user.username = ?1";
+		username = em.find(String.class, username);
 		Vu vu = new Vu();
+		vu.getUser().setUsername(username);
 		vu.setTitle(title);
 		vu.setStartDate(startDate);
+		em.persist(vu);
+		System.out.println(vu);
 		return vu;
 	}
 

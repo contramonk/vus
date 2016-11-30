@@ -76,10 +76,6 @@ public class Vu {
 		return user;
 	}
 	
-	public void setUsername(User user) {
-		this.user = user;
-	}
-	
 	public String getTitle() {
 		return title;
 	}

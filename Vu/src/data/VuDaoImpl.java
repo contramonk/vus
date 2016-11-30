@@ -52,14 +52,14 @@ public class VuDaoImpl implements VuDAO {
 	@Override	
 	public Vu addStartDate(int vuId, Date startDate){
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.setStartDate(startDate);;  
+		managedVu.setStartDate(startDate);
 		em.persist(managedVu);
 		return managedVu; 
 	}
 	@Override
 	public Vu addEndDate(int vuId, Date endDate){
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.setEndDate(endDate);;  
+		managedVu.setEndDate(endDate);  
 		em.persist(managedVu);
 		return managedVu; 
 	}

@@ -1,4 +1,7 @@
 package controllers;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import data.VuDAO;
-import entities.Vu; 
+import data.VuDAO; 
 
 
 @Controller
@@ -41,19 +43,27 @@ public class VuController {
 	}
 	
 	@RequestMapping("addDate.do") //for adding a startDate to a Vu
-	public ModelAndView startDate(@RequestParam("startDate") Date startDate, Vu vu) {
-	return new ModelAndView();
+	public ModelAndView startDate(@RequestParam("startDate") String startDate, @RequestParam("vuId") String vuId) throws ParseException {
+		int id=Integer.parseInt(vuId);
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = formatter.parse(startDate);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addStartDate(id, date));
+		return mv;
 	}
 	
 	
-//	@RequestMapping("addDate.do") //for adding a endDate to a Vu
-//	  public ModelAndView endDate(@RequestParam("endDate") Date endDate, Vu vu) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vuAdmin.jsp");
-//		mv.addObject("Vu", vuDao.setEndDate(vu, endDate));
-//			
-//		return mv;
-//	}
+	@RequestMapping("addEndDate.do") //for adding a endDate to a Vu
+	public ModelAndView endDate(@RequestParam("endDate") String endDate, @RequestParam("vuId") String vuId) throws ParseException {
+		int id=Integer.parseInt(vuId);
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = formatter.parse(endDate);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.addEndDate(id, date));
+		return mv;
+	}
 //	
 //	@RequestMapping("addPhotos.do") //for adding a photo to a Vu
 //	  public ModelAndView addPhotos(@RequestParam("photo") String imgUrl, Vu vu) {
@@ -64,15 +74,16 @@ public class VuController {
 //		return mv;
 //	}
 //	
-//	@RequestMapping("addPost.do") //for adding a photo to a Vu
-//	  public ModelAndView addPost(@RequestParam("post") String post, Vu vu) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vuAdmin.jsp");
-//		mv.addObject("Vu", vuDao.setPhoto(vu, post));
-//			
-//		
-//		return mv;
-//	}
+	@RequestMapping("addPost.do") //for adding a photo to a Vu
+	  public ModelAndView addPost(@RequestParam("post") String post, @RequestParam("vuId") String vuId) {
+		int id=Integer.parseInt(vuId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.setPost(id, post));
+			
+		
+		return mv;
+	}
 //	
 //	@RequestMapping("addLocation.do") //for adding a photo to a Vu
 //	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, 
