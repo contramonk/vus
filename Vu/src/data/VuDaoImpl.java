@@ -82,11 +82,11 @@ public class VuDaoImpl implements VuDAO {
 		return managedVu;
 	}
 	@Override
-	public Location addAddress(int vuId, String address) {
-		Location managedLoc = em.find(Location.class, vuId);
-		managedLoc.setAddress(address);;
-		em.persist(managedLoc);
-		return managedLoc; 
+	public Vu addAddress(int vuId, String address) {
+		Vu managedVu = em.find(Vu.class, vuId);
+		managedVu.getLocation().setAddress(address);;
+		em.persist(managedVu);
+		return managedVu; 
 	}
 	@Override
 	public Location addCity(int vuId, String city) {

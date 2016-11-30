@@ -14,7 +14,7 @@ public interface VuDAO {
 	public Vu addEndDate(int vuId, Date endDate); 
 	public Vu addPhoto(int vuId, Photo photo, String imgUrl, String caption);
 	public Vu addPost (int vuId, String post);
-	public Location addAddress(int vuId, String address);
+	public Vu addAddress(int vuId, String address);
 	public Location addCity(int vuId, String city);
 	public Location addState(int vuId, String state);
 	public Location addZip(int vuId, int zip);
