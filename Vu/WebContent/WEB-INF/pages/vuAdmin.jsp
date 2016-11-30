@@ -62,6 +62,7 @@ ${Vu.location.state}
 
 <div class="row">
 <fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" />
+<fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" />
 
 
   <div class="panel-group" id="date">
@@ -79,14 +80,22 @@ ${Vu.location.state}
         <label for="startDate">Start Date</label>
          <input type="hidden" name="vuId" value="${Vu.id}">
         <input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
-        <label for="endDate">End Date</label>
-        <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
         </div>
         <div class="form-group"> 
         </div>
          <button type="submit" class="btn btn-primary">Enter</button>
         </form>
         
+        <form action="addEndDate.do" method="GET" class="form-inline" id="endDate">
+        <div class="form-group" id="enddate">
+         <label for="endDate">End Date</label>
+         <input type="hidden" name="vuId" value="${Vu.id}">
+        <input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+        </div>
+        <div class="form-group"> 
+        </div>
+         <button type="submit" class="btn btn-primary">Enter</button>
+        </form>
       </div>
     </div>
   </div>
