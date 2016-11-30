@@ -30,6 +30,7 @@ public class VusController {
 		String username = auth.getName(); // get logged in username
 		model.addAttribute("username", username);
 		ModelAndView mv = new ModelAndView();
+		vusDao.getVusByYear(username);
 		mv.addObject("user", vusDao.getUserByUsername(username));
 		mv.setViewName("vus.jsp");
 		mv.addObject("Vus", vusDao.getVus(username));
@@ -51,10 +52,10 @@ public class VusController {
 	}
 	
 	 @RequestMapping("getVusByYear.do") // for editing a Vu
-	 public ModelAndView getVusByYear(@RequestParam("Vus") List<Vu> vus) {
+	 public ModelAndView getVusByYear(@RequestParam("Vus") List<Vu> vus, @RequestParam("username") String username) {
 	 ModelAndView mv = new ModelAndView();
 	 mv.setViewName("vus.jsp");
-	 mv.addObject("VusByYear", vusDao.getVusByYear(vus));
+	 mv.addObject("VusByYear", vusDao.getVusByYear(username));
 	
 	 return mv;
 	 }

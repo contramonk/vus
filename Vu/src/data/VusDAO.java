@@ -21,6 +21,6 @@ public interface VusDAO {
 
 	User getUserByUsername(String username);
 
-	List<Vu> getVusByYear(List<Vu> vus);
+	List<Vu> getVusByYear(String username);
 
 }
