@@ -121,7 +121,7 @@
 							<img src="${photo.url}">
 							<div class="carousel-caption">
      
-      			  <p>"${photo.id}"</p>
+      			  <p>${photo.id}</p>
       					</div>
 						</div>
 					</c:forEach>
@@ -143,7 +143,7 @@
 				<div class="panel panel-default" id="photos">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse2">Add Photo</a>
+							<a data-toggle="collapse" href="#collapse2">Add/Remove Photo</a>
 						</h4>
 					</div>
 					<div id="collapse2" class="panel-collapse collapse">
@@ -160,6 +160,20 @@
 							<div class="form-group"></div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
+						
+						<form action="deletePhoto.do" method="GET" class="form-inline">
+							<div class="form-group" id="photos">
+								<label for="img url">Delete Photo</label> <input type="hidden"
+									name="vuId" value="${Vu.id}"> <input type="number"
+									name="photoId" class="form-control" id="exampleInputName2"
+									placeholder="Enter ID">
+							</div>
+
+							<div class="form-group"></div>
+							<button type="submit" class="btn btn-primary">Enter</button>
+						</form>
+						
+						
 
 					</div>
 				</div>
