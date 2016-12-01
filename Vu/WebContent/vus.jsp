@@ -107,18 +107,12 @@
 					</div>
 
 				</div>
+				
 				<c:forEach var="vus" items="${vuMap}">
-					<c:forEach items="${vus.value}" var="vu">
 					<div class="panel-group">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 
-
-
-								<%-- <h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse0">${vu.startDate}
-								2016 </a>
-						</h4> --%>
 								<h4 class="panel-title">
 									<a data-toggle="collapse" href="#${vus.key}"> ${vus.key}</a>
 								</h4>
@@ -128,6 +122,7 @@
 
 
 						<div id="${vus.key}" class="panel-collapse collapse">
+					<c:forEach items="${vus.value}" var="vu">
 							<div class="panel-body">
 								<%--  ${vu}<br> --%>
 								<img src="${vu.photos[0].getUrl()}"
@@ -140,8 +135,8 @@
 									class="glyphicon glyphicon-trash"></span></a>
 								<hr>
 							</div>
-						</div>
 					</c:forEach>
+						</div>
 				</c:forEach>
 				<%-- </c:forEach>
  --%>
