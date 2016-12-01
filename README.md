@@ -35,7 +35,7 @@ To begin this web application from home page, choose one of the following option
 
 ## Bugs and Issues
 
-(still to be determined upon completion of project)
+<a href="https://github.com/contramonk/vus/issues"> Click here for an updated list with descriptions of our known bugs and issues</a>
 
 ## Creators
 
