@@ -119,6 +119,10 @@
 					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
 						<div class="item<c:if test='${status.first}'> active</c:if>">
 							<img src="${photo.url}">
+							<div class="carousel-caption">
+     
+      			  <p>"${photo.id}"</p>
+      					</div>
 						</div>
 					</c:forEach>
 				</div>
