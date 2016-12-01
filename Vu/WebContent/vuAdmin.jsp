@@ -219,7 +219,7 @@
 								<label for="address">State</label> 
 								<input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="State">									
 								<label for="address">Zip</label> 
-								<input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="State">
+								<input type="text" name="zip" class="form-control" id="exampleInputName2" placeholder="Zip">
 								<label for="address">Place</label>
 								<input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Ex. Meagan's Beach">	
 							<button type="submit" class="btn btn-primary">Enter</button>

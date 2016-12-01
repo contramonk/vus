@@ -15,6 +15,6 @@ public interface VuDAO {
 	public Vu addPhoto(int vuId, String imgUrl);
 	public Vu deletePhoto(int vuId, int  photoId);
 	public Vu addPost (int vuId, String post);
-	public Vu addAddress(int vuId, String address, String city, String state, int zip, String place);
+	public Vu addAddress(int vuId, String address, String city, String state, String zip, String place);
 	
 }
