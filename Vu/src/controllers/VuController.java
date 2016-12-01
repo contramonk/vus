@@ -75,6 +75,16 @@ public class VuController {
 		return mv;
 	}
 	
+	@RequestMapping("deletePhoto.do") //for adding a photo to a Vu
+	  public ModelAndView deletePhoto(@RequestParam("photoId") String photoId, @RequestParam("vuId") String vuId) {
+		int id=Integer.parseInt(vuId);
+		int phoId=Integer.parseInt(photoId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vuAdmin.jsp");
+		mv.addObject("Vu", vuDao.deletePhoto(id, phoId));	
+		return mv;
+	}
+	
 	@RequestMapping("addPost.do") //for adding a photo to a Vu
 	  public ModelAndView addPost(@RequestParam("post") String post, @RequestParam("vuId") String vuId) {
 		int id=Integer.parseInt(vuId);

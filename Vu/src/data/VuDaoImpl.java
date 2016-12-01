@@ -74,6 +74,19 @@ public class VuDaoImpl implements VuDAO {
 		em.persist(managedVu);
 		return managedVu;
 	}
+	
+	@Override
+	public Vu deletePhoto(int vuId, int photoId){
+		String photoQ = "SELECT p from Photo p where p.id = ?1";
+		Photo photo= em.createQuery(photoQ, Photo.class) 
+				.setParameter(1, photoId)
+				.getSingleResult();		
+		Vu managedVu=em.find(Vu.class, vuId);
+		managedVu.removePhoto(photo);
+		em.remove(photo);
+		em.persist(managedVu);
+		return managedVu;
+	}
 	@Override
 	public Vu addAddress(int vuId, String address) {
 		Vu managedVu = em.find(Vu.class, vuId);

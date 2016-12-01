@@ -19,5 +19,6 @@ public interface VuDAO {
 	public Vu addState(int vuId, String state);
 	public Vu addZip(int vuId, int zip);
 	public Vu addPlace(int vuId, String Place);
+	public Vu deletePhoto(int vuId, int  photoId);
 	
 }
