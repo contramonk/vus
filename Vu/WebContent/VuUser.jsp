@@ -41,7 +41,7 @@
   }
   </style>
 
-<title>Vu title</title>
+<title>${vu.title}</title>
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -88,9 +88,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1> Vu Title "${vuTitle}"</h1>
-                        <h3> Location "${Location}"</h3>
-                        <h3>Date "${date}"</h3>
+                        <h1> Vu Title "${vu.title}"</h1>
+                        <h3> Location "${vu.location}"</h3>
+                        <h3>Date "${vu.date}"</h3>
                        <a href="#photos" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -165,7 +165,7 @@
  
 <div class="row">
 
-  Description here "${description}"
+  Description here "${vu.description}"
 
 </div>
 </section>
