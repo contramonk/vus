@@ -22,9 +22,9 @@ As a team we structured our process and communications by implementation of Agil
 + Hibernate
 + Apache Tomcat
 + Git
-+ Github
-+ <a href="https://trello.com/b/fWXeu2QL/vu">Slack</a>
-+ Trello
++ <a href="https://github.com/contramonk/vus">Github</a>
++ <a href="https://trello.com/b/fWXeu2QL/vu">Trello</a>
++ Slack
 
 ## Getting Started
 
