@@ -12,7 +12,7 @@ Feature sets include:
 + A way to track an individual users previous experiences on the site.
 
 # Technologies Implemented
-- As a team we structured our process and communications by implementation of Agile development principles using the following technologies:
+As a team we structured our process and communications by implementation of Agile development principles using the following technologies:
 + Java
 + Spring MVC
 + JSP
