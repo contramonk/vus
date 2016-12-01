@@ -188,57 +188,50 @@
 					</div>
 					<div id="collapse3" class="panel-collapse collapse">
 						<div class="panel-body"></div>
-
+						<div class="col-sm-1">
+						</div>
 						<div class="col-sm-2">
 						<form action="addAddress.do" method="GET" class="form-inline">
-							<div class="form-group" id="address">
 								<label for="address">Address</label> <input type="hidden"
 									name="vuId" value="${Vu.id}"> <input type="text"
 									name="address" class="form-control" id="exampleInputName2"
 									placeholder="Address">
-							</div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						</div>
 						<div class="col-sm-2">
 						<form action="addCity.do" method="GET" class="form-inline">
-							<div class="form-group" id="city">
+						
 								<label for="city">City</label> <input type="hidden" name="vuId"
 									value="${Vu.id}"> <input type="text" name="city"
 									class="form-control" id="exampleInputName2" placeholder="City">
-							</div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						</div>
 						<div class="col-sm-2">
 						<form action="addState.do" method="GET" class="form-inline">
-							<div class="form-group" id="state">
 								<label for="State">State</label> <input type="hidden"
 									name="vuId" value="${Vu.id}"> <input type="text"
 									name="state" class="form-control" id="exampleInputName2"
 									placeholder="CO">
-							</div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						</div>
 						<div class="col-sm-2">
 						<form action="addZip.do" method="GET" class="form-inline">
-							<div class="form-group" id="zip">
 								<label for="city">Zip</label> <input type="hidden" name="vuId"
 									value="${Vu.id}"> <input type="number" name="zip"
 									class="form-control" id="exampleInputName2" placeholder="Zip">
-							</div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						</div>
 						<div class="col-sm-2">
 						<form action="addPlace.do" method="GET" class="form-inline">
-							<div class="form-group" id="place">
 								<label for="place">Place</label> <input type="hidden"
 									name="vuId" value="${Vu.id}"> <input type="text"
 									name="place" class="form-control" id="exampleInputName2"
 									placeholder="Place">
-							</div>
+						
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						</div>
