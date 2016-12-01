@@ -23,7 +23,7 @@ As a team we structured our process and communications by implementation of Agil
 + Apache Tomcat
 + Git
 + Github
-+ Slack
++ <a href="https://trello.com/b/fWXeu2QL/vu">Slack</a>
 + Trello
 
 ## Getting Started
