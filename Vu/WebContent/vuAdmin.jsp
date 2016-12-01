@@ -246,13 +246,20 @@
 
 
 					</div>
-
-			<iframe width="450" height="250" frameborder="0" style="border: 0"
+					
+			<div class="row">
+  				<div class="col-sm-4">
+  				</div>
+  				<div class="center-block">
+			<iframe width="450" height="450"frameborder="0" style="border: 0"
 				src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}"
 				allowfullscreen> </iframe>
-			
-		</div>
 				</div>
+				<div class="col-sm-4">
+  				</div>
+				</div>
+		</div>
+		</div>
 
 				<script
 					src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
