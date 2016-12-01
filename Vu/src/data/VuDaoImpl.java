@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import entities.Location;
 import entities.Photo;
 import entities.Vu;
 
@@ -87,42 +88,21 @@ public class VuDaoImpl implements VuDAO {
 		em.persist(managedVu);
 		return managedVu;
 	}
+	
 	@Override
-	public Vu addAddress(int vuId, String address) {
+	public Vu addAddress(int vuId, String address, String city, String state, int zip, String place) {
 		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setAddress(address);
-		em.persist(managedVu);
-		return managedVu; 
-	}
-	@Override
-	public  Vu addCity(int vuId, String city) {
-		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setCity(city);
-		em.persist(managedVu);
-		return managedVu; 
-	}
-	@Override
-	public Vu addState(int vuId, String state) {
-		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setState(state);
-		em.persist(managedVu);
-		return managedVu; 
-	}
-	@Override
-	public Vu addZip(int vuId, int zip) {
-		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setZip(zip);
+		Location loc=new Location(); 
+		loc.setAddress(address);
+		loc.setCity(city);
+		loc.setState(state);
+		loc.setZip(zip);
+		loc.setPlace(place);
+		loc.addVu(managedVu);
 		em.persist(managedVu);
 		return managedVu; 
 	}
 	
-	@Override
-	public Vu addPlace(int vuId, String place) {
-		Vu managedVu = em.find(Vu.class, vuId);
-		managedVu.getLocation().setPlace(place);
-		em.persist(managedVu);
-		return managedVu; 
-	}
 	
 
 	

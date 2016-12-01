@@ -13,12 +13,8 @@ public interface VuDAO {
 	public Vu addStartDate(int vuId, Date startDate); 
 	public Vu addEndDate(int vuId, Date endDate); 
 	public Vu addPhoto(int vuId, String imgUrl);
-	public Vu addPost (int vuId, String post);
-	public Vu addAddress(int vuId, String address);
-	public Vu addCity(int vuId, String city);
-	public Vu addState(int vuId, String state);
-	public Vu addZip(int vuId, int zip);
-	public Vu addPlace(int vuId, String Place);
 	public Vu deletePhoto(int vuId, int  photoId);
+	public Vu addPost (int vuId, String post);
+	public Vu addAddress(int vuId, String address, String city, String state, int zip, String place);
 	
 }

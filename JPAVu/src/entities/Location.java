@@ -1,8 +1,10 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +22,7 @@ public class Location {
 	private int zip;
 	private String place;
 	
-	@OneToMany(mappedBy="location")
+	@OneToMany(mappedBy="location", fetch = FetchType.EAGER)
 	private List<Vu> vus;
 
 	public Location() {
@@ -37,6 +39,16 @@ public class Location {
 
 	public void setVus(List<Vu> vus) {
 		this.vus = vus;
+	}
+	
+	public void addVu(Vu vu) {
+		if (vus == null) {
+			vus = new ArrayList<>();
+		}
+		if (!vus.contains(vu)) {
+			vus.add(vu);
+		}
+		vu.setLocation(this);
 	}
 
 	public String getAddress() {

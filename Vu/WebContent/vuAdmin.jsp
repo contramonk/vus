@@ -208,15 +208,23 @@
 						<div class="panel-body"></div>
 						<div class="col-sm-1">
 						</div>
-						<div class="col-sm-2">
+						
+						
+						
 						<form action="addAddress.do" method="GET" class="form-inline">
-								<label for="address">Address</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="address" class="form-control" id="exampleInputName2"
-									placeholder="Address">
+								<label for="address">Address</label> <input type="hidden" name="vuId" value="${Vu.id}"> 
+								<input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
+								<label for="address">City</label> 
+								<input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
+								<label for="address">State</label> 
+								<input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="State">									
+								<label for="address">Zip</label> 
+								<input type="number" name="zip" class="form-control" id="exampleInputName2" placeholder="State">
+								<label for="address">Place</label>
+								<input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Ex. Meagan's Beach">	
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
-						</div>
+						<%-- </div>
 						<div class="col-sm-2">
 						<form action="addCity.do" method="GET" class="form-inline">
 						
@@ -252,7 +260,7 @@
 						
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
-						</div>
+ --%>						</div>
 
 
 
