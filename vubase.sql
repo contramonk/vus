@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `Location` (
   `address` VARCHAR(60) NULL,
   `city` VARCHAR(45) NULL,
   `state` CHAR(2) NULL,
-  `zip` INT(5) NULL,
+  `zip` VARCHAR(5) NULL,
   `place` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_location_id` (`id` ASC))
@@ -144,7 +144,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `vubase`;
-INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '2240 E Barry Dr', 'K City', 'VI', 55543, 'Burger King');
+INSERT INTO `Location` (`id`, `address`, `city`, `state`, `zip`, `place`) VALUES (1, '2240 E Barry Dr', 'K City', 'VI', '55543', 'Burger King');
 
 COMMIT;
 
