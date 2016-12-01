@@ -78,9 +78,10 @@
 						<form action="addDate.do" method="GET" class="form-inline"
 							id="date">
 							<div class="form-group" id="date">
-								<label for="startDate">Start Date</label> 
-								<input type="hidden" name="vuId" value="${Vu.id}"> 
-								<input type="text" name="startDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+								<label for="startDate">Start Date</label> <input type="hidden"
+									name="vuId" value="${Vu.id}"> <input type="text"
+									name="startDate" class="form-control" id="exampleInputName1"
+									placeholder="yyyy/mm/dd">
 							</div>
 							<div class="form-group"></div>
 							<button type="submit" class="btn btn-primary">Enter</button>
@@ -89,8 +90,10 @@
 						<form action="addEndDate.do" method="GET" class="form-inline"
 							id="endDate">
 							<div class="form-group" id="enddate">
-								<label for="endDate">End Date</label> <input type="hidden" name="vuId" value="${Vu.id}"> 
-								<input type="text" name="endDate" class="form-control" id="exampleInputName1" placeholder="yyyy/mm/dd">
+								<label for="endDate">End Date</label> <input type="hidden"
+									name="vuId" value="${Vu.id}"> <input type="text"
+									name="endDate" class="form-control" id="exampleInputName1"
+									placeholder="yyyy/mm/dd">
 							</div>
 							<div class="form-group"></div>
 							<button type="submit" class="btn btn-primary">Enter</button>
@@ -120,9 +123,9 @@
 						<div class="item<c:if test='${status.first}'> active</c:if>">
 							<img src="${photo.url}">
 							<div class="carousel-caption">
-     
-      			  <p>${photo.id}</p>
-      					</div>
+
+								<p>${photo.id}</p>
+							</div>
 						</div>
 					</c:forEach>
 				</div>
@@ -160,7 +163,7 @@
 							<div class="form-group"></div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
-						
+
 						<form action="deletePhoto.do" method="GET" class="form-inline">
 							<div class="form-group" id="photos">
 								<label for="img url">Delete Photo</label> <input type="hidden"
@@ -172,8 +175,8 @@
 							<div class="form-group"></div>
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
-						
-						
+
+
 
 					</div>
 				</div>
@@ -189,7 +192,9 @@
 				<div class="form-group">
 					<label for="post">Vu Description</label> <input type="hidden"
 						name="vuId" value="${Vu.id}">
+					<pre>
 					<textarea class="form-control" name="post" id="post" rows="5"></textarea>
+					</pre>
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
@@ -206,22 +211,24 @@
 					</div>
 					<div id="collapse3" class="panel-collapse collapse">
 						<div class="panel-body"></div>
-						<div class="col-sm-1">
-						</div>
-						
-						
-						
+						<div class="col-sm-1"></div>
+
+
+
 						<form action="addAddress.do" method="GET" class="form-inline">
-								<label for="address">Address</label> <input type="hidden" name="vuId" value="${Vu.id}"> 
-								<input type="text" name="address" class="form-control" id="exampleInputName2" placeholder="Address">
-								<label for="address">City</label> 
-								<input type="text" name="city" class="form-control" id="exampleInputName2" placeholder="City">
-								<label for="address">State</label> 
-								<input type="text" name="state" class="form-control" id="exampleInputName2" placeholder="State">									
-								<label for="address">Zip</label> 
-								<input type="text" name="zip" class="form-control" id="exampleInputName2" placeholder="Zip">
-								<label for="address">Place</label>
-								<input type="text" name="place" class="form-control" id="exampleInputName2" placeholder="Ex. Meagan's Beach">	
+							<label for="address">Address</label> <input type="hidden"
+								name="vuId" value="${Vu.id}"> <input type="text"
+								name="address" class="form-control" id="exampleInputName2"
+								placeholder="Address"> <label for="address">City</label>
+							<input type="text" name="city" class="form-control"
+								id="exampleInputName2" placeholder="City"> <label
+								for="address">State</label> <input type="text" name="state"
+								class="form-control" id="exampleInputName2" placeholder="State">
+							<label for="address">Zip</label> <input type="text" name="zip"
+								class="form-control" id="exampleInputName2" placeholder="Zip">
+							<label for="address">Place</label> <input type="text"
+								name="place" class="form-control" id="exampleInputName2"
+								placeholder="Ex. Meagan's Beach">
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
 						<%-- </div>
@@ -260,35 +267,34 @@
 						
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
- --%>						</div>
-
-
-
+ --%>
 					</div>
-					
-			<div class="row">
-  				<div class="col-sm-4">
-  				</div>
-  				<div class="center-block">
-			<iframe width="450" height="450"frameborder="0" style="border: 0"
-				src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}"
-				allowfullscreen> </iframe>
+
+
+
 				</div>
-				<div class="col-sm-4">
-  				</div>
+
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="center-block">
+						<iframe width="450" height="450" frameborder="0" style="border: 0"
+							src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}"
+							allowfullscreen> </iframe>
+					</div>
+					<div class="col-sm-4"></div>
 				</div>
-		</div>
+			</div>
 		</div>
 
-				<script
-					src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-				<!-- Include all compiled plugins (below), or include individual files as needed -->
-				<script src="js/bootstrap.min.js"></script>
-				<script
-					src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-				<script
-					src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-			</div>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</div>
 	</sec:authorize>
 
 
