@@ -22,7 +22,6 @@ public class VuController {
 	private VuDAO vuDao;
 	
 	@RequestMapping("getVu.do")
-	 
 	public ModelAndView getVu(@RequestParam("vuId") String vuId){
 		int id=Integer.parseInt(vuId);
 		ModelAndView mv = new ModelAndView();
@@ -106,14 +105,15 @@ public class VuController {
 		return mv;
 	}
 	
-//	@RequestMapping("addCity.do") //for adding a photo to a Vu
-//	  public ModelAndView addCity(@RequestParam("city") String city, @RequestParam("vuId") String vuId) {
-//		int id=Integer.parseInt(vuId);
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("vuAdmin.jsp");
-//		mv.addObject("Vu", vuDao.addCity(id, city));
-//		return mv;
-//	}
+	@RequestMapping("vuUser.do") //for adding a photo to a Vu
+	public ModelAndView getVuUserView(@RequestParam("vuId") String vuId){
+		int id=Integer.parseInt(vuId);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("VuUser.jsp");
+		mv.addObject("Vu", vuDao.getVu(id));
+		
+		return mv;
+	}
 //	
 //	@RequestMapping("addState.do") //for adding a photo to a Vu
 //	  public ModelAndView addState(@RequestParam("state") String state, @RequestParam("vuId") String vuId) {

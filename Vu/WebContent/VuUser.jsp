@@ -88,10 +88,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1> Vu Title "${vu.title}"</h1>
-                        <h3> Location "${vu.location}"</h3>
-                        <h3>Date "${vu.date}"</h3>
-                       <a href="#photos" class="btn btn-circle page-scroll">
+                        <h1> Vu Title "${Vu.title}"</h1>
+                        <h3> Location "${Vu.location}"</h3>
+<%--                         <h3>Date "${Vu.date}"</h3>
+ --%>                       <a href="#photos" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>

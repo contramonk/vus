@@ -26,7 +26,7 @@
 <body>
 	<sec:authorize access="hasRole('ROLE_ADMIN')">
 		<div class=container-fluid>
-			<a href="VuUser.jsp">See Vu</a>
+			<a href="vuUser.do?vuId=${Vu.id}">See Vu</a>
 			<div class="row">
 				${Vu.title}
 				<div class="panel-group" id="title">
