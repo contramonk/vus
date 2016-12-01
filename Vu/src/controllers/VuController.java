@@ -97,50 +97,51 @@ public class VuController {
 	}
 	
 	@RequestMapping("addAddress.do") //for adding a photo to a Vu
-	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("vuId") String vuId) {
+	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, @RequestParam("state") String state, 
+			@RequestParam("zip") int zip, @RequestParam("place") String place, @RequestParam("vuId") String vuId) {
 		int id=Integer.parseInt(vuId);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.addAddress(id, address));
+		mv.addObject("Vu", vuDao.addAddress(id, address, city, state, zip, place));
 		return mv;
 	}
 	
-	@RequestMapping("addCity.do") //for adding a photo to a Vu
-	  public ModelAndView addCity(@RequestParam("city") String city, @RequestParam("vuId") String vuId) {
-		int id=Integer.parseInt(vuId);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.addCity(id, city));
-		return mv;
-	}
-	
-	@RequestMapping("addState.do") //for adding a photo to a Vu
-	  public ModelAndView addState(@RequestParam("state") String state, @RequestParam("vuId") String vuId) {
-		int id=Integer.parseInt(vuId);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.addState(id, state));
-		return mv;
-	}
-	
-	@RequestMapping("addZip.do") //for adding a photo to a Vu
-	  public ModelAndView addZip(@RequestParam("zip") int zip, @RequestParam("vuId") String vuId) {
-		int id=Integer.parseInt(vuId);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.addZip(id, zip));
-		return mv;
-	}
-	
-	@RequestMapping("addPlace.do") //for adding a photo to a Vu
-	  public ModelAndView addPlace(@RequestParam("place") String place, @RequestParam("vuId") String vuId) {
-		int id=Integer.parseInt(vuId);
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vuAdmin.jsp");
-		mv.addObject("Vu", vuDao.addPlace(id, place));
-		return mv;
-	}
-	
-	
+//	@RequestMapping("addCity.do") //for adding a photo to a Vu
+//	  public ModelAndView addCity(@RequestParam("city") String city, @RequestParam("vuId") String vuId) {
+//		int id=Integer.parseInt(vuId);
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("vuAdmin.jsp");
+//		mv.addObject("Vu", vuDao.addCity(id, city));
+//		return mv;
+//	}
+//	
+//	@RequestMapping("addState.do") //for adding a photo to a Vu
+//	  public ModelAndView addState(@RequestParam("state") String state, @RequestParam("vuId") String vuId) {
+//		int id=Integer.parseInt(vuId);
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("vuAdmin.jsp");
+//		mv.addObject("Vu", vuDao.addState(id, state));
+//		return mv;
+//	}
+//	
+//	@RequestMapping("addZip.do") //for adding a photo to a Vu
+//	  public ModelAndView addZip(@RequestParam("zip") int zip, @RequestParam("vuId") String vuId) {
+//		int id=Integer.parseInt(vuId);
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("vuAdmin.jsp");
+//		mv.addObject("Vu", vuDao.addZip(id, zip));
+//		return mv;
+//	}
+//	
+//	@RequestMapping("addPlace.do") //for adding a photo to a Vu
+//	  public ModelAndView addPlace(@RequestParam("place") String place, @RequestParam("vuId") String vuId) {
+//		int id=Integer.parseInt(vuId);
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("vuAdmin.jsp");
+//		mv.addObject("Vu", vuDao.addPlace(id, place));
+//		return mv;
+//	}
+//	
+//	
 	
 }
