@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.hibernate.dialect.identity.SybaseAnywhereIdentityColumnSupport;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.User;
@@ -36,7 +36,7 @@ public class VusDaoImpl implements VusDAO {
 //		String vuQ = "SELECT YEAR(?1) from Vu group by YEAR(?1)";
 		List<Vu> vuList = em.createQuery(vus, Vu.class).setParameter(1, username).getResultList();
 		List<Integer> yearList = em.createQuery(years, Integer.class).setParameter(1, username).getResultList();
-		Map<Integer, List<Vu>> vuMap = new HashMap<Integer, List<Vu>>();
+		TreeMap<Integer, List<Vu>> vuMap = new TreeMap<Integer, List<Vu>>();
 		List<Vu> list = new ArrayList<Vu>();
 		for(int i = 0; i<yearList.size(); i++){
 			for(int j=0; j< vuList.size(); j++){

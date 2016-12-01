@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="sec"
+<%@taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -107,21 +107,8 @@
 					</div>
 
 				</div>
-				<!-- 	<div class="panel-group">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a href="vuAdmin.jsp" value="Add Vu">Add Vu<span
-								class="glyphicon glyphicon-plus-sign"></span></a>
-						</h4>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-				<%-- <c:forEach items="${Vus}" var="vu"> --%>
-
-				<c:forEach var="vu" items="${vuMap}">
+				<c:forEach var="vus" items="${vuMap}">
+					<c:forEach items="${vus.value}" var="vu">
 					<div class="panel-group">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -133,30 +120,29 @@
 								2016 </a>
 						</h4> --%>
 								<h4 class="panel-title">
-									<a data-toggle="collapse" href="#collapse0"> ${vu.key}</a>
+									<a data-toggle="collapse" href="#${vus.key}"> ${vus.key}</a>
 								</h4>
 							</div>
 						</div>
 					</div>
+
+
+						<div id="${vus.key}" class="panel-collapse collapse">
+							<div class="panel-body">
+								<%--  ${vu}<br> --%>
+								<img src="${vu.photos[0].getUrl()}"
+									style="width: 15mm; height: 15mm"> <a
+									href="getVu.do?vuId=${vu.id}"> ${vu.title} ${vu.startDate}
+									<br>
+								</a> <a href="getVu.do?vuId=${vu.id}"><span
+									class="glyphicon glyphicon-edit"></span></a> <a
+									href="deleteVu.do?vuId=${vu.id}&vu=${vu}"><span
+									class="glyphicon glyphicon-trash"></span></a>
+								<hr>
+							</div>
+						</div>
+					</c:forEach>
 				</c:forEach>
-				<div id="collapse0" class="panel-collapse collapse">
-					<div class="panel-body">
-
-						<c:forEach items="${Vus}" var="vu">
-							<%--  ${vu}<br> --%>
-							<img src="${vu.photos[0].getUrl()}"
-								style="width: 15mm; height: 15mm">
-							<a href="getVu.do?vuId=${vu.id}"> ${vu.title} ${vu.startDate}
-								<br>
-							</a>
-							<a href="getVu.do?vuId=${vu.id}"><span
-								class="glyphicon glyphicon-edit"></span></a>
-							<a href="deleteVu.do?vuId=${vu.id}&vu=${vu}"><span class="glyphicon glyphicon-trash"></span></a>
-							<hr>
-						</c:forEach>
-					</div>
-
-				</div>
 				<%-- </c:forEach>
  --%>
 				<div class="container">
