@@ -98,7 +98,7 @@ public class VuController {
 	
 	@RequestMapping("addAddress.do") //for adding a photo to a Vu
 	  public ModelAndView addLocation(@RequestParam("address") String address, @RequestParam("city") String city, @RequestParam("state") String state, 
-			@RequestParam("zip") int zip, @RequestParam("place") String place, @RequestParam("vuId") String vuId) {
+			@RequestParam("zip") String zip, @RequestParam("place") String place, @RequestParam("vuId") String vuId) {
 		int id=Integer.parseInt(vuId);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");

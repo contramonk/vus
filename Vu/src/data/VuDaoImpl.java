@@ -90,7 +90,7 @@ public class VuDaoImpl implements VuDAO {
 	}
 	
 	@Override
-	public Vu addAddress(int vuId, String address, String city, String state, int zip, String place) {
+	public Vu addAddress(int vuId, String address, String city, String state, String zip, String place) {
 		Vu managedVu = em.find(Vu.class, vuId);
 		Location loc=new Location(); 
 		loc.setAddress(address);
