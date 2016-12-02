@@ -1,14 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,26 +22,12 @@
 <title>Vus</title>
 <!-- Bootstrap Core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 <!-- Custom Fonts -->
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-
 <!-- Theme CSS -->
 <link href="css/grayscale.min.css" rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<link href="css/test.css" rel="stylesheet">
 </head>
 <c:choose>
 	<c:when test="${not empty error}">
@@ -57,7 +39,6 @@
 		<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	</c:otherwise>
 </c:choose>
-<body>
 	<sec:authorize access="hasRole('ROLE_ADMIN')">
 		<!-- Navigation -->
 		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -78,7 +59,7 @@
 				<ul class="nav navbar-nav">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a href="#addVu"> Add Vu</a></li>
+					<li><a href="#add"> Add Vu</a></li>
 					<c:forEach var="vus" items="${vuMap}">
 						<li><a class="page-scroll" href="#${vus.key}">${vus.key}</a></li>
 					</c:forEach>
@@ -88,27 +69,44 @@
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid --> </nav>
-		<div class=container-fluid>
-			<div class="row">
+		<!-- /.container-fluid --> 
+		</nav>
+		
+					<!-- <div class="row">
 				<img
 					src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F"
 					style="width: 4em; height: 4em; position: relative; left: 50%; right: 50%">
+					
+			</div> -->
+				<header class="intro">
+		<div class="intro-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="brand-heading">VU</h1>
+						<p class="intro-text">Welcome ${user.firstName}</p>
+						<a href="#add" class="btn btn-circle page-scroll"> <i
+							class="fa fa-angle-double-down animated"></i>
+						</a>
+					</div>
+				</div>
 			</div>
+		</div>
+	</header>
 			<div class="row">
-				<div class="panel-group">
+				 <div class="panel-group test">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 
-
-<section id="addVu">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" href="#collapse1"><span
+							<h4 class="panel-title" id="add">
+								<a data-toggle="collapse" href="#collapse1">
+								<span
 									class="glyphicon glyphicon-plus-sign"></span></a>
 							</h4>
 						</div>
 					</div>
-				</div>
+				</div> 
+				
 				<div id="collapse1" class="panel-collapse collapse">
 					<div class="panel-body">
 						<form action="addVu.do" method="GET" class="form-inline"
@@ -128,13 +126,14 @@
 
 				</div>
 </div>
+
 				<c:forEach var="vus" items="${vuMap}">
 					<div class="panel-group">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 
-								<h4 class="panel-title">
-									<section id="{vus.key"> <a data-toggle="collapse"
+								<h4 class="panel-title" id="{vus.key">
+									 <a data-toggle="collapse"
 										href="#${vus.key}"> ${vus.key}</a>
 								</h4>
 							</div>
@@ -159,17 +158,15 @@
 						</c:forEach>
 					</div>
 				</c:forEach>
-			</div>
-			<div class="container">
+<div class="container text-center">
 				<div class="row">
-					<hr>
 					<div class="col-lg-12">
 						<div class="col-md-8">
 							<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
 								Policy</a>
 						</div>
 						<div class="col-md-4">
-							<p class="muted pull-right">Â© 2016 Rockin Executioners. All
+							<p class="muted pull-right">© 2016 Rockin Executioners. All
 								rights reserved</p>
 						</div>
 					</div>
