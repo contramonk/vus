@@ -135,6 +135,46 @@ height = 500px;
 
 			<div class="container">
 				<p>${Vu.title}</p>
+				
+			</div>
+
+
+
+			<div class="container">
+				<p>
+					<fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" />
+				</p>
+				<p>
+					<fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" />
+				</p>
+				<p>
+				<c:if test="${!empty Vu.location}">
+				${Vu.location}
+				</c:if>
+				</p>
+				<p style="white-space: pre-wrap">${Vu.post}</p>
+				</div>
+				<div class="container">
+				<div class="row">
+				<section class="container content-section">
+					<!-- Map -->
+					<c:if test="${!empty Vu.location}">
+					<iframe width="100%" height="450" style="border: 0"
+						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location}">
+					</iframe>
+					</c:if>
+					<c:if test="${empty Vu.location}">
+					<iframe width="100%" height="450" style="border: 0"
+						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=Colorado&zoom=2">
+					</iframe>
+					</c:if>
+				</section>
+				</div>
+				</div>
+				<br />
+				
+				<div class="container">
+				<div class="row">
 				<div class="panel-group" id="title">
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -160,19 +200,10 @@ height = 500px;
 						</div>
 					</div>
 				</div>
-			</div>
-
-
-
-			<div class="container">
-				<p>
-					<fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" />
-				</p>
-				<p>
-					<fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" />
-				</p>
-
-
+				</div>
+				</div>
+				<div class="container">
+				<div class="row">
 				<div class="panel-group" id="date">
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -211,47 +242,13 @@ height = 500px;
 						</div>
 					</div>
 				</div>
-			</div>
+				</div>
+				</div>
 		</section>
 
 
 		<div class="container">
-
-			<%-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-				</ol>
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-
-					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
-						<div class="item<c:if test='${status.first}'> active</c:if>">
-							<img src="${photo.url}">
-							<div class="carousel-caption">
-
-								<p>${photo.id}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div> --%>
-
+			<div class="row">
 			<div class="panel-group" id="photos">
 				<div class="panel panel-default" id="photos">
 					<div class="panel-heading">
@@ -292,12 +289,13 @@ height = 500px;
 				</div>
 
 			</div>
+			</div>
+			</div>
 
-		</div>
 
 		<div class="container">
-			<p style="white-space: pre-wrap">${Vu.post}</p>
-
+		<div class="row">
+			
 			<form action="addPost.do" method="GET" class="form-group">
 				<div class="form-group">
 					<label for="post">Vu Description</label> <input type="hidden"
@@ -308,13 +306,13 @@ height = 500px;
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
-
+		</div>
 		</div>
 
-		<div class="container">
+	
+		
 			<div class="container">
-				<p>${Vu.location.state}</p>
-			</div>
+			<div class="row">
 			<div class="panel-group" id="location">
 				<div class="panel panel-default" id="photos">
 					<div class="panel-heading">
@@ -344,57 +342,14 @@ height = 500px;
 								placeholder="Ex. Meagan's Beach">
 							<button type="submit" class="btn btn-primary">Enter</button>
 						</form>
-						<%-- </div>
-						<div class="col-sm-2">
-						<form action="addCity.do" method="GET" class="form-inline">
-						
-								<label for="city">City</label> <input type="hidden" name="vuId"
-									value="${Vu.id}"> <input type="text" name="city"
-									class="form-control" id="exampleInputName2" placeholder="City">
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-						</div>
-						<div class="col-sm-2">
-						<form action="addState.do" method="GET" class="form-inline">
-								<label for="State">State</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="state" class="form-control" id="exampleInputName2"
-									placeholder="CO">
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-						</div>
-						<div class="col-sm-2">
-						<form action="addZip.do" method="GET" class="form-inline">
-								<label for="city">Zip</label> <input type="hidden" name="vuId"
-									value="${Vu.id}"> <input type="number" name="zip"
-									class="form-control" id="exampleInputName2" placeholder="Zip">
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-						</div>
-						<div class="col-sm-2">
-						<form action="addPlace.do" method="GET" class="form-inline">
-								<label for="place">Place</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="place" class="form-control" id="exampleInputName2"
-									placeholder="Place">
-						
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
- --%>
-					</div>
+											</div>
 
 
 
 				</div>
 
-				<section id="map" section class="container content-section">
-
-					<!-- Map -->
-					<iframe width="100%" height="450" style="border: 0"
-						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
-    &q=${Vu.location.state}">
-					</iframe>
-				</section>
+				
+			</div>
 			</div>
 		</div>
 
