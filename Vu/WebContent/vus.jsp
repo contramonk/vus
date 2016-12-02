@@ -138,8 +138,7 @@
 					</c:forEach>
 						</div>
 				</c:forEach>
-				<%-- </c:forEach>
- --%>
+			
 				<div class="container">
 					<div class="row">
 						<hr>

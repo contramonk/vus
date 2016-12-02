@@ -190,8 +190,13 @@
 		</div>
 	</section>
 
-	<!-- Map Section -->
-	<div id="map"></div>
+	<section class="container content-section">
+
+		<iframe width="100%" height="450" frameborder="0" style="border: 0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+    &q=Colorado&zoom=1">
+		</iframe>
+	</section>
 
 	<!-- Footer -->
 	<footer>
@@ -210,9 +215,7 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-	<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-	<script type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
 
 	<!-- Theme JavaScript -->
 	<script src="js/grayscale.min.js"></script>

@@ -42,8 +42,7 @@
 } */
 .carousel img {
 	width: 100%;
-	height: 100%
-	max-height: 100%;
+	height: 100% max-height: 100%;
 }
 
 /* .carousel-inner {
@@ -150,23 +149,47 @@ height = 500px;
 			<div class="row">
 				<h1>${Vu.title}</h1>
 				<h3>${Vu.location}</h3>
-				<h3>${Vu.startDate}- ${Vu.endDate}</h3>
+				
+				<c:choose>
+					<c:when test="${not empty Vu.endDate}">
+					</c:when>
+					<c:otherwise>
+						<h5>${Vu.startDate}</h5>
+					</c:otherwise>
+				</c:choose>
+				
 			</div>
-			<div class="row">${Vu.post}</div>
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<div><hr></div>
+					<div style="white-space: pre-wrap">${Vu.post}</div>
+					<div><hr></div>
+				<div class="col-sm-4"></div>
+			</div>
 		</section>
 
-		<section id="map" class="container content-section text-center">
-			<div class="row">
+			<section class="container content-section">
 
-				<iframe width="600" height="450" frameborder="0" style="border: 0"
+				<iframe width="100%" height="450" frameborder="0" style="border: 0"
 					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
     &q=${Vu.location.state}">
 				</iframe>
-			</div>
-		</section>
-		<br>
+			</section>
+		
+		
+		
+		
 
 
+
+		<!-- Footer -->
+	<footer>
+		<div class="container text-center">
+			<p>Copyright &copy; Your Website 2016</p>
+		</div>
+	</footer>
+	
 		<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -178,12 +201,15 @@ height = 500px;
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
+	
 		<!-- Plugin JavaScript -->
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 
+	
 		<!-- Theme JavaScript -->
 		<script src="js/grayscale.min.js"></script>
+		
 </body>
 </html>
