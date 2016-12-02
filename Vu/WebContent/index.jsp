@@ -192,7 +192,7 @@
 
 	<section class="container content-section">
 
-		<iframe width="100%" height="450" frameborder="0" style="border: 0"
+		<iframe width="100%" height="450" style="border: 0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
     &q=Colorado&zoom=1">
 		</iframe>

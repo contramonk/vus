@@ -64,7 +64,6 @@ height = 500px;
 					Menu <i class="fa fa-bars"></i>
 				</button>
 
-				</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -100,116 +99,120 @@ height = 500px;
 		</div>
 	</header> -->
 
-	<div id="photos" class="container-fluid">
+	<div class="row">
 		<div class="row">
-			<div class="row">
 
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
-						<li data-target="#myCarousel" data-slide-to="3"></li>
-					</ol>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
 
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner" role="listbox">
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
 
-						<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
-							<div class="item<c:if test='${status.first}'> active</c:if>">
-								<img src="${photo.url}">
-								<div class="carousel-caption">
+					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
+						<div class="item<c:if test='${status.first}'> active</c:if>">
+							<img src="${photo.url}">
+							<div class="carousel-caption">
 
-									<p>${photo.id}</p>
-								</div>
+								<p>${photo.id}</p>
 							</div>
-						</c:forEach>
-					</div>
-
-					<!-- Left and right controls -->
-					<a class="left carousel-control" href="#myCarousel" role="button"
-						data-slide="prev"> <span
-						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a> <a class="right carousel-control" href="#myCarousel" role="button"
-						data-slide="next"> <span
-						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
+						</div>
+					</c:forEach>
 				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#myCarousel" role="button"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
 		</div>
-		</section>
+	</div>
 
 
 
 
-		<section id="contact" class="container content-section text-center">
-			<div class="row">
-				<h1>${Vu.title}</h1>
-				<h3>${Vu.location}</h3>
-				
-				<c:choose>
-					<c:when test="${not empty Vu.endDate}">
-					</c:when>
-					<c:otherwise>
-						<h5>${Vu.startDate}</h5>
-					</c:otherwise>
-				</c:choose>
-				
-			</div>
-			<div class="row">
+	<section id="contact" class="container content-section text-center">
+		<div class="row">
+			<h1>${Vu.title}</h1>
+			<h3>${Vu.location}</h3>
+
+			<c:choose>
+				<c:when test="${not empty Vu.endDate}">
+				</c:when>
+				<c:otherwise>
+					<h5>${Vu.startDate}</h5>
+				</c:otherwise>
+			</c:choose>
+
+		</div>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div>
+					<hr>
+				</div>
+				<div style="white-space: pre-wrap">${Vu.post}</div>
+				<div>
+					<hr>
+				</div>
 				<div class="col-sm-4"></div>
-				<div class="col-sm-4">
-					<div><hr></div>
-					<div style="white-space: pre-wrap">${Vu.post}</div>
-					<div><hr></div>
-				<div class="col-sm-4"></div>
 			</div>
-		</section>
+	</section>
 
-			<section class="container content-section">
+	<section class="container content-section">
 
-				<iframe width="100%" height="450" frameborder="0" style="border: 0"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+		<!-- Map -->
+		<iframe width="100%" height="450" style="border: 0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
     &q=${Vu.location.state}">
-				</iframe>
-			</section>
+		</iframe>
 		
-		
-		
-		
+	</section>
 
 
 
-		<!-- Footer -->
+
+
+
+
+	<!-- Footer -->
 	<footer>
 		<div class="container text-center">
 			<p>Copyright &copy; Your Website 2016</p>
 		</div>
 	</footer>
-	
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
-	
-		<!-- Plugin JavaScript -->
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 
-	
-		<!-- Theme JavaScript -->
-		<script src="js/grayscale.min.js"></script>
-		
+
+	<!-- Theme JavaScript -->
+	<script src="js/grayscale.min.js"></script>
+
 </body>
 </html>

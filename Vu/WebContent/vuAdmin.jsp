@@ -11,100 +11,85 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Bootstrap Core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+
+<!-- Theme CSS -->
+<link href="css/grayscale.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
 <style>
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 400px;
+/* .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	width: 100%;
 	margin: auto;
+} */
+.carousel img {
+	width: 100%;
+	height: 100% max-height: 100%;
 }
+
+/* .carousel-inner {
+height = 500px;
+} */
 </style>
 
 <title>VuAdmin</title>
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	"target="_blank">
+	target="_blank"> -->
 </head>
-<body>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	<sec:authorize access="hasRole('ROLE_ADMIN')">
-		<div class=container-fluid>
-			<a href="vuUser.do?vuId=${Vu.id}">See Vu</a>
-			<div class="row">
-				${Vu.title}
-				<div class="panel-group" id="title">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" href="#collapse0">Edit Title</a>
-							</h4>
-						</div>
-						<div id="collapse0" class="panel-collapse collapse">
-							<div class="panel-body"></div>
 
-							<form action="addTitle.do" method="GET" class="form-inline"
-								id="title">
-								<div class="form-group" id="title">
-									<label for="title">Title</label> <input type="hidden"
-										name="vuId" value="${Vu.id}"> <input type="text"
-										name="title" class="form-control" id="exampleInputName1"
-										placeholder="Title">
-								</div>
-								<div class="form-group"></div>
-								<button type="submit" class="btn btn-primary">Enter</button>
-							</form>
 
-						</div>
-					</div>
+
+		<!--  navbar -->
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-main-collapse">
+						Menu <i class="fa fa-bars"></i>
+					</button>
+					<a class="navbar-brand page-scroll" href="vuUser.do?vuId=${Vu.id}">
+						<i class="fa fa-play-circle"></i> <span class="light">See
+							Vu</span>
+					</a>
 				</div>
-			</div>
-		</div>
 
-		<div class="row">${Vu.location.state}</div>
-
-
-		<div class="row">
-			<fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" />
-			<fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" />
-
-
-			<div class="panel-group" id="date">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse1">Edit Date</a>
-						</h4>
-					</div>
-					<div id="collapse1" class="panel-collapse collapse">
-						<div class="panel-body"></div>
-
-						<form action="addDate.do" method="GET" class="form-inline"
-							id="date">
-							<div class="form-group" id="date">
-								<label for="startDate">Start Date</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="startDate" class="form-control" id="exampleInputName1"
-									placeholder="yyyy/mm/dd">
-							</div>
-							<div class="form-group"></div>
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-
-						<form action="addEndDate.do" method="GET" class="form-inline"
-							id="endDate">
-							<div class="form-group" id="enddate">
-								<label for="endDate">End Date</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="endDate" class="form-control" id="exampleInputName1"
-									placeholder="yyyy/mm/dd">
-							</div>
-							<div class="form-group"></div>
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-					</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div
+					class="collapse navbar-collapse navbar-right navbar-main-collapse">
+					<ul class="nav navbar-nav">
+						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+						<li class="hidden"><a href="#page-top"></a></li>
+						<li><a class="page-scroll" href="#about">About</a></li>
+						<li><a class="page-scroll" href="#download">Login</a></li>
+						<li><a class="page-scroll" href="#contact">Register</a></li>
+					</ul>
 				</div>
+				<!-- /.navbar-collapse -->
 			</div>
-		</div>
-
-
-
+			<!-- /.container -->
+		</nav>
+		
 		<div class="row">
 
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -141,6 +126,123 @@
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
+		</div>
+
+			<div class="container">
+				<p>${Vu.title}</p>
+				<div class="panel-group" id="title">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapse0">Edit Title</a>
+							</h4>
+						</div>
+						<div id="collapse0" class="panel-collapse collapse">
+							<div class="panel-body"></div>
+
+							<form action="addTitle.do" method="GET" class="form-inline"
+								id="title">
+								<div class="form-group" id="title">
+									<label for="title">Title</label> <input type="hidden"
+										name="vuId" value="${Vu.id}"> <input type="text"
+										name="title" class="form-control" id="exampleInputName1"
+										placeholder="Title">
+								</div>
+								<div class="form-group"></div>
+								<button type="submit" class="btn btn-primary">Enter</button>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		
+
+
+		<div class="container">
+			<p><fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" /></p>
+			<p><fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" /></p>
+
+
+			<div class="panel-group" id="date">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1">Edit Date</a>
+						</h4>
+					</div>
+					
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body"></div>
+
+						<form action="addDate.do" method="GET" class="form-inline"
+							id="date">
+							<div class="form-group" id="date">
+								<label for="startDate">Start Date</label> <input type="hidden"
+									name="vuId" value="${Vu.id}"> <input type="text"
+									name="startDate" class="form-control" id="exampleInputName1"
+									placeholder="yyyy/mm/dd">
+							</div>
+							<div class="form-group"></div>
+							<button type="submit" class="btn btn-primary">Enter</button>
+						</form>
+					
+
+						<form action="addEndDate.do" method="GET" class="form-inline"
+							id="endDate">
+							<div class="form-group" id="enddate">
+								<label for="endDate">End Date</label> <input type="hidden"
+									name="vuId" value="${Vu.id}"> <input type="text"
+									name="endDate" class="form-control" id="exampleInputName1"
+									placeholder="yyyy/mm/dd">
+							</div>
+							<div class="form-group"></div>
+							<button type="submit" class="btn btn-primary">Enter</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="container">
+
+			<%-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+
+					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
+						<div class="item<c:if test='${status.first}'> active</c:if>">
+							<img src="${photo.url}">
+							<div class="carousel-caption">
+
+								<p>${photo.id}</p>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#myCarousel" role="button"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div> --%>
 
 			<div class="panel-group" id="photos">
 				<div class="panel panel-default" id="photos">
@@ -185,8 +287,8 @@
 
 		</div>
 
-		<div class="row">
-			${Vu.post}
+		<div class="container">
+			<p style="white-space: pre-wrap">${Vu.post}</p>
 
 			<form action="addPost.do" method="GET" class="form-group">
 				<div class="form-group">
@@ -201,12 +303,13 @@
 
 		</div>
 
-		<div class="row">
+		<div class="container">
+		<div class="container"><p>${Vu.location.state}</p></div>
 			<div class="panel-group" id="location">
 				<div class="panel panel-default" id="photos">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse3">Enter Location</a>
+							<a data-toggle="collapse" href="#collapse3">Edit Location</a>
 						</h4>
 					</div>
 					<div id="collapse3" class="panel-collapse collapse">
@@ -274,28 +377,47 @@
 
 				</div>
 
-				<div class="row">
-					<div class="col-sm-4"></div>
-					<div class="center-block">
-						<iframe width="450" height="450" frameborder="0" style="border: 0"
-							src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY&q=${Vu.location.state}"
-							allowfullscreen> </iframe>
-					</div>
-					<div class="col-sm-4"></div>
-				</div>
+				<section class="container content-section">
+				
+					<!-- Map -->
+					<iframe width="100%" height="450" style="border: 0"
+						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+    &q=${Vu.location.state}">
+					</iframe>
+				</section>
 			</div>
 		</div>
 
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Footer -->
+	<footer>
+		<div class="container text-center">
+			<p>Copyright &copy; Your Website 2016</p>
 		</div>
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+	<!-- Plugin JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+
+	<!-- Theme JavaScript -->
+	<script src="js/grayscale.min.js"></script>
 	</sec:authorize>
+	
+	
 
 
 </body>
