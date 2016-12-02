@@ -12,38 +12,38 @@ Feature sets include:
 + A way to track an individual users previous experiences on the site.
 
 # Technologies Implemented
-- As a team we structured our process and communications by implementation of Agile development principles using the following technologies:
-*Java
-*Spring MVC
-*JSP
-*HTML/CSS
-*MySQL/MySQLWorkBench
-*JPA
-*Hibernate
-*Apache Tomcat
-*Git
-*Github
-*Slack
-*Trello
+As a team we structured our process and communications by implementation of Agile development principles using the following technologies:
++ Java
++ Spring MVC
++ JSP
++ HTML/CSS
++ MySQL/MySQLWorkBench
++ JPA
++ Hibernate
++ Apache Tomcat
++ Git
++ <a href="https://github.com/contramonk/vus">Github</a>
++ <a href="https://trello.com/b/fWXeu2QL/vu">Trello</a>
++ Slack
 
 ## Getting Started
 
 To begin this web application from home page, choose one of the following options to get started:
-*To access preloaded profile, select "login" as existing user with the following; username: "guest", password: "guest".
-*To create and access your own distinct experiences, select "register" as a new user with unique values for the following fields; username, password, first name and last name.
++ To access preloaded profile, select "login" as existing user with the following; username: "guest", password: "guest".
++ To create and access your own distinct experiences, select "register" as a new user with unique values for the following fields; username, password, first name and last name.
 
 
 ## Bugs and Issues
 
-(still to be determined upon completion of project)
+<a href="https://github.com/contramonk/vus/issues"> Click here for an updated list with descriptions of our known bugs and issues</a>
 
 ## Creators
 
 <a href="https://github.com/contramonk">Jonathan Edwards
-								Github</a>
+								Github</a> <br>
 <a href="https://github.com/chrisbuttaro">Chris Buttaro
-								Github</a>
+								Github</a><br>
 <a href="https://github.com/spassantino">Sarah Passantino
-								Github</a>
+								Github</a><br>
 
 © 2016 Rockin Executioners. All rights reserved
