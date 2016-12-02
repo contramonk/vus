@@ -71,6 +71,7 @@ height = 500px;
 					<a class="navbar-brand page-scroll" href="vuUser.do?vuId=${Vu.id}">
 						<i class="fa fa-play-circle"></i> <span class="light">See
 							Vu</span>
+
 					</a>
 				</div>
 
@@ -80,53 +81,57 @@ height = 500px;
 					<ul class="nav navbar-nav">
 						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 						<li class="hidden"><a href="#page-top"></a></li>
-						<li><a class="page-scroll" href="#about">About</a></li>
-						<li><a class="page-scroll" href="#download">Login</a></li>
-						<li><a class="page-scroll" href="#contact">Register</a></li>
+						<li><a href="getVus.do">Home</a></li>
+						<li><a class="page-scroll" href="#photos">Photos</a></li>
+						<li><a class="page-scroll" href="#contact">Description</a></li>
+						<li><a class="page-scroll" href="#map">Location</a></li>
+						<li><a href="index.jsp">Signout</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
 			<!-- /.container -->
 		</nav>
-		
+
 		<div class="row">
+			<section id="photos">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol>
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-				</ol>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
+						<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
+							<div class="item<c:if test='${status.first}'> active</c:if>">
+								<img src="${photo.url}">
+								<div class="carousel-caption">
 
-					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
-						<div class="item<c:if test='${status.first}'> active</c:if>">
-							<img src="${photo.url}">
-							<div class="carousel-caption">
-
-								<p>${photo.id}</p>
+									<p>${photo.id}</p>
+								</div>
 							</div>
-						</div>
-					</c:forEach>
-				</div>
+						</c:forEach>
+					</div>
 
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel" role="button"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</section>
 		</div>
+		<section id="contact" class="container content-section text-center">
 
 			<div class="container">
 				<p>${Vu.title}</p>
@@ -156,55 +161,58 @@ height = 500px;
 					</div>
 				</div>
 			</div>
-			
-		
 
 
-		<div class="container">
-			<p><fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" /></p>
-			<p><fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" /></p>
+
+			<div class="container">
+				<p>
+					<fmt:formatDate value="${Vu.startDate}" pattern="yyyy-MM-dd" />
+				</p>
+				<p>
+					<fmt:formatDate value="${Vu.endDate}" pattern="yyyy-MM-dd" />
+				</p>
 
 
-			<div class="panel-group" id="date">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse1">Edit Date</a>
-						</h4>
-					</div>
-					
-					<div id="collapse1" class="panel-collapse collapse">
-						<div class="panel-body"></div>
+				<div class="panel-group" id="date">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#collapse1">Edit Date</a>
+							</h4>
+						</div>
 
-						<form action="addDate.do" method="GET" class="form-inline"
-							id="date">
-							<div class="form-group" id="date">
-								<label for="startDate">Start Date</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="startDate" class="form-control" id="exampleInputName1"
-									placeholder="yyyy/mm/dd">
-							</div>
-							<div class="form-group"></div>
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
-					
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body"></div>
 
-						<form action="addEndDate.do" method="GET" class="form-inline"
-							id="endDate">
-							<div class="form-group" id="enddate">
-								<label for="endDate">End Date</label> <input type="hidden"
-									name="vuId" value="${Vu.id}"> <input type="text"
-									name="endDate" class="form-control" id="exampleInputName1"
-									placeholder="yyyy/mm/dd">
-							</div>
-							<div class="form-group"></div>
-							<button type="submit" class="btn btn-primary">Enter</button>
-						</form>
+							<form action="addDate.do" method="GET" class="form-inline"
+								id="date">
+								<div class="form-group" id="date">
+									<label for="startDate">Start Date</label> <input type="hidden"
+										name="vuId" value="${Vu.id}"> <input type="text"
+										name="startDate" class="form-control" id="exampleInputName1"
+										placeholder="yyyy/mm/dd">
+								</div>
+								<div class="form-group"></div>
+								<button type="submit" class="btn btn-primary">Enter</button>
+							</form>
+
+
+							<form action="addEndDate.do" method="GET" class="form-inline"
+								id="endDate">
+								<div class="form-group" id="enddate">
+									<label for="endDate">End Date</label> <input type="hidden"
+										name="vuId" value="${Vu.id}"> <input type="text"
+										name="endDate" class="form-control" id="exampleInputName1"
+										placeholder="yyyy/mm/dd">
+								</div>
+								<div class="form-group"></div>
+								<button type="submit" class="btn btn-primary">Enter</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
+		</section>
 
 
 		<div class="container">
@@ -304,7 +312,9 @@ height = 500px;
 		</div>
 
 		<div class="container">
-		<div class="container"><p>${Vu.location.state}</p></div>
+			<div class="container">
+				<p>${Vu.location.state}</p>
+			</div>
 			<div class="panel-group" id="location">
 				<div class="panel panel-default" id="photos">
 					<div class="panel-heading">
@@ -377,8 +387,8 @@ height = 500px;
 
 				</div>
 
-				<section class="container content-section">
-				
+				<section id="map" section class="container content-section">
+
 					<!-- Map -->
 					<iframe width="100%" height="450" style="border: 0"
 						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
@@ -389,35 +399,42 @@ height = 500px;
 		</div>
 
 		<!-- Footer -->
-	<footer>
-		<div class="container text-center">
-			<p>Copyright &copy; Your Website 2016</p>
-		</div>
-	</footer>
+		<footer>
+			<div class="col-lg-12">
+				<div class="col-md-8">
+					<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
+						Policy</a>
+				</div>
+				<div class="col-md-4">
+					<p class="muted pull-right">© 2016 Rockin Executioners. All
+						rights reserved</p>
+				</div>
+			</div>
+		</footer>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
 
-	<!-- Plugin JavaScript -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<!-- Plugin JavaScript -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 
 
-	<!-- Theme JavaScript -->
-	<script src="js/grayscale.min.js"></script>
+		<!-- Theme JavaScript -->
+		<script src="js/grayscale.min.js"></script>
 	</sec:authorize>
-	
-	
+
+
 
 
 </body>

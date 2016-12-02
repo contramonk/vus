@@ -63,7 +63,11 @@ height = 500px;
 					data-target=".navbar-main-collapse">
 					Menu <i class="fa fa-bars"></i>
 				</button>
+				<a class="navbar-brand page-scroll" href="getVu.do?vuId=${Vu.id}">
+					<i class="fa fa-play-circle"></i> <span class="light">Edit
+						Vu</span>
 
+				</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,10 +76,11 @@ height = 500px;
 				<ul class="nav navbar-nav">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#Vu">Vu</a></li>
+					<li><a href="getVus.do">Home</a></li>
 					<li><a class="page-scroll" href="#photos">Photos</a></li>
 					<li><a class="page-scroll" href="#contact">Description</a></li>
-					<li><a class="page-scroll" href="#map">Map</a></li>
+					<li><a class="page-scroll" href="#map">Location</a></li>
+					<li><a href="index.jsp">Signout</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -101,41 +106,43 @@ height = 500px;
 
 	<div class="row">
 		<div class="row">
+			<section id="photos">
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-				</ol>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+					</ol>
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
 
-					<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
-						<div class="item<c:if test='${status.first}'> active</c:if>">
-							<img src="${photo.url}">
-							<div class="carousel-caption">
+						<c:forEach items="${Vu.photos}" var="photo" varStatus="status">
+							<div class="item<c:if test='${status.first}'> active</c:if>">
+								<img src="${photo.url}">
+								<div class="carousel-caption">
 
-								<p>${photo.id}</p>
+									<p>${photo.id}</p>
+								</div>
 							</div>
-						</div>
-					</c:forEach>
-				</div>
+						</c:forEach>
+					</div>
 
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a> <a class="right carousel-control" href="#myCarousel" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel" role="button"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</section>
 		</div>
 	</div>
 
@@ -156,7 +163,7 @@ height = 500px;
 			</c:choose>
 
 		</div>
-		<div class="row">
+		<div class="row"></div>
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<div>
@@ -169,28 +176,34 @@ height = 500px;
 				<div class="col-sm-4"></div>
 			</div>
 	</section>
+	<div class="row">
 
-	<section class="container content-section">
+	<section id="map" class="container content-section">
 
 		<!-- Map -->
 		<iframe width="100%" height="450" style="border: 0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
     &q=${Vu.location.state}">
 		</iframe>
-		
+
 	</section>
-
-
-
+</div>
 
 
 
 
 	<!-- Footer -->
 	<footer>
-		<div class="container text-center">
-			<p>Copyright &copy; Your Website 2016</p>
-		</div>
+<div class="col-lg-12">
+				<div class="col-md-8">
+					<a href="aboutUs.jsp">About Us</a> | <a href="privacyPolicy.jsp">Privacy
+						Policy</a>
+				</div>
+				<div class="col-md-4">
+					<p class="muted pull-right">© 2016 Rockin Executioners. All
+						rights reserved</p>
+				</div>
+			</div>
 	</footer>
 
 	<script
