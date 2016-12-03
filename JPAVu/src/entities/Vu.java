@@ -31,12 +31,6 @@ public class Vu {
 	@JoinColumn(name = "location_id")
 	private Location location;
 
-	@Override
-	public String toString() {
-		return "Vu [id=" + id + ", user=" + user + ", location=" + location + ", title=" + title + ", post=" + post
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", photos=" + photos + "]";
-	}
-
 	private String title;
 	private String post;
 
@@ -48,7 +42,7 @@ public class Vu {
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
 
-	@OneToMany(mappedBy = "vu", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "vu", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
 	private List<Photo> photos;
 
 	public Vu() {
@@ -131,6 +125,12 @@ public class Vu {
 
 	public int getId() {
 		return id;
+	}
+	
+	@Override
+	public String toString() {
+		return "Vu [id=" + id + ", user=" + user + ", location=" + location + ", title=" + title + ", post=" + post
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", photos=" + photos + "]";
 	}
 
 }
