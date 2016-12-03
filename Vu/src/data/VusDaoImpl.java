@@ -99,11 +99,5 @@ public class VusDaoImpl implements VusDAO {
 		 
 	 }
 	
-	// @Override
-	// public Vu editVu(int id, int userId, String title, String post, Date
-	// startDate, Date endDate, Vu vu) {
-	//
-	// return vu;
-	// }
-	//
+
 }
