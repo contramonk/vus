@@ -56,12 +56,6 @@
                 </div>
                 <!-- /.container-fluid --> 
             </nav>
-            <!-- <div class="row">
-                <img
-                	src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15181225_10209289402223717_8978212067129912470_n.jpg?oh=6763cc4731ad4488ee6adb4a8913ba63&oe=58B78A0F"
-                	style="width: 4em; height: 4em; position: relative; left: 50%; right: 50%">
-                	
-                </div> -->
             <header class="intro">
                 <div class="intro-body">
                     <div class="container">
@@ -117,11 +111,26 @@
                         <c:forEach items="${vus.value}" var="vu">
                             <div class="panel-body">
                                 <%--  ${vu}<br> --%>
-                                <img src="${vu.photos[0].getUrl()}"
-                                    style="width: 15mm; height: 15mm"> <a
-                                    href="vuUser.do?vuId=${vu.id}"> ${vu.title} ${vu.startDate}
+                                <div class= "row">
+                                    <div class="col-sm-4">
+                                        <p><a href= "vuUser.do?vuId=${vu.id}">
+                                            ${vu.title} ${vu.startDate}</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-8">
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-sm-4">
+                                        <a href="vuUser.do?vuId=${vu.id}">
+                                        <img src="${vu.photos[0].getUrl()}"
+                                            style="height: 100%; width: 100%;" ></a>
+                                    </div>
+                                    <div class = "col-sm-8">
+                                    </div>
+                                </div>
                                 <br>
-                                </a> <a href="getVu.do?vuId=${vu.id}"><span
+                                <a href="getVu.do?vuId=${vu.id}"><span
                                     class="glyphicon glyphicon-edit"></span></a> <a
                                     href="deleteVu.do?vuId=${vu.id}&vu=${vu}"><span
                                     class="glyphicon glyphicon-trash"></span></a>
