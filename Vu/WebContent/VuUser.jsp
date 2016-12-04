@@ -153,10 +153,18 @@
         </section>
         <section class="container content-section">
             <!-- Map -->
-            <iframe id="map" width="100%" height="450" style="border: 0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
-                &q=${Vu.location.state}">
-            </iframe>
+            <c:if test='${empty Vu.location}'>
+                <iframe id="map" width="100%" height="450" style="border: 0"
+               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+               &q=Colorado&zoom=2">
+           </iframe>
+           </c:if>
+            <c:if test='${!empty Vu.location}'>
+               <iframe id="map" width="100%" height="450" style="border: 0"
+                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0pKrEqTo-fME3GzGtr7ayYn-AGZ-erMY
+                   &q=${Vu.location}">
+               </iframe>
+            </c:if>
         </section>
         <!-- Footer -->
         <footer>
