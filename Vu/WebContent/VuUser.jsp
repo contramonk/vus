@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -130,13 +131,16 @@
                 <h1>${Vu.title}</h1>
                 <h3>${Vu.location}</h3>
                 <c:choose>
-                    <c:when test="${not empty Vu.endDate}">
-                        <h5>${Vu.startDate}- ${Vu.endDate}</h5>
-                    </c:when>
-                    <c:otherwise>
-                        <h5>${Vu.startDate}</h5>
-                    </c:otherwise>
-                </c:choose>
+                        <c:when test="${not empty Vu.endDate}">
+                            <h5>
+                            <fmt:formatDate value="${Vu.startDate}" pattern="MM-dd-yyyy"/> -
+                            <fmt:formatDate value="${Vu.endDate}" pattern="MM-dd-yyyy"/>
+                            </h5>
+                        </c:when>
+                        <c:otherwise>
+                            <h5><fmt:formatDate value="${Vu.startDate}" pattern="MM-dd-yyyy"/></h5>
+                        </c:otherwise>
+                    </c:choose>
             </div>
             <div class="row"></div>
             <div class="col-sm-4"></div>
