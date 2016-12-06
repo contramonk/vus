@@ -119,10 +119,13 @@
                     <h3>${Vu.location}</h3>
                     <c:choose>
                         <c:when test="${not empty Vu.endDate}">
-                            <h5>${Vu.startDate} - ${Vu.endDate}</h5>
+                            <h5>
+                            <fmt:formatDate value="${Vu.startDate}" pattern="MM-dd-yyyy"/> -
+                            <fmt:formatDate value="${Vu.endDate}" pattern="MM-dd-yyyy"/>
+                            </h5>
                         </c:when>
                         <c:otherwise>
-                            <h5>${Vu.startDate}</h5>
+                            <h5><fmt:formatDate value="${Vu.startDate}" pattern="MM-dd-yyyy"/></h5>
                         </c:otherwise>
                     </c:choose>
                 </div>
@@ -200,7 +203,7 @@
                                         <label for="startDate">Start Date</label> <input type="hidden"
                                             name="vuId" value="${Vu.id}"> <input type="text"
                                             name="startDate" class="form-control" id="exampleInputName1"
-                                            placeholder="yyyy/mm/dd">
+                                            placeholder="dd/mm/yyyy">
                                     </div>
                                     <div class="form-group"></div>
                                     <button type="submit" class="btn btn-primary">Enter</button>
@@ -211,7 +214,7 @@
                                         <label for="endDate">End Date</label> <input type="hidden"
                                             name="vuId" value="${Vu.id}"> <input type="text"
                                             name="endDate" class="form-control" id="exampleInputName1"
-                                            placeholder="yyyy/mm/dd">
+                                            placeholder="dd/mm/yyyy">
                                     </div>
                                     <div class="form-group"></div>
                                     <button type="submit" class="btn btn-primary">Enter</button>

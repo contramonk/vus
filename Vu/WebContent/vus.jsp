@@ -1,6 +1,7 @@
 <%@taglib prefix="sec"
     uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -90,7 +91,7 @@
                             <input type="text" class="form-control" name="title"
                                 placeholder="Title" value=""> <input type="hidden"
                                 name="username" value="${user.username}"> <input
-                                type="text" class="form-control" placeholder="Start Date"
+                                type="text" class="form-control" placeholder="dd/mm/yyyy"
                                 name="startDate">
                             <button type="submit" class="btn btn-primary">Enter</button>
                         </form>
@@ -113,8 +114,10 @@
                                 <%--  ${vu}<br> --%>
                                 <div class= "row">
                                     <div class="col-sm-4">
-                                        <p><a href= "vuUser.do?vuId=${vu.id}">
-                                            ${vu.title} ${vu.startDate}</a>
+                                        <p>
+                                          <a href= "vuUser.do?vuId=${vu.id}">
+                                            ${vu.title} <fmt:formatDate value="${vu.startDate}" pattern="MM-dd-yyyy"/>
+                                            </a>
                                         </p>
                                     </div>
                                     <div class="col-sm-8">

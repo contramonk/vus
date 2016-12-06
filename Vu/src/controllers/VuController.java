@@ -45,7 +45,7 @@ public class VuController {
 	@RequestMapping("addDate.do") //for adding a startDate to a Vu
 	public ModelAndView startDate(@RequestParam("startDate") String startDate, @RequestParam("vuId") String vuId) throws ParseException {
 		int id=Integer.parseInt(vuId);
-		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = formatter.parse(startDate);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
@@ -57,7 +57,7 @@ public class VuController {
 	@RequestMapping("addEndDate.do") //for adding a endDate to a Vu
 	public ModelAndView endDate(@RequestParam("endDate") String endDate, @RequestParam("vuId") String vuId) throws ParseException {
 		int id=Integer.parseInt(vuId);
-		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = formatter.parse(endDate);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("vuAdmin.jsp");
