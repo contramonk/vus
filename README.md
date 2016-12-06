@@ -29,7 +29,7 @@ As a team we structured our process and communications by implementation of Agil
 ## Getting Started
 
 To begin this web application from home page, choose one of the following options to get started:
-+ To access preloaded profile, select "login" as existing user with the following; username: "guest", password: "guest".
++ To access preloaded profile, select "login" as existing user with the following; username: "pope", password: "pope".
 + To create and access your own distinct experiences, select "register" as a new user with unique values for the following fields; username, password, first name and last name.
 
 
