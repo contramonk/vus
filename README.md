@@ -1,6 +1,6 @@
 # Vu Overview
 
-Vu is a Full Stack Group MVC Project that was assigned to Skill Distillery Cohort 7 in week 8 of the 16 week program. It is our second full web application and our first time using Spring MVC. We created Vu, a C.R.U.D. web application, to document a user's memories/experiences in a meaningful and organized way.
+Vu is a Full Stack Group MVC Project that was assigned to Skill Distillery Cohort 7 in week 8 of the 16 week program. It is our second full web application and our first time using Spring MVC. We created Vu, a C.R.U.D. web application, to document a user's memories/experiences in a meaningful and organized way. You can view the application [here](http://www.contramonk.com:8080/Vu/)
 
 # Project Requirements
 Below are a list of features that were required of our group project. The scope of the project was not limited to, but had to contain these features.
